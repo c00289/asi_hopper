@@ -1,0 +1,52 @@
+[project]
+name = "asi_hopper"
+version = "0.1.4"
+description = "Read-only, audited, replayable door into Jira Cloud for functional-safety tooling: a Python API, a CLI, and a fixture-replay gateway for tests"
+readme = "README.md"
+authors = [
+    { name = "Roy Mendoza", email = "c00289@contractor.asirobots.com" }
+]
+requires-python = ">=3.13"
+keywords = ["jira", "atlassian", "mcp", "functional-safety", "fusa", "evidence", "cli"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Bug Tracking",
+    "Topic :: Office/Business",
+    "Typing :: Typed",
+]
+dependencies = [
+    "mcp>=1.13",
+    "keyring>=25.0",
+]
+
+[project.scripts]
+asi-hopper = "asi_hopper.automation.cli:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.8",
+]
+
+[build-system]
+requires = ["uv_build>=0.13.5,<0.14.0"]
+build-backend = "uv_build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 120
+target-version = "py313"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+
+[tool.uv]
+# OneDrive refuses hardlinks from the uv cache; copy instead so `uv sync` just works here
+link-mode = "copy"

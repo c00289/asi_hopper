@@ -1,0 +1,16 @@
+[
+  {
+    "id": "0e0e7883-6f84-469d-a098-706e035c766e",
+    "url": "https://asirobots.atlassian.net",
+    "name": "asirobots",
+    "scopes": ["read:comment:confluence", "read:confluence-user", "read:page:confluence", "read:space:confluence", "search:confluence", "write:comment:confluence", "write:page:confluence"],
+    "avatarUrl": "https://settings-cdn-bifrost.prod-east.frontend.public.atl-paas.net/assets/avatars/240/flag.png"
+  },
+  {
+    "id": "0e0e7883-6f84-469d-a098-706e035c766e",
+    "url": "https://asirobots.atlassian.net",
+    "name": "asirobots",
+    "scopes": ["read:jira-work", "write:jira-work"],
+    "avatarUrl": "https://settings-cdn-bifrost.prod-east.frontend.public.atl-paas.net/assets/avatars/240/flag.png"
+  }
+]

@@ -1,0 +1,2013 @@
+{
+  "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/project/search?expand=issueTypes&maxResults=50&action=browse&startAt=0",
+  "maxResults": 50,
+  "startAt": 0,
+  "total": 33,
+  "isLast": true,
+  "values": [
+    {
+      "expand": "description,lead,issueTypes,url,projectKeys,permissions,insight",
+      "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/project/12681",
+      "id": "12681",
+      "key": "APD",
+      "issueTypes": [
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/11981",
+          "id": "11981",
+          "description": "Discovery idea",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/POLARIS_ISSUETYPE/avatar/12945?size=medium",
+          "name": "Idea",
+          "subtask": false,
+          "avatarId": 12945,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/12149",
+          "id": "12149",
+          "description": "",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/POLARIS_ISSUETYPE/avatar/12957?size=medium",
+          "name": "Epic",
+          "subtask": false,
+          "avatarId": 12957,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/12150",
+          "id": "12150",
+          "description": "",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/POLARIS_ISSUETYPE/avatar/12951?size=medium",
+          "name": "Story",
+          "subtask": false,
+          "avatarId": 12951,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/12151",
+          "id": "12151",
+          "description": "",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/POLARIS_ISSUETYPE/avatar/12934?size=medium",
+          "name": "Task",
+          "subtask": false,
+          "avatarId": 12934,
+          "hierarchyLevel": 0
+        }
+      ],
+      "name": "Agriculture PD",
+      "avatarUrls": {
+        "48x48": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10507",
+        "24x24": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10507?size=small",
+        "16x16": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10507?size=xsmall",
+        "32x32": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10507?size=medium"
+      },
+      "projectTypeKey": "product_discovery",
+      "simplified": true,
+      "style": "next-gen",
+      "isPrivate": false,
+      "properties": {},
+      "entityId": "736959a2-f95b-4dc9-8ec6-30f00d729b70",
+      "uuid": "736959a2-f95b-4dc9-8ec6-30f00d729b70"
+    },
+    {
+      "expand": "description,lead,issueTypes,url,projectKeys,permissions,insight",
+      "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/project/14006",
+      "id": "14006",
+      "key": "APM",
+      "issueTypes": [
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/12629",
+          "id": "12629",
+          "description": "Epics track collections of related bugs, stories, and tasks.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10307?size=medium",
+          "name": "Epic",
+          "subtask": false,
+          "avatarId": 10307,
+          "hierarchyLevel": 1
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/12630",
+          "id": "12630",
+          "description": "Subtasks track small pieces of work that are part of a larger task.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10316?size=medium",
+          "name": "Subtask",
+          "subtask": true,
+          "avatarId": 10316,
+          "hierarchyLevel": -1
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/12631",
+          "id": "12631",
+          "description": "",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10318?size=medium",
+          "name": "Task",
+          "subtask": false,
+          "avatarId": 10318,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/12632",
+          "id": "12632",
+          "description": "",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10315?size=medium",
+          "name": "Story",
+          "subtask": false,
+          "avatarId": 10315,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/12633",
+          "id": "12633",
+          "description": "",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10314?size=medium",
+          "name": "Feature",
+          "subtask": false,
+          "avatarId": 10314,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/12634",
+          "id": "12634",
+          "description": "",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10303?size=medium",
+          "name": "Bug",
+          "subtask": false,
+          "avatarId": 10303,
+          "hierarchyLevel": 0
+        }
+      ],
+      "name": "Ag Project Managers",
+      "avatarUrls": {
+        "48x48": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10530",
+        "24x24": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10530?size=small",
+        "16x16": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10530?size=xsmall",
+        "32x32": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10530?size=medium"
+      },
+      "projectTypeKey": "software",
+      "simplified": true,
+      "style": "next-gen",
+      "isPrivate": false,
+      "properties": {},
+      "entityId": "0c76fdf6-c211-484a-ba2d-58583aa4c830",
+      "uuid": "0c76fdf6-c211-484a-ba2d-58583aa4c830"
+    },
+    {
+      "expand": "description,lead,issueTypes,url,projectKeys,permissions,insight",
+      "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/project/11560",
+      "id": "11560",
+      "key": "AQT",
+      "issueTypes": [
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/11453",
+          "id": "11453",
+          "description": "Tasks track small, distinct pieces of work.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10318?size=medium",
+          "name": "Task",
+          "subtask": false,
+          "avatarId": 10318,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/11454",
+          "id": "11454",
+          "description": "Epics track collections of related bugs, stories, and tasks.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10307?size=medium",
+          "name": "Epic",
+          "subtask": false,
+          "avatarId": 10307,
+          "hierarchyLevel": 1
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/11455",
+          "id": "11455",
+          "description": "Subtasks track small pieces of work that are part of a larger task.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10316?size=medium",
+          "name": "Subtask",
+          "subtask": true,
+          "avatarId": 10316,
+          "hierarchyLevel": -1
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/11457",
+          "id": "11457",
+          "description": "Stories track functionality or features expressed as user goals.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10315?size=medium",
+          "name": "Story",
+          "subtask": false,
+          "avatarId": 10315,
+          "hierarchyLevel": 0
+        }
+      ],
+      "name": "Australian Quality Team",
+      "avatarUrls": {
+        "48x48": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10514",
+        "24x24": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10514?size=small",
+        "16x16": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10514?size=xsmall",
+        "32x32": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10514?size=medium"
+      },
+      "projectTypeKey": "software",
+      "simplified": true,
+      "style": "next-gen",
+      "isPrivate": false,
+      "properties": {},
+      "entityId": "c45e5ac9-69e0-4c60-a3f7-c3996bf5d665",
+      "uuid": "c45e5ac9-69e0-4c60-a3f7-c3996bf5d665"
+    },
+    {
+      "expand": "description,lead,issueTypes,url,projectKeys,permissions,insight",
+      "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/project/14196",
+      "id": "14196",
+      "key": "BRAZ",
+      "issueTypes": [
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/12956",
+          "id": "12956",
+          "description": "Subtasks track small pieces of work that are part of a larger task.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10316?size=medium",
+          "name": "Subtask",
+          "subtask": true,
+          "avatarId": 10316,
+          "hierarchyLevel": -1
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/12957",
+          "id": "12957",
+          "description": "",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10307?size=medium",
+          "name": "Epic",
+          "subtask": false,
+          "avatarId": 10307,
+          "hierarchyLevel": 1
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/12958",
+          "id": "12958",
+          "description": "",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10315?size=medium",
+          "name": "Story",
+          "subtask": false,
+          "avatarId": 10315,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/12959",
+          "id": "12959",
+          "description": "",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10303?size=medium",
+          "name": "Bug",
+          "subtask": false,
+          "avatarId": 10303,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/12960",
+          "id": "12960",
+          "description": "",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10318?size=medium",
+          "name": "Task",
+          "subtask": false,
+          "avatarId": 10318,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/12961",
+          "id": "12961",
+          "description": "",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10322?size=medium",
+          "name": "Ideas",
+          "subtask": false,
+          "avatarId": 10322,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/12962",
+          "id": "12962",
+          "description": "",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10311?size=medium",
+          "name": "Improvements",
+          "subtask": false,
+          "avatarId": 10311,
+          "hierarchyLevel": 0
+        }
+      ],
+      "name": "Brazil Defects",
+      "avatarUrls": {
+        "48x48": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10506",
+        "24x24": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10506?size=small",
+        "16x16": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10506?size=xsmall",
+        "32x32": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10506?size=medium"
+      },
+      "projectTypeKey": "software",
+      "simplified": true,
+      "style": "next-gen",
+      "isPrivate": false,
+      "properties": {},
+      "entityId": "47d263f3-b188-444b-89d2-69d740ff8bcc",
+      "uuid": "47d263f3-b188-444b-89d2-69d740ff8bcc"
+    },
+    {
+      "expand": "description,lead,issueTypes,url,projectKeys,permissions,insight",
+      "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/project/10443",
+      "id": "10443",
+      "key": "C2EMTSU",
+      "issueTypes": [
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10315",
+          "id": "10315",
+          "description": "Tasks track small, distinct pieces of work.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10318?size=medium",
+          "name": "Task",
+          "subtask": false,
+          "avatarId": 10318,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10316",
+          "id": "10316",
+          "description": "Epics track collections of related bugs, stories, and tasks.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10307?size=medium",
+          "name": "Epic",
+          "subtask": false,
+          "avatarId": 10307,
+          "hierarchyLevel": 1
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10317",
+          "id": "10317",
+          "description": "Subtasks track small pieces of work that are part of a larger task.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10316?size=medium",
+          "name": "Subtask",
+          "subtask": true,
+          "avatarId": 10316,
+          "hierarchyLevel": -1
+        }
+      ],
+      "name": "COM 226 _Enaex Mack Truck SW Update",
+      "avatarUrls": {
+        "48x48": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10522",
+        "24x24": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10522?size=small",
+        "16x16": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10522?size=xsmall",
+        "32x32": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10522?size=medium"
+      },
+      "projectTypeKey": "software",
+      "simplified": true,
+      "style": "next-gen",
+      "isPrivate": false,
+      "properties": {},
+      "entityId": "5dd63ab4-40a2-40f9-bf63-9e29ef1d664e",
+      "uuid": "5dd63ab4-40a2-40f9-bf63-9e29ef1d664e"
+    },
+    {
+      "expand": "description,lead,issueTypes,url,projectKeys,permissions,insight",
+      "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/project/11855",
+      "id": "11855",
+      "key": "C4SYSDP",
+      "issueTypes": [
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/11620",
+          "id": "11620",
+          "description": "Discovery idea",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/POLARIS_ISSUETYPE/avatar/12945?size=medium",
+          "name": "Idea",
+          "subtask": false,
+          "avatarId": 12945,
+          "hierarchyLevel": 0
+        }
+      ],
+      "name": "C4 Systems - Discovery Project",
+      "avatarUrls": {
+        "48x48": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/12091",
+        "24x24": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/12091?size=small",
+        "16x16": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/12091?size=xsmall",
+        "32x32": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/12091?size=medium"
+      },
+      "projectCategory": {
+        "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/projectCategory/11025",
+        "id": "11025",
+        "name": "Construction",
+        "description": "All Construction Market / Program Projects"
+      },
+      "projectTypeKey": "product_discovery",
+      "simplified": true,
+      "style": "next-gen",
+      "isPrivate": false,
+      "properties": {},
+      "entityId": "e6169baf-8cda-4af3-91dc-6feb6666ebde",
+      "uuid": "e6169baf-8cda-4af3-91dc-6feb6666ebde"
+    },
+    {
+      "expand": "description,lead,issueTypes,url,projectKeys,permissions,insight",
+      "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/project/13775",
+      "id": "13775",
+      "key": "COKRA",
+      "issueTypes": [
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/12592",
+          "id": "12592",
+          "description": "Epics track collections of related bugs, stories, and tasks.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10307?size=medium",
+          "name": "Epic",
+          "subtask": false,
+          "avatarId": 10307,
+          "hierarchyLevel": 1
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/12594",
+          "id": "12594",
+          "description": "",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/13004?size=medium",
+          "name": "Risk",
+          "subtask": false,
+          "avatarId": 13004,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/12595",
+          "id": "12595",
+          "description": "",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/13005?size=medium",
+          "name": "Decision",
+          "subtask": false,
+          "avatarId": 13005,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/12596",
+          "id": "12596",
+          "description": "",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/13006?size=medium",
+          "name": "Action",
+          "subtask": false,
+          "avatarId": 13006,
+          "hierarchyLevel": 0
+        }
+      ],
+      "name": "Corporate OKR Actions",
+      "avatarUrls": {
+        "48x48": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/13003",
+        "24x24": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/13003?size=small",
+        "16x16": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/13003?size=xsmall",
+        "32x32": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/13003?size=medium"
+      },
+      "projectTypeKey": "software",
+      "simplified": true,
+      "style": "next-gen",
+      "isPrivate": false,
+      "properties": {},
+      "entityId": "6e326ca1-1510-4df0-93cc-694212e35321",
+      "uuid": "6e326ca1-1510-4df0-93cc-694212e35321"
+    },
+    {
+      "expand": "description,lead,issueTypes,url,projectKeys,permissions,insight",
+      "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/project/12086",
+      "id": "12086",
+      "key": "CSLEADER",
+      "issueTypes": [
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/11716",
+          "id": "11716",
+          "description": "Tasks track small, distinct pieces of work.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10318?size=medium",
+          "name": "Task",
+          "subtask": false,
+          "avatarId": 10318,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/11717",
+          "id": "11717",
+          "description": "Epics track collections of related bugs, stories, and tasks.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10307?size=medium",
+          "name": "Epic",
+          "subtask": false,
+          "avatarId": 10307,
+          "hierarchyLevel": 1
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/11718",
+          "id": "11718",
+          "description": "Subtasks track small pieces of work that are part of a larger task.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10316?size=medium",
+          "name": "Subtask",
+          "subtask": true,
+          "avatarId": 10316,
+          "hierarchyLevel": -1
+        }
+      ],
+      "name": "Construction Systems Leadership",
+      "avatarUrls": {
+        "48x48": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10521",
+        "24x24": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10521?size=small",
+        "16x16": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10521?size=xsmall",
+        "32x32": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10521?size=medium"
+      },
+      "projectTypeKey": "software",
+      "simplified": true,
+      "style": "next-gen",
+      "isPrivate": false,
+      "properties": {},
+      "entityId": "f56a0f56-5b96-4907-aac1-52b8e534cf93",
+      "uuid": "f56a0f56-5b96-4907-aac1-52b8e534cf93"
+    },
+    {
+      "expand": "description,lead,issueTypes,url,projectKeys,permissions,insight",
+      "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/project/12650",
+      "id": "12650",
+      "key": "DL",
+      "issueTypes": [
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/11914",
+          "id": "11914",
+          "description": "Tasks track small, distinct pieces of work.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10318?size=medium",
+          "name": "Task",
+          "subtask": false,
+          "avatarId": 10318,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/11915",
+          "id": "11915",
+          "description": "Epics track collections of related bugs, stories, and tasks.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10307?size=medium",
+          "name": "Epic",
+          "subtask": false,
+          "avatarId": 10307,
+          "hierarchyLevel": 1
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/11916",
+          "id": "11916",
+          "description": "Subtasks track small pieces of work that are part of a larger task.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10316?size=medium",
+          "name": "Subtask",
+          "subtask": true,
+          "avatarId": 10316,
+          "hierarchyLevel": -1
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/11947",
+          "id": "11947",
+          "description": "Stories track functionality or features expressed as user goals.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10315?size=medium",
+          "name": "Story",
+          "subtask": false,
+          "avatarId": 10315,
+          "hierarchyLevel": 0
+        }
+      ],
+      "name": "Dozer Leadership ",
+      "avatarUrls": {
+        "48x48": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10505",
+        "24x24": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10505?size=small",
+        "16x16": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10505?size=xsmall",
+        "32x32": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10505?size=medium"
+      },
+      "projectTypeKey": "software",
+      "simplified": true,
+      "style": "next-gen",
+      "isPrivate": false,
+      "properties": {},
+      "entityId": "219725a3-a732-49ea-81dd-a329e081f99f",
+      "uuid": "219725a3-a732-49ea-81dd-a329e081f99f"
+    },
+    {
+      "expand": "description,lead,issueTypes,url,projectKeys,permissions,insight",
+      "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/project/10495",
+      "id": "10495",
+      "key": "FMFS",
+      "issueTypes": [
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10360",
+          "id": "10360",
+          "description": "Stories track functionality or features expressed as user goals.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10315?size=medium",
+          "name": "Story",
+          "subtask": false,
+          "avatarId": 10315,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10361",
+          "id": "10361",
+          "description": "Tasks track small, distinct pieces of work.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10318?size=medium",
+          "name": "Task",
+          "subtask": false,
+          "avatarId": 10318,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10362",
+          "id": "10362",
+          "description": "Bugs track problems or errors.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10303?size=medium",
+          "name": "Bug",
+          "subtask": false,
+          "avatarId": 10303,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10363",
+          "id": "10363",
+          "description": "Epics track collections of related bugs, stories, and tasks.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10307?size=medium",
+          "name": "Epic",
+          "subtask": false,
+          "avatarId": 10307,
+          "hierarchyLevel": 1
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10364",
+          "id": "10364",
+          "description": "Subtasks track small pieces of work that are part of a larger task.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10316?size=medium",
+          "name": "Subtask",
+          "subtask": true,
+          "avatarId": 10316,
+          "hierarchyLevel": -1
+        }
+      ],
+      "name": "Fairway Mowing Functional Safety",
+      "avatarUrls": {
+        "48x48": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10513",
+        "24x24": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10513?size=small",
+        "16x16": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10513?size=xsmall",
+        "32x32": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10513?size=medium"
+      },
+      "projectTypeKey": "software",
+      "simplified": true,
+      "style": "next-gen",
+      "isPrivate": false,
+      "properties": {},
+      "entityId": "bfc2d7d3-29dd-4304-9e4f-0dc7a0c437f5",
+      "uuid": "bfc2d7d3-29dd-4304-9e4f-0dc7a0c437f5"
+    },
+    {
+      "expand": "description,lead,issueTypes,url,projectKeys,permissions,insight",
+      "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/project/12911",
+      "id": "12911",
+      "key": "FSS",
+      "issueTypes": [
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10004",
+          "id": "10004",
+          "description": "A problem which impairs or prevents the functions of the product.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10303?size=medium",
+          "name": "Bug",
+          "subtask": false,
+          "avatarId": 10303,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10010",
+          "id": "10010",
+          "description": "For customer support issues. Created by JIRA Service Desk.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10489?size=medium",
+          "name": "Support",
+          "subtask": false,
+          "avatarId": 10489,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10001",
+          "id": "10001",
+          "description": "A user story. Created by JIRA Software - do not edit or delete.",
+          "iconUrl": "https://asirobots.atlassian.net/images/icons/issuetypes/story.svg",
+          "name": "Story",
+          "subtask": false,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10002",
+          "id": "10002",
+          "description": "A task that needs to be done.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10318?size=medium",
+          "name": "Task",
+          "subtask": false,
+          "avatarId": 10318,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10000",
+          "id": "10000",
+          "description": "A big user story that needs to be broken down. Created by JIRA Software - do not edit or delete.",
+          "iconUrl": "https://asirobots.atlassian.net/images/icons/issuetypes/epic.svg",
+          "name": "Epic",
+          "subtask": false,
+          "hierarchyLevel": 1
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10011",
+          "id": "10011",
+          "description": "High level issue type residing above epics in the Hierarchy ",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/12891?size=medium",
+          "name": "Initiative",
+          "subtask": false,
+          "avatarId": 12891,
+          "hierarchyLevel": 2
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10338",
+          "id": "10338",
+          "description": "Saga",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10304?size=medium",
+          "name": "Objective",
+          "subtask": false,
+          "avatarId": 10304,
+          "hierarchyLevel": 3
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10003",
+          "id": "10003",
+          "description": "The sub-task of the issue",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10316?size=medium",
+          "name": "Sub-task",
+          "subtask": true,
+          "avatarId": 10316,
+          "hierarchyLevel": -1
+        }
+      ],
+      "name": "Foundation Systems & Safety",
+      "avatarUrls": {
+        "48x48": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10505",
+        "24x24": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10505?size=small",
+        "16x16": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10505?size=xsmall",
+        "32x32": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10505?size=medium"
+      },
+      "projectTypeKey": "software",
+      "simplified": false,
+      "style": "classic",
+      "isPrivate": false,
+      "properties": {}
+    },
+    {
+      "expand": "description,lead,issueTypes,url,projectKeys,permissions,insight",
+      "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/project/12581",
+      "id": "12581",
+      "key": "GL",
+      "issueTypes": [
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/11881",
+          "id": "11881",
+          "description": "Tasks track small, distinct pieces of work.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10318?size=medium",
+          "name": "Task",
+          "subtask": false,
+          "avatarId": 10318,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/11882",
+          "id": "11882",
+          "description": "Epics track collections of related bugs, stories, and tasks.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10307?size=medium",
+          "name": "Epic",
+          "subtask": false,
+          "avatarId": 10307,
+          "hierarchyLevel": 1
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/11883",
+          "id": "11883",
+          "description": "Subtasks track small pieces of work that are part of a larger task.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10316?size=medium",
+          "name": "Subtask",
+          "subtask": true,
+          "avatarId": 10316,
+          "hierarchyLevel": -1
+        }
+      ],
+      "name": "Grading Leadership",
+      "avatarUrls": {
+        "48x48": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10515",
+        "24x24": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10515?size=small",
+        "16x16": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10515?size=xsmall",
+        "32x32": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10515?size=medium"
+      },
+      "projectTypeKey": "software",
+      "simplified": true,
+      "style": "next-gen",
+      "isPrivate": false,
+      "properties": {},
+      "entityId": "81d50a28-b5cf-4871-b431-ddfb95e6202c",
+      "uuid": "81d50a28-b5cf-4871-b431-ddfb95e6202c"
+    },
+    {
+      "expand": "description,lead,issueTypes,url,projectKeys,permissions,insight",
+      "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/project/12582",
+      "id": "12582",
+      "key": "HL",
+      "issueTypes": [
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/11884",
+          "id": "11884",
+          "description": "Tasks track small, distinct pieces of work.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10318?size=medium",
+          "name": "Task",
+          "subtask": false,
+          "avatarId": 10318,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/11885",
+          "id": "11885",
+          "description": "Epics track collections of related bugs, stories, and tasks.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10307?size=medium",
+          "name": "Epic",
+          "subtask": false,
+          "avatarId": 10307,
+          "hierarchyLevel": 1
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/11886",
+          "id": "11886",
+          "description": "Subtasks track small pieces of work that are part of a larger task.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10316?size=medium",
+          "name": "Subtask",
+          "subtask": true,
+          "avatarId": 10316,
+          "hierarchyLevel": -1
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/11887",
+          "id": "11887",
+          "description": "Stories track functionality or features expressed as user goals.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10315?size=medium",
+          "name": "Story",
+          "subtask": false,
+          "avatarId": 10315,
+          "hierarchyLevel": 0
+        }
+      ],
+      "name": "Haulage Leadership",
+      "avatarUrls": {
+        "48x48": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10518",
+        "24x24": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10518?size=small",
+        "16x16": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10518?size=xsmall",
+        "32x32": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10518?size=medium"
+      },
+      "projectTypeKey": "software",
+      "simplified": true,
+      "style": "next-gen",
+      "isPrivate": false,
+      "properties": {},
+      "entityId": "37d4623a-146a-4ee8-92dc-3bc075b30767",
+      "uuid": "37d4623a-146a-4ee8-92dc-3bc075b30767"
+    },
+    {
+      "expand": "description,lead,issueTypes,url,projectKeys,permissions,insight",
+      "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/project/11756",
+      "id": "11756",
+      "key": "HROS",
+      "issueTypes": [
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/11551",
+          "id": "11551",
+          "description": "A person who has been employed.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/12058?size=medium",
+          "name": "Employee",
+          "subtask": false,
+          "avatarId": 12058,
+          "hierarchyLevel": 0
+        }
+      ],
+      "name": "HR Onboarding Status",
+      "avatarUrls": {
+        "48x48": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10522",
+        "24x24": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10522?size=small",
+        "16x16": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10522?size=xsmall",
+        "32x32": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10522?size=medium"
+      },
+      "projectTypeKey": "business",
+      "simplified": true,
+      "style": "next-gen",
+      "isPrivate": false,
+      "properties": {},
+      "entityId": "04be3168-8f99-4ee4-9973-3976478b13a0",
+      "uuid": "04be3168-8f99-4ee4-9973-3976478b13a0"
+    },
+    {
+      "expand": "description,lead,issueTypes,url,projectKeys,permissions,insight",
+      "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/project/12649",
+      "id": "12649",
+      "key": "HWL",
+      "issueTypes": [
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10002",
+          "id": "10002",
+          "description": "A task that needs to be done.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10318?size=medium",
+          "name": "Task",
+          "subtask": false,
+          "avatarId": 10318,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10003",
+          "id": "10003",
+          "description": "The sub-task of the issue",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10316?size=medium",
+          "name": "Sub-task",
+          "subtask": true,
+          "avatarId": 10316,
+          "hierarchyLevel": -1
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10001",
+          "id": "10001",
+          "description": "A user story. Created by JIRA Software - do not edit or delete.",
+          "iconUrl": "https://asirobots.atlassian.net/images/icons/issuetypes/story.svg",
+          "name": "Story",
+          "subtask": false,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10004",
+          "id": "10004",
+          "description": "A problem which impairs or prevents the functions of the product.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10303?size=medium",
+          "name": "Bug",
+          "subtask": false,
+          "avatarId": 10303,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10000",
+          "id": "10000",
+          "description": "A big user story that needs to be broken down. Created by JIRA Software - do not edit or delete.",
+          "iconUrl": "https://asirobots.atlassian.net/images/icons/issuetypes/epic.svg",
+          "name": "Epic",
+          "subtask": false,
+          "hierarchyLevel": 1
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10011",
+          "id": "10011",
+          "description": "High level issue type residing above epics in the Hierarchy ",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/12891?size=medium",
+          "name": "Initiative",
+          "subtask": false,
+          "avatarId": 12891,
+          "hierarchyLevel": 2
+        }
+      ],
+      "name": "Wheel Loader (Haulage)",
+      "avatarUrls": {
+        "48x48": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/12421",
+        "24x24": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/12421?size=small",
+        "16x16": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/12421?size=xsmall",
+        "32x32": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/12421?size=medium"
+      },
+      "projectCategory": {
+        "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/projectCategory/11025",
+        "id": "11025",
+        "name": "Construction",
+        "description": "All Construction Market / Program Projects"
+      },
+      "projectTypeKey": "software",
+      "simplified": false,
+      "style": "classic",
+      "isPrivate": false,
+      "properties": {}
+    },
+    {
+      "expand": "description,lead,issueTypes,url,projectKeys,permissions,insight",
+      "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/project/11822",
+      "id": "11822",
+      "key": "JDSAP",
+      "issueTypes": [
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/11617",
+          "id": "11617",
+          "description": "Tasks track small, distinct pieces of work.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10318?size=medium",
+          "name": "Task",
+          "subtask": false,
+          "avatarId": 10318,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/11618",
+          "id": "11618",
+          "description": "Epics track collections of related bugs, stories, and tasks.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10307?size=medium",
+          "name": "Epic",
+          "subtask": false,
+          "avatarId": 10307,
+          "hierarchyLevel": 1
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/11619",
+          "id": "11619",
+          "description": "Subtasks track small pieces of work that are part of a larger task.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10316?size=medium",
+          "name": "Subtask",
+          "subtask": true,
+          "avatarId": 10316,
+          "hierarchyLevel": -1
+        }
+      ],
+      "name": "John Deere Software Audit Preparation ",
+      "avatarUrls": {
+        "48x48": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10505",
+        "24x24": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10505?size=small",
+        "16x16": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10505?size=xsmall",
+        "32x32": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10505?size=medium"
+      },
+      "projectTypeKey": "software",
+      "simplified": true,
+      "style": "next-gen",
+      "isPrivate": false,
+      "properties": {},
+      "entityId": "4de95d4f-aa1b-4b29-b806-b4a6f7626a40",
+      "uuid": "4de95d4f-aa1b-4b29-b806-b4a6f7626a40"
+    },
+    {
+      "expand": "description,lead,issueTypes,url,projectKeys,permissions,insight",
+      "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/project/13444",
+      "id": "13444",
+      "key": "LIB",
+      "issueTypes": [
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/12390",
+          "id": "12390",
+          "description": "Discovery idea",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/POLARIS_ISSUETYPE/avatar/12945?size=medium",
+          "name": "Idea",
+          "subtask": false,
+          "avatarId": 12945,
+          "hierarchyLevel": 0
+        }
+      ],
+      "name": "Landscaping - Idea Board",
+      "avatarUrls": {
+        "48x48": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10522",
+        "24x24": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10522?size=small",
+        "16x16": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10522?size=xsmall",
+        "32x32": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10522?size=medium"
+      },
+      "projectCategory": {
+        "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/projectCategory/11024",
+        "id": "11024",
+        "name": "Landscaping",
+        "description": "Landscaping, mowing, turf"
+      },
+      "projectTypeKey": "product_discovery",
+      "simplified": true,
+      "style": "next-gen",
+      "isPrivate": false,
+      "properties": {},
+      "entityId": "32f2bdd3-35fd-4bbe-8eb4-3332fe3cacf1",
+      "uuid": "32f2bdd3-35fd-4bbe-8eb4-3332fe3cacf1"
+    },
+    {
+      "expand": "description,lead,issueTypes,url,projectKeys,permissions,insight",
+      "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/project/13443",
+      "id": "13443",
+      "key": "LPDP",
+      "issueTypes": [
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/12385",
+          "id": "12385",
+          "description": "Tasks track small, distinct pieces of work.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10318?size=medium",
+          "name": "Task",
+          "subtask": false,
+          "avatarId": 10318,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/12386",
+          "id": "12386",
+          "description": "Bugs track problems or errors.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10303?size=medium",
+          "name": "Bug",
+          "subtask": false,
+          "avatarId": 10303,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/12387",
+          "id": "12387",
+          "description": "Stories track functionality or features expressed as user goals.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10315?size=medium",
+          "name": "Story",
+          "subtask": false,
+          "avatarId": 10315,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/12388",
+          "id": "12388",
+          "description": "Epics track collections of related bugs, stories, and tasks.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10307?size=medium",
+          "name": "Epic",
+          "subtask": false,
+          "avatarId": 10307,
+          "hierarchyLevel": 1
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/12389",
+          "id": "12389",
+          "description": "Subtasks track small pieces of work that are part of a larger task.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10316?size=medium",
+          "name": "Subtask",
+          "subtask": true,
+          "avatarId": 10316,
+          "hierarchyLevel": -1
+        }
+      ],
+      "name": "Landscaping - Product Development Plan",
+      "avatarUrls": {
+        "48x48": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10526",
+        "24x24": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10526?size=small",
+        "16x16": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10526?size=xsmall",
+        "32x32": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10526?size=medium"
+      },
+      "projectCategory": {
+        "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/projectCategory/11024",
+        "id": "11024",
+        "name": "Landscaping",
+        "description": "Landscaping, mowing, turf"
+      },
+      "projectTypeKey": "software",
+      "simplified": true,
+      "style": "next-gen",
+      "isPrivate": false,
+      "properties": {},
+      "entityId": "fd53d2ac-0162-4f45-ad86-71c3d81546fa",
+      "uuid": "fd53d2ac-0162-4f45-ad86-71c3d81546fa"
+    },
+    {
+      "expand": "description,lead,issueTypes,url,projectKeys,permissions,insight",
+      "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/project/10470",
+      "id": "10470",
+      "key": "MECH",
+      "issueTypes": [
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10339",
+          "id": "10339",
+          "description": "Stories track functionality or features expressed as user goals.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10315?size=medium",
+          "name": "Story",
+          "subtask": false,
+          "avatarId": 10315,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10340",
+          "id": "10340",
+          "description": "Tasks track small, distinct pieces of work.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10318?size=medium",
+          "name": "Task",
+          "subtask": false,
+          "avatarId": 10318,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10341",
+          "id": "10341",
+          "description": "Bugs track problems or errors.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10303?size=medium",
+          "name": "Bug",
+          "subtask": false,
+          "avatarId": 10303,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10342",
+          "id": "10342",
+          "description": "Epics track collections of related bugs, stories, and tasks.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10307?size=medium",
+          "name": "Epic",
+          "subtask": false,
+          "avatarId": 10307,
+          "hierarchyLevel": 1
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10343",
+          "id": "10343",
+          "description": "Subtasks track small pieces of work that are part of a larger task.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10316?size=medium",
+          "name": "Subtask",
+          "subtask": true,
+          "avatarId": 10316,
+          "hierarchyLevel": -1
+        }
+      ],
+      "name": "Mechanical Team Roadmap",
+      "avatarUrls": {
+        "48x48": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10530",
+        "24x24": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10530?size=small",
+        "16x16": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10530?size=xsmall",
+        "32x32": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10530?size=medium"
+      },
+      "projectTypeKey": "software",
+      "simplified": true,
+      "style": "next-gen",
+      "isPrivate": false,
+      "properties": {},
+      "entityId": "4d440d0c-d97a-4327-ae89-f632337db3e5",
+      "uuid": "4d440d0c-d97a-4327-ae89-f632337db3e5"
+    },
+    {
+      "expand": "description,lead,issueTypes,url,projectKeys,permissions,insight",
+      "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/project/10503",
+      "id": "10503",
+      "key": "MFAT",
+      "issueTypes": [
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10385",
+          "id": "10385",
+          "description": "Tasks track small, distinct pieces of work.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10318?size=medium",
+          "name": "Task",
+          "subtask": false,
+          "avatarId": 10318,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10386",
+          "id": "10386",
+          "description": "Epics track collections of related bugs, stories, and tasks.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10307?size=medium",
+          "name": "Epic",
+          "subtask": false,
+          "avatarId": 10307,
+          "hierarchyLevel": 1
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10387",
+          "id": "10387",
+          "description": "Subtasks track small pieces of work that are part of a larger task.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10316?size=medium",
+          "name": "Subtask",
+          "subtask": true,
+          "avatarId": 10316,
+          "hierarchyLevel": -1
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10400",
+          "id": "10400",
+          "description": "Items that are larger tasks, and which improve the quality of test plans, our \"living documentation\", backlog cleanup, etc.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10322?size=medium",
+          "name": "Improvement",
+          "subtask": false,
+          "avatarId": 10322,
+          "hierarchyLevel": 0
+        }
+      ],
+      "name": "Mining Factory Acceptance Test",
+      "avatarUrls": {
+        "48x48": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10527",
+        "24x24": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10527?size=small",
+        "16x16": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10527?size=xsmall",
+        "32x32": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10527?size=medium"
+      },
+      "projectTypeKey": "software",
+      "simplified": true,
+      "style": "next-gen",
+      "isPrivate": false,
+      "properties": {},
+      "entityId": "ba170604-ae38-4309-a57a-f5de672cd8d6",
+      "uuid": "ba170604-ae38-4309-a57a-f5de672cd8d6"
+    },
+    {
+      "expand": "description,lead,issueTypes,url,projectKeys,permissions,insight",
+      "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/project/11583",
+      "id": "11583",
+      "key": "MOBIUS",
+      "issueTypes": [
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/11476",
+          "id": "11476",
+          "description": "Tasks track small, distinct pieces of work.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10318?size=medium",
+          "name": "Task",
+          "subtask": false,
+          "avatarId": 10318,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/11477",
+          "id": "11477",
+          "description": "Bugs track problems or errors.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10303?size=medium",
+          "name": "Bug",
+          "subtask": false,
+          "avatarId": 10303,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/11478",
+          "id": "11478",
+          "description": "Stories track functionality or features expressed as user goals.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10315?size=medium",
+          "name": "Story",
+          "subtask": false,
+          "avatarId": 10315,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/11479",
+          "id": "11479",
+          "description": "Epics track collections of related bugs, stories, and tasks.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10307?size=medium",
+          "name": "Epic",
+          "subtask": false,
+          "avatarId": 10307,
+          "hierarchyLevel": 1
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/11480",
+          "id": "11480",
+          "description": "Subtasks track small pieces of work that are part of a larger task.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10316?size=medium",
+          "name": "Subtask",
+          "subtask": true,
+          "avatarId": 10316,
+          "hierarchyLevel": -1
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/11683",
+          "id": "11683",
+          "description": "",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10304?size=medium",
+          "name": "Spike",
+          "subtask": false,
+          "avatarId": 10304,
+          "hierarchyLevel": 0
+        }
+      ],
+      "name": "Mobius Platform Future",
+      "avatarUrls": {
+        "48x48": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10510",
+        "24x24": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10510?size=small",
+        "16x16": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10510?size=xsmall",
+        "32x32": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10510?size=medium"
+      },
+      "projectTypeKey": "software",
+      "simplified": true,
+      "style": "next-gen",
+      "isPrivate": false,
+      "properties": {},
+      "entityId": "2582b76a-7a00-4fa5-b8cf-70c5a08f5bde",
+      "uuid": "2582b76a-7a00-4fa5-b8cf-70c5a08f5bde"
+    },
+    {
+      "expand": "description,lead,issueTypes,url,projectKeys,permissions,insight",
+      "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/project/11579",
+      "id": "11579",
+      "key": "MPD",
+      "issueTypes": [
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/11470",
+          "id": "11470",
+          "description": "Discovery idea",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/POLARIS_ISSUETYPE/avatar/12945?size=medium",
+          "name": "Idea",
+          "subtask": false,
+          "avatarId": 12945,
+          "hierarchyLevel": 0
+        }
+      ],
+      "name": "Mobius PD",
+      "avatarUrls": {
+        "48x48": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/11789",
+        "24x24": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/11789?size=small",
+        "16x16": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/11789?size=xsmall",
+        "32x32": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/11789?size=medium"
+      },
+      "projectTypeKey": "product_discovery",
+      "simplified": true,
+      "style": "next-gen",
+      "isPrivate": false,
+      "properties": {},
+      "entityId": "e1daed78-15ca-4791-8a6b-bc8bb49595c4",
+      "uuid": "e1daed78-15ca-4791-8a6b-bc8bb49595c4"
+    },
+    {
+      "expand": "description,lead,issueTypes,url,projectKeys,permissions,insight",
+      "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/project/10511",
+      "id": "10511",
+      "key": "NLP",
+      "issueTypes": [
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10401",
+          "id": "10401",
+          "description": "A small, distinct piece of work.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10318?size=medium",
+          "name": "Task",
+          "subtask": false,
+          "avatarId": 10318,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10402",
+          "id": "10402",
+          "description": "A small piece of work that's part of a larger task.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10316?size=medium",
+          "name": "Sub-task",
+          "subtask": true,
+          "avatarId": 10316,
+          "hierarchyLevel": -1
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10403",
+          "id": "10403",
+          "description": "Epics track large pieces of work.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10307?size=medium",
+          "name": "Epic",
+          "subtask": false,
+          "avatarId": 10307,
+          "hierarchyLevel": 1
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10404",
+          "id": "10404",
+          "description": "Bugs track problems or errors.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10303?size=medium",
+          "name": "Bug",
+          "subtask": false,
+          "avatarId": 10303,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10405",
+          "id": "10405",
+          "description": "Stories track functionality or features expressed as user goals.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10315?size=medium",
+          "name": "Story",
+          "subtask": false,
+          "avatarId": 10315,
+          "hierarchyLevel": 0
+        }
+      ],
+      "name": "Newcrest Localization Pods",
+      "avatarUrls": {
+        "48x48": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10530",
+        "24x24": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10530?size=small",
+        "16x16": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10530?size=xsmall",
+        "32x32": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10530?size=medium"
+      },
+      "projectTypeKey": "business",
+      "simplified": true,
+      "style": "next-gen",
+      "isPrivate": false,
+      "properties": {},
+      "entityId": "a3e1b299-f9fd-4a03-9499-23fc8cdc036c",
+      "uuid": "a3e1b299-f9fd-4a03-9499-23fc8cdc036c"
+    },
+    {
+      "expand": "description,lead,issueTypes,url,projectKeys,permissions,insight",
+      "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/project/10506",
+      "id": "10506",
+      "key": "OSC",
+      "issueTypes": [
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10394",
+          "id": "10394",
+          "description": "Epics track collections of related bugs, stories, and tasks.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10307?size=medium",
+          "name": "Epic",
+          "subtask": false,
+          "avatarId": 10307,
+          "hierarchyLevel": 1
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10395",
+          "id": "10395",
+          "description": "Subtasks track small pieces of work that are part of a larger task.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10316?size=medium",
+          "name": "Subtask",
+          "subtask": true,
+          "avatarId": 10316,
+          "hierarchyLevel": -1
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10396",
+          "id": "10396",
+          "description": "Stories track functionality or features expressed as user goals.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10315?size=medium",
+          "name": "Story",
+          "subtask": false,
+          "avatarId": 10315,
+          "hierarchyLevel": 0
+        }
+      ],
+      "name": "Occupational Safety Committee",
+      "avatarUrls": {
+        "48x48": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10752",
+        "24x24": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10752?size=small",
+        "16x16": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10752?size=xsmall",
+        "32x32": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10752?size=medium"
+      },
+      "projectTypeKey": "software",
+      "simplified": true,
+      "style": "next-gen",
+      "isPrivate": false,
+      "properties": {},
+      "entityId": "4eb44087-5364-47c0-87df-f71f938049f7",
+      "uuid": "4eb44087-5364-47c0-87df-f71f938049f7"
+    },
+    {
+      "expand": "description,lead,issueTypes,url,projectKeys,permissions,insight",
+      "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/project/10490",
+      "id": "10490",
+      "key": "PDPC",
+      "issueTypes": [
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10355",
+          "id": "10355",
+          "description": "A small, distinct piece of work.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10318?size=medium",
+          "name": "Task",
+          "subtask": false,
+          "avatarId": 10318,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10356",
+          "id": "10356",
+          "description": "A small piece of work that's part of a larger task.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10316?size=medium",
+          "name": "Sub-task",
+          "subtask": true,
+          "avatarId": 10316,
+          "hierarchyLevel": -1
+        }
+      ],
+      "name": "PDP Committee",
+      "avatarUrls": {
+        "48x48": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10744",
+        "24x24": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10744?size=small",
+        "16x16": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10744?size=xsmall",
+        "32x32": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10744?size=medium"
+      },
+      "projectCategory": {
+        "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/projectCategory/10013",
+        "id": "10013",
+        "name": "ASI Admin",
+        "description": ""
+      },
+      "projectTypeKey": "business",
+      "simplified": true,
+      "style": "next-gen",
+      "isPrivate": false,
+      "properties": {},
+      "entityId": "38b18a23-6799-4cc7-9074-869b878c7470",
+      "uuid": "38b18a23-6799-4cc7-9074-869b878c7470"
+    },
+    {
+      "expand": "description,lead,issueTypes,url,projectKeys,permissions,insight",
+      "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/project/12284",
+      "id": "12284",
+      "key": "PMOC",
+      "issueTypes": [
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/11749",
+          "id": "11749",
+          "description": "Tasks track small, distinct pieces of work.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10318?size=medium",
+          "name": "Task",
+          "subtask": false,
+          "avatarId": 10318,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/11750",
+          "id": "11750",
+          "description": "Epics track collections of related bugs, stories, and tasks.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10307?size=medium",
+          "name": "Epic",
+          "subtask": false,
+          "avatarId": 10307,
+          "hierarchyLevel": 1
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/11751",
+          "id": "11751",
+          "description": "Subtasks track small pieces of work that are part of a larger task.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10316?size=medium",
+          "name": "Subtask",
+          "subtask": true,
+          "avatarId": 10316,
+          "hierarchyLevel": -1
+        }
+      ],
+      "name": "Corporate PMO",
+      "avatarUrls": {
+        "48x48": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/12790",
+        "24x24": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/12790?size=small",
+        "16x16": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/12790?size=xsmall",
+        "32x32": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/12790?size=medium"
+      },
+      "projectTypeKey": "software",
+      "simplified": true,
+      "style": "next-gen",
+      "isPrivate": false,
+      "properties": {},
+      "entityId": "2a106c9e-6666-4634-82ef-fd764484199b",
+      "uuid": "2a106c9e-6666-4634-82ef-fd764484199b"
+    },
+    {
+      "expand": "description,lead,issueTypes,url,projectKeys,permissions,insight",
+      "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/project/13510",
+      "id": "13510",
+      "key": "RDRR",
+      "issueTypes": [
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/12423",
+          "id": "12423",
+          "description": "Discovery idea",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/POLARIS_ISSUETYPE/avatar/12945?size=medium",
+          "name": "Idea",
+          "subtask": false,
+          "avatarId": 12945,
+          "hierarchyLevel": 0
+        }
+      ],
+      "name": "R&D Risk Register",
+      "avatarUrls": {
+        "48x48": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10510",
+        "24x24": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10510?size=small",
+        "16x16": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10510?size=xsmall",
+        "32x32": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10510?size=medium"
+      },
+      "projectTypeKey": "product_discovery",
+      "simplified": true,
+      "style": "next-gen",
+      "isPrivate": false,
+      "properties": {},
+      "entityId": "2658a7f0-0ebf-429f-8f27-a36c30470fc2",
+      "uuid": "2658a7f0-0ebf-429f-8f27-a36c30470fc2"
+    },
+    {
+      "expand": "description,lead,issueTypes,url,projectKeys,permissions,insight",
+      "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/project/11531",
+      "id": "11531",
+      "key": "RRT",
+      "issueTypes": [
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/11427",
+          "id": "11427",
+          "description": "Bugs track problems or errors.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10303?size=medium",
+          "name": "Bug",
+          "subtask": false,
+          "avatarId": 10303,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/11428",
+          "id": "11428",
+          "description": "This is a failed regression test case",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10308?size=medium",
+          "name": "Failed Test",
+          "subtask": false,
+          "avatarId": 10308,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/11429",
+          "id": "11429",
+          "description": "This regression test is block because it can't be run as written",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10323?size=medium",
+          "name": "Blocked Test",
+          "subtask": false,
+          "avatarId": 10323,
+          "hierarchyLevel": 0
+        }
+      ],
+      "name": "MDT RRT Tracker",
+      "avatarUrls": {
+        "48x48": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10509",
+        "24x24": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10509?size=small",
+        "16x16": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10509?size=xsmall",
+        "32x32": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10509?size=medium"
+      },
+      "projectTypeKey": "software",
+      "simplified": true,
+      "style": "next-gen",
+      "isPrivate": false,
+      "properties": {},
+      "entityId": "aa465342-e103-4158-b817-a8956a01555a",
+      "uuid": "aa465342-e103-4158-b817-a8956a01555a"
+    },
+    {
+      "expand": "description,lead,issueTypes,url,projectKeys,permissions,insight",
+      "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/project/10496",
+      "id": "10496",
+      "key": "SPMTFR",
+      "issueTypes": [
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10365",
+          "id": "10365",
+          "description": "A small, distinct piece of work.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10318?size=medium",
+          "name": "Task",
+          "subtask": false,
+          "avatarId": 10318,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10366",
+          "id": "10366",
+          "description": "A small piece of work that's part of a larger task.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10316?size=medium",
+          "name": "Sub-task",
+          "subtask": true,
+          "avatarId": 10316,
+          "hierarchyLevel": -1
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10373",
+          "id": "10373",
+          "description": "",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium",
+          "name": "Initiative",
+          "subtask": false,
+          "avatarId": 10300,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10374",
+          "id": "10374",
+          "description": "Epics track large pieces of work.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10307?size=medium",
+          "name": "Epic",
+          "subtask": false,
+          "avatarId": 10307,
+          "hierarchyLevel": 1
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10375",
+          "id": "10375",
+          "description": "Bugs track problems or errors.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10303?size=medium",
+          "name": "Bug",
+          "subtask": false,
+          "avatarId": 10303,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10376",
+          "id": "10376",
+          "description": "Stories track functionality or features expressed as user goals.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10315?size=medium",
+          "name": "Story",
+          "subtask": false,
+          "avatarId": 10315,
+          "hierarchyLevel": 0
+        }
+      ],
+      "name": "Shayne's Project Management test for RHIO",
+      "avatarUrls": {
+        "48x48": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10522",
+        "24x24": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10522?size=small",
+        "16x16": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10522?size=xsmall",
+        "32x32": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10522?size=medium"
+      },
+      "projectTypeKey": "business",
+      "simplified": true,
+      "style": "next-gen",
+      "isPrivate": false,
+      "properties": {},
+      "entityId": "ef64b04d-9195-495c-9a20-42e074156ecf",
+      "uuid": "ef64b04d-9195-495c-9a20-42e074156ecf"
+    },
+    {
+      "expand": "description,lead,issueTypes,url,projectKeys,permissions,insight",
+      "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/project/12944",
+      "id": "12944",
+      "key": "SSPB",
+      "issueTypes": [
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/12079",
+          "id": "12079",
+          "description": "Tasks track small, distinct pieces of work.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10318?size=medium",
+          "name": "Task",
+          "subtask": false,
+          "avatarId": 10318,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/12080",
+          "id": "12080",
+          "description": "Bugs track problems or errors.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10303?size=medium",
+          "name": "Bug",
+          "subtask": false,
+          "avatarId": 10303,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/12081",
+          "id": "12081",
+          "description": "Stories track functionality or features expressed as user goals.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10315?size=medium",
+          "name": "Story",
+          "subtask": false,
+          "avatarId": 10315,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/12082",
+          "id": "12082",
+          "description": "Epics track collections of related bugs, stories, and tasks.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10307?size=medium",
+          "name": "Epic",
+          "subtask": false,
+          "avatarId": 10307,
+          "hierarchyLevel": 1
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/12083",
+          "id": "12083",
+          "description": "Subtasks track small pieces of work that are part of a larger task.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10316?size=medium",
+          "name": "Subtask",
+          "subtask": true,
+          "avatarId": 10316,
+          "hierarchyLevel": -1
+        }
+      ],
+      "name": "Sample Scrum Project B",
+      "avatarUrls": {
+        "48x48": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10530",
+        "24x24": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10530?size=small",
+        "16x16": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10530?size=xsmall",
+        "32x32": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10530?size=medium"
+      },
+      "projectTypeKey": "software",
+      "simplified": true,
+      "style": "next-gen",
+      "isPrivate": false,
+      "properties": {},
+      "entityId": "8dcf5f47-4d34-402b-8814-f8d82b66c0aa",
+      "uuid": "8dcf5f47-4d34-402b-8814-f8d82b66c0aa"
+    },
+    {
+      "expand": "description,lead,issueTypes,url,projectKeys,permissions,insight",
+      "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/project/11554",
+      "id": "11554",
+      "key": "TAWT",
+      "issueTypes": [
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/11448",
+          "id": "11448",
+          "description": "A small, distinct piece of work.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10318?size=medium",
+          "name": "Task",
+          "subtask": false,
+          "avatarId": 10318,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/11449",
+          "id": "11449",
+          "description": "A small piece of work that's part of a larger task.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10316?size=medium",
+          "name": "Sub-task",
+          "subtask": true,
+          "avatarId": 10316,
+          "hierarchyLevel": -1
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/11450",
+          "id": "11450",
+          "description": "A digital or physical item to be tracked.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/11764?size=medium",
+          "name": "Asset",
+          "subtask": false,
+          "avatarId": 11764,
+          "hierarchyLevel": 0
+        }
+      ],
+      "name": "TEST ASSET WORK TEMPLATE",
+      "avatarUrls": {
+        "48x48": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10508",
+        "24x24": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10508?size=small",
+        "16x16": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10508?size=xsmall",
+        "32x32": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10508?size=medium"
+      },
+      "projectTypeKey": "business",
+      "simplified": true,
+      "style": "next-gen",
+      "isPrivate": false,
+      "properties": {},
+      "entityId": "9d43a568-b4a2-4d46-9979-4685ddd79545",
+      "uuid": "9d43a568-b4a2-4d46-9979-4685ddd79545"
+    },
+    {
+      "expand": "description,lead,issueTypes,url,projectKeys,permissions,insight",
+      "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/project/13311",
+      "id": "13311",
+      "key": "TGR",
+      "issueTypes": [
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/12252",
+          "id": "12252",
+          "description": "Discovery idea",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/POLARIS_ISSUETYPE/avatar/12945?size=medium",
+          "name": "Idea",
+          "subtask": false,
+          "avatarId": 12945,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/12667",
+          "id": "12667",
+          "description": "",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/POLARIS_ISSUETYPE/avatar/12936?size=medium",
+          "name": "Big Picture Idea",
+          "subtask": false,
+          "avatarId": 12936,
+          "hierarchyLevel": 0
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/12668",
+          "id": "12668",
+          "description": "",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/POLARIS_ISSUETYPE/avatar/12934?size=medium",
+          "name": "Implementation Idea",
+          "subtask": false,
+          "avatarId": 12934,
+          "hierarchyLevel": 0
+        }
+      ],
+      "name": "Technology Group Roadmap",
+      "avatarUrls": {
+        "48x48": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/12756",
+        "24x24": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/12756?size=small",
+        "16x16": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/12756?size=xsmall",
+        "32x32": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/12756?size=medium"
+      },
+      "projectCategory": {
+        "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/projectCategory/10007",
+        "id": "10007",
+        "name": "R&D",
+        "description": "All Research and Development Projects"
+      },
+      "projectTypeKey": "product_discovery",
+      "simplified": true,
+      "style": "next-gen",
+      "isPrivate": false,
+      "properties": {},
+      "entityId": "c815ae51-48a5-45d0-b765-f064ba442c3c",
+      "uuid": "c815ae51-48a5-45d0-b765-f064ba442c3c"
+    },
+    {
+      "expand": "description,lead,issueTypes,url,projectKeys,permissions,insight",
+      "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/project/11520",
+      "id": "11520",
+      "key": "TWS",
+      "issueTypes": [
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/11418",
+          "id": "11418",
+          "description": "Epics track collections of related bugs, stories, and tasks.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10307?size=medium",
+          "name": "Epic",
+          "subtask": false,
+          "avatarId": 10307,
+          "hierarchyLevel": 1
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/11419",
+          "id": "11419",
+          "description": "Subtasks track small pieces of work that are part of a larger task.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10316?size=medium",
+          "name": "Subtask",
+          "subtask": true,
+          "avatarId": 10316,
+          "hierarchyLevel": -1
+        },
+        {
+          "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/11420",
+          "id": "11420",
+          "description": "Stories track functionality or features expressed as user goals.",
+          "iconUrl": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/2/universal_avatar/view/type/issuetype/avatar/10315?size=medium",
+          "name": "Story",
+          "subtask": false,
+          "avatarId": 10315,
+          "hierarchyLevel": 0
+        }
+      ],
+      "name": "Troy Workspace",
+      "avatarUrls": {
+        "48x48": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10517",
+        "24x24": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10517?size=small",
+        "16x16": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10517?size=xsmall",
+        "32x32": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/universal_avatar/view/type/project/avatar/10517?size=medium"
+      },
+      "projectTypeKey": "software",
+      "simplified": true,
+      "style": "next-gen",
+      "isPrivate": false,
+      "properties": {},
+      "entityId": "96adba8f-e36c-4723-9510-03111a08a993",
+      "uuid": "96adba8f-e36c-4723-9510-03111a08a993"
+    }
+  ]
+}

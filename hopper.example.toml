@@ -1,0 +1,68 @@
+# Copy to hopper.toml (git-ignored) and adjust. Relative paths resolve against this file.
+# Precedence: explicit argument, then ASI_HOPPER_* environment variables, then this file.
+# No credential lives here. Personal API tokens are not permitted on this org and Hopper has
+# no Basic auth. Run `asi-hopper auth login` once (OAuth 2.1 browser consent); the refresh
+# token is kept in Windows Credential Manager under service "asi_hopper".
+# Every key below is read by config.py; `asi-hopper status` reports the values in force.
+
+site = "https://asirobots.atlassian.net"
+
+# Atlassian cloud id passed to the MCP tools as cloudId (ASI_HOPPER_CLOUD_ID). Leave it unset:
+# the site host is accepted in its place.
+# cloud_id = "0e0e7883-6f84-469d-a098-706e035c766e"
+
+# Path of the SQLite journal from the write-side design. Read and reported by `status` only:
+# nothing writes it (the write side is delayed indefinitely by owner decision, 2026-10-27).
+journal = "hopper.db"
+
+# Where `snapshot` writes evidence bundles by default.
+evidence_dir = "evidence"
+
+[gateway]
+# mcp (Atlassian Remote MCP Server over OAuth 2.1; the default) or replay (recorded fixtures).
+kind = "mcp"
+# The MCP endpoint (ASI_HOPPER_MCP_URL overrides it).
+url = "https://mcp.atlassian.com/v1/mcp"
+# Per-call timeout in seconds.
+timeout_seconds = 30
+# How many times a failed call is retried with backoff before the error is reported.
+max_retries = 4
+# Rate limit applied to every call.
+requests_per_second = 5
+# Largest server-sent event the MCP transport accepts, in MiB; 0 means no limit. A page of
+# 50 issues with default fields fits in 16; a list view should pass LIST_FIELDS and never needs more.
+max_event_mb = 16
+# Loopback port for the OAuth browser callback (http://127.0.0.1:<port>/callback).
+callback_port = 53680
+# Client name sent at OAuth dynamic client registration.
+client_name = "asi_hopper"
+# replay only: directory holding index.json and the recorded payloads (ASI_HOPPER_FIXTURES, --fixtures).
+# fixtures = "tests/fixtures"
+# Wrap the gateway and record every call into this directory (ASI_HOPPER_RECORD, --record).
+# record = "tests/fixtures"
+
+[policy]
+# Policy is parsed and reported by `status`. The dispatcher refuses any verb marked as writing
+# while mode is "read", and no verb is marked as writing. The other keys come from the write-side
+# design, delayed indefinitely by owner decision (2026-10-27): read and reported, enforced by nothing.
+# The only mode that exists (ASI_HOPPER_MODE overrides it).
+mode = "read"
+# Statuses a write would not leave without --force and a reason.
+protected_statuses = ["Done"]
+# The most write steps one apply would accept.
+max_writes_per_apply = 50
+# Whether every write would have to carry --reason.
+require_reason = true
+# Whether comments and descriptions written by Hopper would end with one provenance line.
+footer = true
+# What "undo" of a create would transition the issue to (never deleted).
+cancelled_status = "Done"
+cancelled_resolution = "Won't Do"
+# A dated name that would unlock writes to a project with test = false. Leave it absent.
+# production_writes_approved_by = "2026-xx-xx Functional Safety Tech Lead"
+
+# The project allowlist: each entry names a project and whether it is a test project; reported
+# by `status`. No test project exists and none will be requested.
+[[projects]]
+key = "HWL"
+test = false

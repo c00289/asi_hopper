@@ -1,0 +1,9 @@
+{
+  "issueLinkTypes": [
+    {"id": "10000", "name": "Blocks", "inward": "is blocked by", "outward": "blocks", "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issueLinkType/10000"},
+    {"id": "10003", "name": "Relates", "inward": "relates to", "outward": "relates to", "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issueLinkType/10003"},
+    {"id": "10205", "name": "Risk Mitigation", "inward": "is mitigated by", "outward": "mitigates", "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issueLinkType/10205"},
+    {"id": "10206", "name": "Risk Verification", "inward": "is verified by", "outward": "verifies", "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issueLinkType/10206"},
+    {"id": "10203", "name": "Found in", "inward": "Found", "outward": "Found while testing", "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issueLinkType/10203"}
+  ]
+}

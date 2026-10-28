@@ -1,0 +1,261 @@
+[
+  {
+    "tool": "atlassianUserInfo",
+    "args": {},
+    "file": "atlassianUserInfo.json",
+    "recorded_at": "2026-10-27T17:05:00-06:00",
+    "source": "claude.ai Atlassian connector"
+  },
+  {
+    "tool": "getAccessibleAtlassianResources",
+    "args": {},
+    "file": "getAccessibleAtlassianResources.json",
+    "recorded_at": "2026-10-27T17:05:00-06:00",
+    "source": "claude.ai Atlassian connector"
+  },
+  {
+    "tool": "getVisibleJiraProjects",
+    "args": {
+      "action": "browse",
+      "expandIssueTypes": true,
+      "maxResults": 50,
+      "startAt": 0
+    },
+    "file": "getVisibleJiraProjects.json",
+    "recorded_at": "2026-10-27T17:06:00-06:00",
+    "source": "claude.ai Atlassian connector"
+  },
+  {
+    "tool": "getVisibleJiraProjects",
+    "args": {
+      "action": "browse",
+      "expandIssueTypes": true,
+      "maxResults": 50,
+      "startAt": 0,
+      "searchString": "HWL"
+    },
+    "file": "getVisibleJiraProjects.json",
+    "recorded_at": "2026-10-27T17:06:00-06:00",
+    "source": "claude.ai Atlassian connector (same page; the server would filter)"
+  },
+  {
+    "tool": "getJiraProjectIssueTypesMetadata",
+    "args": {
+      "projectIdOrKey": "HWL"
+    },
+    "file": "getJiraProjectIssueTypesMetadata_HWL.json",
+    "recorded_at": "2026-10-27T17:40:00-06:00",
+    "source": "claude.ai Atlassian connector"
+  },
+  {
+    "tool": "getJiraIssueTypeMetaWithFields",
+    "args": {
+      "projectIdOrKey": "HWL",
+      "issueTypeId": "10001",
+      "requiredFieldsOnly": true
+    },
+    "file": "getJiraIssueTypeMetaWithFields_HWL_10001.json",
+    "recorded_at": "2026-10-27T17:35:00-06:00",
+    "source": "claude.ai Atlassian connector"
+  },
+  {
+    "tool": "getJiraIssue",
+    "args": {
+      "issueIdOrKey": "HWL-2575",
+      "fields": [
+        "summary",
+        "description",
+        "status",
+        "issuetype",
+        "priority",
+        "labels",
+        "components",
+        "assignee",
+        "reporter",
+        "created",
+        "updated",
+        "resolution",
+        "project",
+        "parent",
+        "duedate",
+        "issuelinks"
+      ],
+      "responseContentFormat": "markdown"
+    },
+    "file": "getJiraIssue_HWL-2575.json",
+    "recorded_at": "2026-10-27T17:35:00-06:00",
+    "source": "claude.ai Atlassian connector"
+  },
+  {
+    "tool": "getJiraIssue",
+    "args": {
+      "issueIdOrKey": "HWL-2575",
+      "fields": [
+        "summary",
+        "description",
+        "status",
+        "issuetype",
+        "priority",
+        "labels",
+        "components",
+        "assignee",
+        "reporter",
+        "created",
+        "updated",
+        "resolution",
+        "project",
+        "parent",
+        "duedate",
+        "issuelinks",
+        "comment"
+      ],
+      "responseContentFormat": "markdown"
+    },
+    "file": "getJiraIssue_HWL-2575.json",
+    "recorded_at": "2026-10-27T17:35:00-06:00",
+    "source": "claude.ai Atlassian connector"
+  },
+  {
+    "tool": "getJiraIssue",
+    "args": {
+      "issueIdOrKey": "HWL-2575",
+      "fields": [
+        "summary",
+        "status",
+        "issuetype",
+        "project",
+        "issuelinks"
+      ],
+      "responseContentFormat": "markdown"
+    },
+    "file": "getJiraIssue_HWL-2575.json",
+    "recorded_at": "2026-10-27T17:35:00-06:00",
+    "source": "claude.ai Atlassian connector (superset payload)"
+  },
+  {
+    "tool": "getJiraIssue",
+    "args": {
+      "issueIdOrKey": "HWL-2575",
+      "fields": [
+        "summary",
+        "status",
+        "issuetype",
+        "project",
+        "comment"
+      ],
+      "responseContentFormat": "markdown"
+    },
+    "file": "getJiraIssue_HWL-2575.json",
+    "recorded_at": "2026-10-27T17:35:00-06:00",
+    "source": "claude.ai Atlassian connector (superset payload)"
+  },
+  {
+    "tool": "searchJiraIssuesUsingJql",
+    "args": {
+      "jql": "assignee = currentUser() AND statusCategory != Done ORDER BY status ASC, updated DESC",
+      "fields": [
+        "summary",
+        "description",
+        "status",
+        "issuetype",
+        "priority",
+        "labels",
+        "components",
+        "assignee",
+        "reporter",
+        "created",
+        "updated",
+        "resolution",
+        "project",
+        "parent",
+        "duedate",
+        "issuelinks"
+      ],
+      "maxResults": 50,
+      "responseContentFormat": "markdown"
+    },
+    "file": "searchJiraIssuesUsingJql_open.json",
+    "recorded_at": "2026-10-27T17:25:00-06:00",
+    "source": "claude.ai Atlassian connector (3 of 6 issues kept)"
+  },
+  {
+    "tool": "searchJiraIssuesUsingJql",
+    "args": {
+      "jql": "assignee = currentUser() AND statusCategory != Done ORDER BY status ASC, updated DESC",
+      "fields": [
+        "summary",
+        "status",
+        "issuetype",
+        "priority",
+        "labels",
+        "components",
+        "assignee",
+        "reporter",
+        "created",
+        "updated",
+        "resolution",
+        "project",
+        "parent",
+        "duedate"
+      ],
+      "maxResults": 50,
+      "responseContentFormat": "markdown"
+    },
+    "file": "searchJiraIssuesUsingJql_open.json",
+    "note": "the list-view request (LIST_FIELDS, page 50) replays the same recorded page; extra recorded fields are ignored"
+  },
+  {
+    "tool": "searchJiraIssuesUsingJql",
+    "args": {
+      "jql": "assignee = currentUser() AND statusCategory != Done ORDER BY status ASC, updated DESC",
+      "fields": [
+        "summary",
+        "description",
+        "status",
+        "issuetype",
+        "priority",
+        "labels",
+        "components",
+        "assignee",
+        "reporter",
+        "created",
+        "updated",
+        "resolution",
+        "project",
+        "parent",
+        "duedate",
+        "issuelinks"
+      ],
+      "maxResults": 100,
+      "responseContentFormat": "markdown"
+    },
+    "file": "searchJiraIssuesUsingJql_open.json",
+    "recorded_at": "2026-10-27T17:25:00-06:00",
+    "source": "claude.ai Atlassian connector (3 of 6 issues kept)"
+  },
+  {
+    "tool": "getTransitionsForJiraIssue",
+    "args": {
+      "issueIdOrKey": "HWL-2575"
+    },
+    "file": "getTransitionsForJiraIssue_HWL-2575.json",
+    "recorded_at": "2026-10-27T17:35:00-06:00",
+    "source": "claude.ai Atlassian connector (4 of 11 transitions kept)"
+  },
+  {
+    "tool": "getIssueLinkTypes",
+    "args": {},
+    "file": "getIssueLinkTypes.json",
+    "recorded_at": "2026-10-27T17:35:00-06:00",
+    "source": "claude.ai Atlassian connector (5 of 17 types kept)"
+  },
+  {
+    "tool": "getJiraIssueRemoteIssueLinks",
+    "args": {
+      "issueIdOrKey": "HWL-2554"
+    },
+    "file": "getJiraIssueRemoteIssueLinks_HWL-2554.json",
+    "recorded_at": "2026-10-27T17:40:00-06:00",
+    "source": "claude.ai Atlassian connector"
+  }
+]

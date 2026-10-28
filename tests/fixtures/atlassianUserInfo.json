@@ -1,0 +1,20 @@
+{
+  "account_id": "712020:cc2de3ca-496f-4478-a2fb-88035b07c08e",
+  "account_status": "active",
+  "name": "Roy Mendoza - C",
+  "picture": "https://secure.gravatar.com/avatar/1f453dad681cdeea3cefdd7b5c289301",
+  "created_at": "2026-09-20T01:27:05.121Z",
+  "last_updated": "2026-10-21T14:58:46.686Z",
+  "email": "c00289@contractor.asirobots.com",
+  "characteristics": {"not_mentionable": false},
+  "extended_profile": {
+    "job_title": "Functional Safety Engineer",
+    "department": "Engineering | Safety",
+    "phone_numbers": [],
+    "team_type": "Software Development"
+  },
+  "locale": "en-US",
+  "nickname": "Roy Mendoza - C",
+  "account_type": "atlassian",
+  "email_verified": true
+}

@@ -1,0 +1,27 @@
+# environments and caches
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+
+# build artefacts
+dist/
+build/
+*.egg-info/
+
+# machine-specific configuration (copy hopper.example.toml); never commit a token
+hopper.toml
+.env
+
+# local runtime data. The names come from the write-side design (delayed indefinitely by owner
+# decision, 2026-10-27); nothing writes them today. Evidence snapshots are kept: they are the point.
+*.db
+*.db-journal
+plan*.json
+apply-report*.json
+*.tmp
+
+# OS
+Thumbs.db
+desktop.ini

@@ -1,0 +1,31 @@
+{
+  "tool": "asi_hopper 0.1.0",
+  "record_version": 1,
+  "site": "https://asirobots.atlassian.net",
+  "account": {
+    "account_id": "712020:cc2de3ca-496f-4478-a2fb-88035b07c08e",
+    "name": "Roy Mendoza - C",
+    "email": "c00289@contractor.asirobots.com"
+  },
+  "taken_at": "2026-10-27T18:19:11-05:00",
+  "jql": "assignee = currentUser() AND statusCategory != Done ORDER BY status ASC, updated DESC",
+  "comments": false,
+  "count": 6,
+  "keys": [
+    "HWL-2572",
+    "HWL-2573",
+    "HWL-2554",
+    "HWL-2553",
+    "HWL-2575",
+    "HWL-2574"
+  ],
+  "files": {
+    "issues": "issues.json",
+    "csv": "issues.csv",
+    "readable": "issues.md"
+  },
+  "sha256": {
+    "issues.json": "32c0d1c0ecb56603047537d3ae7105224215f0e02d59995ff56480106f16b94e"
+  },
+  "folder": "C:\\Users\\rgomezme\\OneDrive - Capgemini\\asi_hopper\\evidence\\open-tickets-2026-10-27"
+}

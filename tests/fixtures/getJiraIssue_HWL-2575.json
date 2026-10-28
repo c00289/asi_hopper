@@ -1,0 +1,57 @@
+{
+  "issues": {
+    "nodes": [
+      {
+        "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+        "id": "244031",
+        "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issue/244031",
+        "key": "HWL-2575",
+        "fields": {
+          "summary": "STPA Step 4 – Loss Scenarios – Work",
+          "issuetype": {"self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10001", "id": "10001", "description": "A user story. Created by JIRA Software - do not edit or delete.", "iconUrl": "https://asirobots.atlassian.net/images/icons/issuetypes/story.svg", "name": "Story", "subtask": false, "hierarchyLevel": 0},
+          "parent": {
+            "id": "226417", "key": "HWL-1915", "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issue/226417",
+            "fields": {
+              "summary": "MVP3 - PDP Phase 3 Closeout",
+              "status": {"self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/status/3", "description": "", "iconUrl": "https://asirobots.atlassian.net/images/icons/statuses/inprogress.png", "name": "In Progress", "id": "3", "statusCategory": {"self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/statuscategory/4", "id": 4, "key": "indeterminate", "colorName": "yellow", "name": "In Progress"}},
+              "priority": {"self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/priority/5", "iconUrl": "https://asirobots.atlassian.net/images/icons/priorities/trivial.svg", "name": "Un-Groomed", "id": "5"},
+              "issuetype": {"self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10000", "id": "10000", "description": "A big user story that needs to be broken down. Created by JIRA Software - do not edit or delete.", "iconUrl": "https://asirobots.atlassian.net/images/icons/issuetypes/epic.svg", "name": "Epic", "subtask": false, "hierarchyLevel": 1}
+            }
+          },
+          "components": [],
+          "created": "2026-10-16T09:16:25.969-0600",
+          "project": {"self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/project/12649", "id": "12649", "key": "HWL", "name": "Wheel Loader (Haulage)", "projectTypeKey": "software", "simplified": false, "projectCategory": {"self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/projectCategory/11025", "id": "11025", "description": "All Construction Market / Program Projects", "name": "Construction"}},
+          "description": "### Description\n\nSTPA Step 4 — identify loss scenarios for the WL Unsafe Control Actions from Step 3 (HWL-2574). Worked jointly with Javier/Tim.\n\n### Definition of Done\n\n- [ ] Step 3 UCAs complete\n- [ ] Loss scenarios identified for each UCA\n- [ ] Scenarios traced to UCAs and hazards\n- [ ] Ready for peer review\n\n",
+          "reporter": {"self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/user?accountId=712020%3A68a8c06d-fe4a-456b-96c3-c8da54ca3409", "accountId": "712020:68a8c06d-fe4a-456b-96c3-c8da54ca3409", "emailAddress": "0600@asirobots.com", "displayName": "Javier Quintana", "active": true, "timeZone": "America/Denver", "accountType": "atlassian"},
+          "priority": {"self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/priority/5", "iconUrl": "https://asirobots.atlassian.net/images/icons/priorities/trivial.svg", "name": "Un-Groomed", "id": "5"},
+          "resolution": null,
+          "labels": [],
+          "duedate": null,
+          "comment": {"comments": [], "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issue/244031/comment", "maxResults": 0, "total": 0, "startAt": 0},
+          "issuelinks": [
+            {
+              "id": "194705",
+              "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issueLink/194705",
+              "type": {"id": "10000", "name": "Blocks", "inward": "is blocked by", "outward": "blocks", "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issueLinkType/10000"},
+              "inwardIssue": {
+                "id": "244030", "key": "HWL-2574", "self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issue/244030",
+                "fields": {
+                  "summary": "STPA Step 3 – Unsafe Control Actions – Work",
+                  "status": {"self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/status/10249", "description": "", "iconUrl": "https://asirobots.atlassian.net/images/icons/status_generic.gif", "name": "To Do", "id": "10249", "statusCategory": {"self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/statuscategory/2", "id": 2, "key": "new", "colorName": "blue-gray", "name": "To Do"}},
+                  "priority": {"self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/priority/5", "iconUrl": "https://asirobots.atlassian.net/images/icons/priorities/trivial.svg", "name": "Un-Groomed", "id": "5"},
+                  "issuetype": {"self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10001", "id": "10001", "description": "A user story. Created by JIRA Software - do not edit or delete.", "iconUrl": "https://asirobots.atlassian.net/images/icons/issuetypes/story.svg", "name": "Story", "subtask": false, "hierarchyLevel": 0}
+                }
+              }
+            }
+          ],
+          "assignee": {"self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/user?accountId=712020%3Acc2de3ca-496f-4478-a2fb-88035b07c08e", "accountId": "712020:cc2de3ca-496f-4478-a2fb-88035b07c08e", "emailAddress": "c00289@contractor.asirobots.com", "displayName": "Roy Mendoza - C", "active": true, "timeZone": "America/Denver", "accountType": "atlassian"},
+          "updated": "2026-10-27T11:18:59.416-0600",
+          "status": {"self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/status/10249", "description": "", "iconUrl": "https://asirobots.atlassian.net/images/icons/status_generic.gif", "name": "To Do", "id": "10249", "statusCategory": {"self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/statuscategory/2", "id": 2, "key": "new", "colorName": "blue-gray", "name": "To Do"}}
+        },
+        "descriptionEditable": true,
+        "webUrl": "https://asirobots.atlassian.net/browse/HWL-2575"
+      }
+    ]
+  },
+  "context": {"atlassianAccountId": "712020:cc2de3ca-496f-4478-a2fb-88035b07c08e", "cloudId": "0e0e7883-6f84-469d-a098-706e035c766e", "toolName": "getJiraIssue", "endpoint": "v1:streamable-http", "env": "prod"}
+}

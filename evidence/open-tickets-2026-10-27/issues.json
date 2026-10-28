@@ -1,0 +1,322 @@
+[
+  {
+    "key": "HWL-2572",
+    "id": "244028",
+    "project": "HWL",
+    "project_name": "Wheel Loader (Haulage)",
+    "issue_type": "Story",
+    "summary": "STPA Step 1 – Losses, Hazards & System Boundary – Peer Review",
+    "status": "In Progress",
+    "status_category": "indeterminate",
+    "resolution": null,
+    "priority": "Un-Groomed",
+    "assignee": "Roy Mendoza - C",
+    "assignee_id": "712020:cc2de3ca-496f-4478-a2fb-88035b07c08e",
+    "reporter": "Javier Quintana",
+    "reporter_id": "712020:68a8c06d-fe4a-456b-96c3-c8da54ca3409",
+    "labels": [],
+    "components": [],
+    "parent": {
+      "key": "HWL-1915",
+      "id": "226417",
+      "summary": "MVP3 - PDP Phase 3 Closeout",
+      "status": "In Progress",
+      "status_category": "indeterminate",
+      "issue_type": "Epic"
+    },
+    "created": "2026-10-16T09:16:03.731-0600",
+    "updated": "2026-10-27T11:20:13.440-0600",
+    "due": null,
+    "url": "https://asirobots.atlassian.net/browse/HWL-2572",
+    "description": "**Peer Review — per QP-06**\n\nPeer review of STPA Step 1 losses, hazards, and system boundary (HWL-2571).\n\n**Peer Review Action Items**\n\n* Javier — SA\n* Adolfo — Safety SE\n* Jerry — V&V\n* Zeke — Mechatronic Manager\n* Nish — Software Manager\n* SME's — Subject Matter Expert, as required\n\n**Definition of Done**\n\n- [ ] Step 1 output submitted for peer review in Jama\n- [ ] Comments dispositioned\n- [ ] Peer review closed; ready for approval\n\n",
+    "links": [
+      {
+        "id": "194701",
+        "type": "Blocks",
+        "direction": "inward",
+        "description": "is blocked by",
+        "other": {
+          "key": "HWL-2571",
+          "id": "244027",
+          "summary": "STPA Step 1 – Losses, Hazards & System Boundary – Work",
+          "status": "In Progress",
+          "status_category": "indeterminate",
+          "issue_type": "Story"
+        }
+      },
+      {
+        "id": "194702",
+        "type": "Blocks",
+        "direction": "outward",
+        "description": "blocks",
+        "other": {
+          "key": "HWL-2573",
+          "id": "244029",
+          "summary": "STPA Step 1 – Losses, Hazards & System Boundary – Approval",
+          "status": "In Progress",
+          "status_category": "indeterminate",
+          "issue_type": "Story"
+        }
+      }
+    ],
+    "comments": [],
+    "custom": {}
+  },
+  {
+    "key": "HWL-2573",
+    "id": "244029",
+    "project": "HWL",
+    "project_name": "Wheel Loader (Haulage)",
+    "issue_type": "Story",
+    "summary": "STPA Step 1 – Losses, Hazards & System Boundary – Approval",
+    "status": "In Progress",
+    "status_category": "indeterminate",
+    "resolution": null,
+    "priority": "Un-Groomed",
+    "assignee": "Roy Mendoza - C",
+    "assignee_id": "712020:cc2de3ca-496f-4478-a2fb-88035b07c08e",
+    "reporter": "Javier Quintana",
+    "reporter_id": "712020:68a8c06d-fe4a-456b-96c3-c8da54ca3409",
+    "labels": [],
+    "components": [],
+    "parent": {
+      "key": "HWL-1915",
+      "id": "226417",
+      "summary": "MVP3 - PDP Phase 3 Closeout",
+      "status": "In Progress",
+      "status_category": "indeterminate",
+      "issue_type": "Epic"
+    },
+    "created": "2026-10-16T09:16:10.614-0600",
+    "updated": "2026-10-27T11:20:03.347-0600",
+    "due": null,
+    "url": "https://asirobots.atlassian.net/browse/HWL-2573",
+    "description": "**Approval — per QP-06**\n\nFormal approval of STPA Step 1 losses, hazards, and system boundary, after peer review closes (HWL-2572).\n\n**Approval Quorum**\n\n| Reviewer | Role |\n| --- | --- |\n| Rod | Chief Engineer |\n| Alok | Product Manager |\n| Jerry | V&V |\n| Javier | SA |\n| Jeff Ferring | PAT |\n| Adolfo | FuSa |\n\n**Definition of Done**\n\n- [ ] Submitted for approval in Jama\n- [ ] Quorum signoffs obtained; approved status recorded\n\n",
+    "links": [
+      {
+        "id": "194702",
+        "type": "Blocks",
+        "direction": "inward",
+        "description": "is blocked by",
+        "other": {
+          "key": "HWL-2572",
+          "id": "244028",
+          "summary": "STPA Step 1 – Losses, Hazards & System Boundary – Peer Review",
+          "status": "In Progress",
+          "status_category": "indeterminate",
+          "issue_type": "Story"
+        }
+      },
+      {
+        "id": "194704",
+        "type": "Blocks",
+        "direction": "outward",
+        "description": "blocks",
+        "other": {
+          "key": "HWL-2574",
+          "id": "244030",
+          "summary": "STPA Step 3 – Unsafe Control Actions – Work",
+          "status": "To Do",
+          "status_category": "new",
+          "issue_type": "Story"
+        }
+      }
+    ],
+    "comments": [],
+    "custom": {}
+  },
+  {
+    "key": "HWL-2554",
+    "id": "243177",
+    "project": "HWL",
+    "project_name": "Wheel Loader (Haulage)",
+    "issue_type": "Story",
+    "summary": "Perform Platform Safety Plan",
+    "status": "In Progress",
+    "status_category": "indeterminate",
+    "resolution": null,
+    "priority": "Un-Groomed",
+    "assignee": "Roy Mendoza - C",
+    "assignee_id": "712020:cc2de3ca-496f-4478-a2fb-88035b07c08e",
+    "reporter": "Javier Quintana",
+    "reporter_id": "712020:68a8c06d-fe4a-456b-96c3-c8da54ca3409",
+    "labels": [],
+    "components": [],
+    "parent": {
+      "key": "HWL-1915",
+      "id": "226417",
+      "summary": "MVP3 - PDP Phase 3 Closeout",
+      "status": "In Progress",
+      "status_category": "indeterminate",
+      "issue_type": "Epic"
+    },
+    "created": "2026-10-14T08:52:24.090-0600",
+    "updated": "2026-10-27T11:18:17.307-0600",
+    "due": null,
+    "url": "https://asirobots.atlassian.net/browse/HWL-2554",
+    "description": "### Description\n\nCreate the Wheel Loader Safety Plan (`HWL_00SP_01.001`) from the QF-17 template. For each safety deliverable across safety lifecycle phases 1–10, fill in the six robot-team columns: Work Product Release, Author, Verification Independence Reviewer, Gate Reviewer, Deadline, and Status. Deadlines must align with the WL program and PDP timelines. This supports the PDP Phase 3 Closeout (HWL-1915) by establishing what safety evidence exists, what's ongoing, and what's blocked.\n\nSource: [QF-17 Safety Plan](https://autonomoussolutions.sharepoint.com/:w:/r/sites/productppps/Shared%20Documents/Company%20QMS%20Policies%20%26%20Standards/QF-17%20Safety%20Plan.docx?d=wa3d9fb0f96894245bbcf334aa6c264ae&csf=1&web=1&e=a2eLsS)\n\n### Definition of Done\n\n* \\[ \\] `HWL_00SP_01.001` created from QF-17 and stored in DMS\n* \\[ \\] All six robot-team columns filled for every deliverable in phases 1–10, with Out-of-Scope or Alternative statuses justified\n* \\[ \\] Deadlines aligned to WL program and PDP timelines\n* \\[ \\] Reviewed by the Functional Safety Tech Lead\n* \\[ \\] Linked as Phase 3 exit evidence under HWL-1915\n\n",
+    "links": [],
+    "comments": [],
+    "custom": {}
+  },
+  {
+    "key": "HWL-2553",
+    "id": "243176",
+    "project": "HWL",
+    "project_name": "Wheel Loader (Haulage)",
+    "issue_type": "Story",
+    "summary": "Perform Platform Activity flow",
+    "status": "In Progress",
+    "status_category": "indeterminate",
+    "resolution": null,
+    "priority": "Un-Groomed",
+    "assignee": "Roy Mendoza - C",
+    "assignee_id": "712020:cc2de3ca-496f-4478-a2fb-88035b07c08e",
+    "reporter": "Javier Quintana",
+    "reporter_id": "712020:68a8c06d-fe4a-456b-96c3-c8da54ca3409",
+    "labels": [],
+    "components": [],
+    "parent": {
+      "key": "HWL-1915",
+      "id": "226417",
+      "summary": "MVP3 - PDP Phase 3 Closeout",
+      "status": "In Progress",
+      "status_category": "indeterminate",
+      "issue_type": "Epic"
+    },
+    "created": "2026-10-14T08:51:10.357-0600",
+    "updated": "2026-10-27T11:18:14.448-0600",
+    "due": null,
+    "url": "https://asirobots.atlassian.net/browse/HWL-2553",
+    "description": "### Description\n\nProduce the Wheel Loader Activity Flow, using the Platform Activity Flow in PLAT_00SD_01.000 §6 as the baseline. Record WL-specific gaps and additions in the WL Scope Definition (QF-12), as the platform document requires for program teams. This is a QF-17 Phase 1 (Concept Development) deliverable.\n\nSources: [PLAT_00SD_01.001 Platform Product](https://autonomoussolutions.sharepoint.com/:b:/r/sites/ConstructionLeadership/Shared%20Documents/ASI%20-%20Haulage/0100%20Earth%20Loading/00%20General/!Architecture/PLAT_00SD_01.000%20Platform%20Product/PLAT_00SD_01.001%20Platform%20Product.pdf?d=w073609f17e94425b8593c2fce75633b0&csf=1&web=1&e=XmlLFo), [QF-17 Safety Plan](https://autonomoussolutions.sharepoint.com/:w:/r/sites/productppps/Shared%20Documents/Company%20QMS%20Policies%20%26%20Standards/QF-17%20Safety%20Plan.docx?d=wa3d9fb0f96894245bbcf334aa6c264ae&csf=1&web=1&e=a2eLsS)\n\n### Definition of Done\n\n* \\[ \\] Platform Activity Flow (§6) reviewed against WL operation, including UC-01 Loading Aggregate and WL work-implement functions\n* \\[ \\] WL Activity Flow created, with gaps and additions from the platform baseline identified\n* \\[ \\] Activity Flow included in the WL Scope Definition (`HWL_00SD_01.000`, QF-12) and stored in DMS\n* \\[ \\] Reviewed through Scope Definition review; gate reviewed by the Functional Safety Tech Lead and Systems Tech Lead\n* \\[ \\] Status updated on the WL Safety Plan\n\n",
+    "links": [],
+    "comments": [],
+    "custom": {}
+  },
+  {
+    "key": "HWL-2575",
+    "id": "244031",
+    "project": "HWL",
+    "project_name": "Wheel Loader (Haulage)",
+    "issue_type": "Story",
+    "summary": "STPA Step 4 – Loss Scenarios – Work",
+    "status": "To Do",
+    "status_category": "new",
+    "resolution": null,
+    "priority": "Un-Groomed",
+    "assignee": "Roy Mendoza - C",
+    "assignee_id": "712020:cc2de3ca-496f-4478-a2fb-88035b07c08e",
+    "reporter": "Javier Quintana",
+    "reporter_id": "712020:68a8c06d-fe4a-456b-96c3-c8da54ca3409",
+    "labels": [],
+    "components": [],
+    "parent": {
+      "key": "HWL-1915",
+      "id": "226417",
+      "summary": "MVP3 - PDP Phase 3 Closeout",
+      "status": "In Progress",
+      "status_category": "indeterminate",
+      "issue_type": "Epic"
+    },
+    "created": "2026-10-16T09:16:25.969-0600",
+    "updated": "2026-10-27T11:18:59.416-0600",
+    "due": null,
+    "url": "https://asirobots.atlassian.net/browse/HWL-2575",
+    "description": "### Description\n\nSTPA Step 4 — identify loss scenarios for the WL Unsafe Control Actions from Step 3 (HWL-2574). Worked jointly with Javier/Tim.\n\n### Definition of Done\n\n- [ ] Step 3 UCAs complete\n- [ ] Loss scenarios identified for each UCA\n- [ ] Scenarios traced to UCAs and hazards\n- [ ] Ready for peer review\n\n",
+    "links": [
+      {
+        "id": "194705",
+        "type": "Blocks",
+        "direction": "inward",
+        "description": "is blocked by",
+        "other": {
+          "key": "HWL-2574",
+          "id": "244030",
+          "summary": "STPA Step 3 – Unsafe Control Actions – Work",
+          "status": "To Do",
+          "status_category": "new",
+          "issue_type": "Story"
+        }
+      }
+    ],
+    "comments": [],
+    "custom": {}
+  },
+  {
+    "key": "HWL-2574",
+    "id": "244030",
+    "project": "HWL",
+    "project_name": "Wheel Loader (Haulage)",
+    "issue_type": "Story",
+    "summary": "STPA Step 3 – Unsafe Control Actions – Work",
+    "status": "To Do",
+    "status_category": "new",
+    "resolution": null,
+    "priority": "Un-Groomed",
+    "assignee": "Roy Mendoza - C",
+    "assignee_id": "712020:cc2de3ca-496f-4478-a2fb-88035b07c08e",
+    "reporter": "Javier Quintana",
+    "reporter_id": "712020:68a8c06d-fe4a-456b-96c3-c8da54ca3409",
+    "labels": [],
+    "components": [],
+    "parent": {
+      "key": "HWL-1915",
+      "id": "226417",
+      "summary": "MVP3 - PDP Phase 3 Closeout",
+      "status": "In Progress",
+      "status_category": "indeterminate",
+      "issue_type": "Epic"
+    },
+    "created": "2026-10-16T09:16:19.677-0600",
+    "updated": "2026-10-27T11:18:59.021-0600",
+    "due": null,
+    "url": "https://asirobots.atlassian.net/browse/HWL-2574",
+    "description": "### Description\n\nSTPA Step 3 — identify Unsafe Control Actions (UCAs) for the WL, combining the Step 1 outputs (losses, hazards) with the Step 2 control structure. Worked jointly with Javier/Tim. Starts only after Step 1 (HWL-2573) and Step 2 (HWL-2570) are approved.\n\n### Definition of Done\n\n- [ ] Step 1 and Step 2 approved\n- [ ] UCAs identified for each control action in the WL control structure\n- [ ] UCAs traced to hazards\n- [ ] Ready for peer review\n\n",
+    "links": [
+      {
+        "id": "194703",
+        "type": "Blocks",
+        "direction": "inward",
+        "description": "is blocked by",
+        "other": {
+          "key": "HWL-2570",
+          "id": "244026",
+          "summary": "STPA Step 2 – Control Structure – Approval",
+          "status": "To Do",
+          "status_category": "new",
+          "issue_type": "Story"
+        }
+      },
+      {
+        "id": "194704",
+        "type": "Blocks",
+        "direction": "inward",
+        "description": "is blocked by",
+        "other": {
+          "key": "HWL-2573",
+          "id": "244029",
+          "summary": "STPA Step 1 – Losses, Hazards & System Boundary – Approval",
+          "status": "In Progress",
+          "status_category": "indeterminate",
+          "issue_type": "Story"
+        }
+      },
+      {
+        "id": "194705",
+        "type": "Blocks",
+        "direction": "outward",
+        "description": "blocks",
+        "other": {
+          "key": "HWL-2575",
+          "id": "244031",
+          "summary": "STPA Step 4 – Loss Scenarios – Work",
+          "status": "To Do",
+          "status_category": "new",
+          "issue_type": "Story"
+        }
+      }
+    ],
+    "comments": [],
+    "custom": {}
+  }
+]

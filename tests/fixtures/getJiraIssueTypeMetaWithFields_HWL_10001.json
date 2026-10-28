@@ -1,0 +1,40 @@
+{
+  "startAt": 0,
+  "maxResults": 50,
+  "total": 25,
+  "fields": [
+    {
+      "required": true,
+      "schema": {"type": "issuetype", "system": "issuetype"},
+      "name": "Issue Type",
+      "key": "issuetype",
+      "hasDefaultValue": false,
+      "operations": [],
+      "allowedValues": [
+        {"self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/issuetype/10001", "id": "10001", "description": "A user story. Created by JIRA Software - do not edit or delete.", "iconUrl": "https://asirobots.atlassian.net/images/icons/issuetypes/story.svg", "name": "Story", "subtask": false, "hierarchyLevel": 0}
+      ],
+      "fieldId": "issuetype"
+    },
+    {
+      "required": true,
+      "schema": {"type": "project", "system": "project"},
+      "name": "Project",
+      "key": "project",
+      "hasDefaultValue": false,
+      "operations": ["set"],
+      "allowedValues": [
+        {"self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/project/12649", "id": "12649", "key": "HWL", "name": "Wheel Loader (Haulage)", "projectTypeKey": "software", "simplified": false, "projectCategory": {"self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/projectCategory/11025", "id": "11025", "description": "All Construction Market / Program Projects", "name": "Construction"}}
+      ],
+      "fieldId": "project"
+    },
+    {
+      "required": true,
+      "schema": {"type": "string", "system": "summary"},
+      "name": "Summary",
+      "key": "summary",
+      "hasDefaultValue": false,
+      "operations": ["set"],
+      "fieldId": "summary"
+    }
+  ]
+}
