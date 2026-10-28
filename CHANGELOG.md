@@ -10,6 +10,29 @@ All notable changes to ASI Hopper are recorded here. The format follows
 - 0.2.0: `run steps.jsonl`, `serve --mcp`, `serve --http`; dewey and kletz `jira sync` land in
   those repos; live read smoke tests behind `ASI_HOPPER_LIVE=1`.
 
+## [0.1.5] - 2026-10-28
+
+The Kletz window said "Offline: Jira read failed: could not connect to https://mcp.atlassian.com/v1/mcp:
+unhandled errors in a TaskGroup (1 sub-exception)" while `auth status` said logged in. The real cause,
+one layer down, was "no Atlassian session for this account; run `asi-hopper auth login` once": the stored
+session was no longer honoured and the MCP client had fallen back to a fresh sign-in, which a
+non-interactive window refuses.
+
+### Fixed
+- **The leaf of an exception group is what the caller hears** (`McpGateway._leaf`, used by `_translate`
+  and so by both a failed start and a failed call): anyio wraps a failed start in an `ExceptionGroup`,
+  so the gateway reported "could not connect ... TaskGroup" and lost the message. An `AuthRequired`
+  leaf wins over whatever else failed around it, so the window and the CLI now say to sign in.
+- **`auth status` probes the session** (`Auth.status`): `logged_in` still says a session is stored;
+  the new `session` field says whether Atlassian honours it: `valid` (with the account, one `whoami`
+  with the gateway forced non-interactive, so a status check never opens a browser), `rejected` (a
+  warning says to `auth logout` then `auth login`), `unreachable` (the gateway's message), `none`, or
+  `not probed` on the replay gateway.
+
+### Tests
+- `test_a_failed_start_reports_the_leaf_of_the_exception_group`,
+  `test_auth_status_probes_a_stored_session_without_a_browser`.
+
 ## [0.1.4] - 2026-10-28
 
 ### Changed

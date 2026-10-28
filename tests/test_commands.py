@@ -120,5 +120,42 @@ def test_schema_describes_verbs(hopper: Hopper) -> None:
 def test_auth_status_and_login_refusal_on_replay(hopper: Hopper) -> None:
     status = hopper.execute("auth", action="status")
     assert status.ok and "logged_in" in status.data
+    assert status.data["session"] in ("none", "not probed")  # the replay gateway is never probed
     login = hopper.execute("auth", action="login")
     assert not login.ok and "needs the mcp gateway" in login.errors[0]
+
+
+def test_auth_status_probes_a_stored_session_without_a_browser(hopper: Hopper, monkeypatch) -> None:
+    from asi_hopper.errors import AuthRequired, GatewayError
+
+    store = hopper.session_store()
+    monkeypatch.setattr(store, "describe", lambda: {"server": store.server_url, "logged_in": True})
+    monkeypatch.setattr(hopper, "session_store", lambda: store)
+    gateway = hopper.gateway
+    monkeypatch.setattr(gateway, "name", "mcp", raising=False)
+    gateway.interactive = True  # type: ignore[attr-defined]
+    seen: list[bool] = []
+
+    def whoami():
+        seen.append(gateway.interactive)  # type: ignore[attr-defined]
+        return {"account_id": "a1", "display_name": "Roy Mendoza"}
+
+    monkeypatch.setattr(hopper.meta, "whoami", whoami)
+    valid = hopper.execute("auth", action="status")
+    assert valid.ok and valid.data["session"] == "valid" and valid.data["account"]["account_id"] == "a1"
+    assert seen == [False] and gateway.interactive is True  # the probe never opens a browser; restored after
+
+    def rejected():
+        raise AuthRequired("no Atlassian session for this account; run `asi-hopper auth login` once")
+
+    monkeypatch.setattr(hopper.meta, "whoami", rejected)
+    bad = hopper.execute("auth", action="status")
+    assert bad.ok and bad.data["session"] == "rejected" and bad.data["logged_in"] is True
+    assert "auth logout" in bad.warnings[0] and "auth login" in bad.warnings[0]
+
+    def down():
+        raise GatewayError("could not connect to https://example.invalid/mcp: ConnectionError: x")
+
+    monkeypatch.setattr(hopper.meta, "whoami", down)
+    off = hopper.execute("auth", action="status")
+    assert off.ok and off.data["session"] == "unreachable" and "could not connect" in off.warnings[0]

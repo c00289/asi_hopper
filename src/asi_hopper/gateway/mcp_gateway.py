@@ -125,11 +125,27 @@ class McpGateway:
                         except BaseException as exc:  # hand every failure back to the caller
                             future.set_exception(self._translate(exc))
         except BaseException as exc:
-            self._startup_error = exc
+            # anyio wraps a failed start in an ExceptionGroup ("unhandled errors in a TaskGroup"); the
+            # caller must hear the leaf: "no Atlassian session ..." or the connection error itself
+            self._startup_error = self._translate(exc)
             self._ready.set()
 
     @staticmethod
+    def _leaf(exc: BaseException) -> BaseException:
+        """The exception that matters inside an ``ExceptionGroup`` tree: an ``AuthRequired`` leaf if there is
+        one (a sign-in is the fix, whatever else failed around it), else the first leaf; a plain exception
+        is its own leaf."""
+        if not isinstance(exc, BaseExceptionGroup):
+            return exc
+        leaves = [McpGateway._leaf(inner) for inner in exc.exceptions]
+        for leaf in leaves:
+            if "no Atlassian session" in str(leaf) or "AuthRequired" in type(leaf).__name__:
+                return leaf
+        return leaves[0] if leaves else exc
+
+    @staticmethod
     def _translate(exc: BaseException) -> Exception:
+        exc = McpGateway._leaf(exc)
         text = str(exc)
         if "No redirect handler" in text or "no Atlassian session" in text or "AuthRequired" in type(exc).__name__:
             return AuthRequired(text)

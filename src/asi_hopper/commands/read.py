@@ -5,6 +5,7 @@ from __future__ import annotations
 from dataclasses import asdict
 from typing import Any
 
+from ..errors import AuthRequired, GatewayError
 from ..model.normalise import DEFAULT_FIELDS
 from .base import Argument, Command, Context, Result
 from .factory import register_command
@@ -239,7 +240,7 @@ class Auth(Command):
         store = ctx.hopper.session_store()
         action = args["action"]
         if action == "status":
-            return Result.success(store.describe())
+            return self.status(ctx, store.describe())
         if action == "logout":
             store.clear()
             return Result.success({"logged_in": False, "server": store.server_url})
@@ -247,3 +248,33 @@ class Auth(Command):
             return Result.failure(f"auth login needs the mcp gateway, not {ctx.hopper.gateway.name!r}")
         account = ctx.hopper.meta.whoami()  # forces the connection, and the browser flow if needed
         return Result.success({"logged_in": True, "account": account, **store.describe()})
+
+    @staticmethod
+    def status(ctx: Context, info: dict[str, Any]) -> Result:
+        """``logged_in`` says a session is stored; ``session`` says whether Atlassian still honours it.
+
+        The probe is one ``whoami`` with the gateway forced non-interactive, so a status check never
+        opens a browser: ``valid`` (with the account), ``rejected`` (sign in again: the refresh token
+        or the registered client was rotated away, as the window's "could not connect ... TaskGroup"
+        of 2026-10-28 turned out to be) or ``unreachable`` (the network or the server).
+        """
+        gateway = ctx.hopper.gateway
+        if not info.get("logged_in") or gateway.name != "mcp":
+            info["session"] = "none" if not info.get("logged_in") else "not probed"
+            return Result.success(info)
+        previous = getattr(gateway, "interactive", None)
+        if previous is not None:
+            gateway.interactive = False
+        try:
+            info["account"] = ctx.hopper.meta.whoami()
+            info["session"] = "valid"
+            return Result.success(info)
+        except AuthRequired as exc:
+            info["session"] = "rejected"
+            return Result.success(info, warnings=[f"{exc}; `asi-hopper auth logout` first clears the stale client registration"])
+        except GatewayError as exc:
+            info["session"] = "unreachable"
+            return Result.success(info, warnings=[str(exc)])
+        finally:
+            if previous is not None:
+                gateway.interactive = previous

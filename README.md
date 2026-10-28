@@ -16,6 +16,14 @@ one way our tools and agents read it, and what it read on a given day can be pro
 > See [docs/proposal.md](docs/proposal.md) for the design. The write side is delayed indefinitely by owner
 > decision (2026-10-27): no sandbox will be requested and the question is closed.
 
+## What is in 0.1.5
+
+A rejected session is named, not hidden: the gateway reports the leaf of anyio's exception group
+("no Atlassian session for this account; run `asi-hopper auth login` once") instead of "unhandled
+errors in a TaskGroup", and `auth status` probes the stored session with one browser-free `whoami`
+and answers `session: valid | rejected | unreachable`, with a warning saying what to run when it is
+rejected. 0.1.3 and 0.1.4 are in the CHANGELOG.
+
 ## What is in 0.1.2
 
 Housekeeping from the 2026-10-28 broken-windows sweep, no change to the API or the verbs:
@@ -107,7 +115,7 @@ No credential lives in this file. Sign in once:
 
 ```powershell
 asi-hopper auth login      # opens the Atlassian consent page; the session goes to Windows Credential Manager
-asi-hopper auth status
+asi-hopper auth status     # since 0.1.5: probes the session; "rejected" means logout, then login again
 asi-hopper auth logout
 ```
 
