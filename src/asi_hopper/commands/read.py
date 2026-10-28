@@ -271,7 +271,8 @@ class Auth(Command):
             return Result.success(info)
         except AuthRequired as exc:
             info["session"] = "rejected"
-            return Result.success(info, warnings=[f"{exc}; `asi-hopper auth logout` first clears the stale client registration"])
+            hint = f"{exc}; `asi-hopper auth logout` first clears the stale client registration"
+            return Result.success(info, warnings=[hint])
         except GatewayError as exc:
             info["session"] = "unreachable"
             return Result.success(info, warnings=[str(exc)])
