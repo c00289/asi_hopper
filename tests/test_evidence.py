@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 
 from asi_hopper import Hopper
+from asi_hopper.model.pagetext import sections
 from asi_hopper.services.evidence import PageSource
 
 from .conftest import OPEN_JQL
@@ -67,6 +68,17 @@ def _tree(hopper: Hopper, out: Path, name: str) -> Path:
     return out / name
 
 
+def rows_header(folder: Path) -> list[str]:
+    with (folder / "pages.csv").open(encoding="utf-8", newline="") as fh:
+        return next(csv.reader(fh))
+
+
+def test_page_entry_sections_are_empty_for_a_non_markdown_body(hopper: Hopper) -> None:
+    record = hopper.confluence.page(PAGE, content_format="adf")
+    entry, body = hopper.evidence._page_entry(record, False)
+    assert entry["sections"] == [] and body.startswith("{")  # the ADF document, serialised
+
+
 def test_confluence_snapshot_of_a_page_tree(hopper: Hopper, tmp_path: Path) -> None:
     folder = _tree(hopper, tmp_path, "tree")
     assert {p.name for p in folder.iterdir()} == {"pages.json", "pages", "pages.csv", "pages.md", "manifest.json"}
@@ -90,6 +102,20 @@ def test_confluence_snapshot_of_a_page_tree(hopper: Hopper, tmp_path: Path) -> N
     first = entries[0]
     assert "body" not in first and first["body_file"] == f"pages/{PAGE}.md" and first["version"] == 45
     assert [e["comment_count"] for e in entries] == [8, 2, 0]
+    # since 0.1.9 every entry lists the sections of its Markdown body, hashed, so a citation can name one
+    assert [s["heading"] for s in first["sections"]] == [
+        "",
+        "Losses and Hazards",
+        "Control Structure",
+        "Context Table",
+        "Loss Scenarios",
+    ]
+    assert all(set(s) == {"heading", "anchor", "sha256", "chars"} for s in first["sections"])
+    assert first["sections"][3]["anchor"] == "Context-Table"
+    page_body = (folder / "pages" / f"{PAGE}.md").read_text(encoding="utf-8")
+    assert [s["sha256"] for s in first["sections"]] == [s.sha256 for s in sections(page_body)]
+    assert [len(e["sections"]) for e in entries] == [5, 2, 1]  # the last child has no heading: one section
+    assert "sections" not in rows_header(folder) and "sections" not in (folder / "pages.md").read_text(encoding="utf-8")
     assert first["comments"][0]["kind"] == "inline" and first["comments"][0]["id"] == "5351964709"
     footer = entries[1]["comments"][1]
     assert footer["kind"] == "footer" and len(footer["replies"]) == 1  # one reply, fetched with the comment

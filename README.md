@@ -4,7 +4,7 @@ One of the [ASI FuSa tools](https://github.com/c00289/c00289/blob/main/README.md
 
 A read-only, audited, replayable door into Jira, and since 0.1.7 into Confluence, for the Wheel Loader
 programme: a Python library, a command line, and a fixture-replay gateway so that siblings and tests
-never touch the network. Version **0.1.8**, alpha. Named after Grace Hopper, who built the first compiler
+never touch the network. Version **0.1.9**, alpha. Named after Grace Hopper, who built the first compiler
 so people could instruct a machine in their own words.
 
 The idea, in one sentence: Jira is the source of truth for the programme's work, Hopper is the
@@ -15,6 +15,19 @@ one way our tools and agents read it, and what it read on a given day can be pro
 > with OAuth 2.1 once, through the browser, and reads with your own account.
 > See [docs/proposal.md](docs/proposal.md) for the design. The write side is delayed indefinitely by owner
 > decision (2026-10-27): no sandbox will be requested and the question is closed.
+
+## What is in 0.1.9
+
+The anatomy of a page. `asi_hopper.model.pagetext` reads a Markdown body the way the Remote MCP Server
+renders it: `sections()` splits it on its headings, each with the Confluence heading anchor and a SHA-256
+of its text; `tables()` turns GitHub pipe tables into cells; `links()` lists every link with the Confluence
+page id it names; `strike()`, `bold_runs()` and `split_on_bold()` read a cell whose bold labels are glued to
+their text. `PageRecord.sections()` and `PageRecord.anchor_url(heading)` put them on the record;
+`confluence page <id> --section "Context Table"` returns one section by heading and `--sections` lists them;
+every `pages.json` entry of an evidence bundle lists its page's sections with their hashes, so a citation can
+name a section as well as the body. Phase C of
+[docs/confluence-integration-plan.md](docs/confluence-integration-plan.md); Hopper still knows nothing about
+what a page is about.
 
 ## What is in 0.1.8
 
@@ -166,6 +179,7 @@ asi-hopper diff evidence\stpa-tickets-2026-10-27            # against live Jira
 asi-hopper confluence spaces STPA,FST
 asi-hopper confluence pages STPA --limit 10
 asi-hopper confluence page 399343803 --format markdown
+asi-hopper confluence page 399343803 --section "Context Table"   # since 0.1.9: one section, with its hash
 asi-hopper confluence search "title ~ 'STPA'" --space STPA
 asi-hopper confluence comments 399343803 --kind inline
 asi-hopper confluence snapshot 399343803 --depth 1 --comments   # since 0.1.8: a page tree as evidence
@@ -206,6 +220,8 @@ with Hopper(interactive=False) as hopper:        # a sibling: never opens a brow
     for ref in hopper.cql("title ~ 'STPA'", space="STPA"):
         print(ref.id, ref.title, ref.url)
     page = hopper.page("399343803")                 # PageRecord: body as markdown, version, updated
+    for section in page.sections():                 # 0.1.9: heading, anchor, text, sha256
+        print(section.heading, page.anchor_url(section.heading), section.sha256[:12])
     hopper.execute("confluence", action="comments", target="399343803")
 ```
 
@@ -221,7 +237,7 @@ offline. If there is no OAuth session and `interactive=False`, the first call fa
 |---|---|---|---|
 | `spaces` | space keys, comma-separated (optional) | `--limit` | `Space` records |
 | `pages` | space key or id | `--limit --all --max` | `PageRef` records, newest change first |
-| `page` | page id | `--format markdown/adf/html --raw` | one `PageRecord` with its body |
+| `page` | page id | `--format markdown/adf/html --raw --section "Heading" --sections` | one `PageRecord` with its body; `--section` one section (heading, anchor, anchor_url, level, text, sha256), `--sections` the list without text (since 0.1.9) |
 | `children` | page id | `--depth 1-10 --limit --all` | `PageRef` records |
 | `search` | CQL (optional) | `--space KEY --limit --all --max` | `PageRef` records; no CQL runs the user-scoped default and says so in `warnings` |
 | `comments` | page id | `--kind footer/inline/all --replies --limit` | `PageComment` records (open inline comments carry the text they hang on) |
@@ -231,7 +247,21 @@ No action writes. The write side is a contract only: `ConfluenceWriteSide` in `g
 four methods a write adapter would have, and `ConfluenceApi.writes` (a `ClosedConfluenceWriteSide`) raises
 `WriteSideClosed` on each before touching anything. `asi-hopper tools` lists what the server exposes and
 which tools write; Hopper calls none of those. Recorded shapes, limits and errors are in
-[docs/confluence-sandbox-2026-10-29.md](docs/confluence-sandbox-2026-10-29.md).
+[docs/confluence-sandbox-2026-10-29.md](docs/confluence-sandbox-2026-10-29.md). A page's Markdown body is
+what the server renders: headings as `##`, tables as pipe tables, bold runs glued to their text
+(`**Label **text`), struck fragments in `~~`; `--section` and the helpers below read it as it is.
+
+**Page anatomy (0.1.9).** `asi_hopper.model.pagetext` is standard library only and knows Markdown, not what
+a page is about. `sections(markdown)` gives `Section(level, heading, anchor, start, end, text)` with a
+`sha256` over the text (the text before the first heading is a section of level 0); `find_section(sections,
+heading)` picks one by heading, equal first, then containing; `heading_anchor(heading)` is the cloud
+editor's anchor (`Context Table` gives `#Context-Table`). `tables(text)` gives `Table(header, rows, start,
+end)` with stripped cells, `\|` unescaped, short rows padded, long rows folded into the last cell.
+`links(text)` gives `Link(label, url, page_id)` with the Confluence page id when the URL names one.
+`strike(text)` returns the text without `~~` and whether any part was struck; `bold_runs(text)` the labels
+inside `**...**`; `split_on_bold(text)` the `(label, following text)` pairs a cell written as
+`**A **one *[x]***B **two` splits into. These are what a consumer builds a page reader on: it cites a
+section by heading, anchor URL and hash, and the hash is in the bundle.
 
 ## Evidence
 
@@ -243,8 +273,9 @@ Jira using the manifest's JQL. `evidence/open-tickets-2026-10-27/` is the first 
 written by `snapshot` on 2026-10-27 after the first OAuth sign-in and verified against live Jira.
 
 Since 0.1.8 a Confluence bundle (`confluence snapshot`) holds `pages.json` (records and comments, no
-bodies), `pages/<id>.md` (one Markdown body per page, byte for byte), `pages.csv`, `pages.md` and a
-`manifest.json` whose `kind` is `confluence` and whose `source` is the page ids, the page tree or the CQL
+bodies; since 0.1.9 each entry's `sections` with heading, anchor, chars and SHA-256), `pages/<id>.md` (one
+Markdown body per page, byte for byte), `pages.csv`, `pages.md` and a `manifest.json` whose `kind` is
+`confluence` and whose `source` is the page ids, the page tree or the CQL
 it covered. `verify` recomputes every hash the manifest lists; `diff` compares two page bundles by title,
 status, version, updated, parent, body hash and comment count, or one bundle against live. The first one,
 `evidence/locator-safety-function-stpa-2026-10-29/`, lives on the owner's machine and is git-ignored: the page
@@ -260,7 +291,8 @@ src/asi_hopper/
   errors.py           HopperError and its subclasses (ConfigError, AuthRequired, NotRecorded, ...)
   version.py          __version__ and RECORD_VERSION
   model/              records (frozen dataclasses) and normalise (raw payload -> record);
-                      confluence (Space, PageRef, PageRecord, PageComment and their normalisers)
+                      confluence (Space, PageRef, PageRecord, PageComment and their normalisers);
+                      pagetext (sections, tables, links, bold runs of a Markdown body)
   adf/                ADF <-> Markdown
   gateway/            JiraGateway protocol, JiraApi and ConfluenceApi (every tool call in one place),
                       ConfluenceWriteSide (the closed write contract), McpGateway (OAuth, background
@@ -285,7 +317,8 @@ Every test runs against `tests/fixtures` through `ReplayGateway`; `tests/conftes
 `test_commands.py` (every verb), `test_evidence.py` (bundles, verify, diff), `test_cli.py` (exit
 codes), `test_gateway.py` (the MCP gateway's reconnect, timeout and exception-group handling,
 with the serve loop stubbed), `test_confluence.py` (every Confluence action, the normalisers, the tool
-inventory, and the write contract refusing). Tests never read the developer's `hopper.toml`, environment, or keyring. Live smoke tests
+inventory, and the write contract refusing), `test_pagetext.py` (page anatomy on the synthetic fixture
+page and hand-written edge cases). Tests never read the developer's `hopper.toml`, environment, or keyring. Live smoke tests
 do not exist yet; run the CLI by hand after `auth login`.
 
 ## Functional-safety posture

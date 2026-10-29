@@ -58,6 +58,36 @@ def test_page_in_every_body_format(hopper: Hopper) -> None:
     assert not bad.ok and "must be one of" in bad.errors[0]
 
 
+def test_page_sections_and_one_section(hopper: Hopper) -> None:
+    listing = hopper.execute("confluence", action="page", target=PAGE, sections=True)
+    assert listing.ok and [s["heading"] for s in listing.data] == [
+        "",
+        "Losses and Hazards",
+        "Control Structure",
+        "Context Table",
+        "Loss Scenarios",
+    ]
+    keys = {"heading", "anchor", "anchor_url", "level", "chars", "sha256"}
+    assert all(set(s) == keys for s in listing.data) and [s["level"] for s in listing.data] == [0, 2, 2, 2, 2]
+    context = listing.data[3]
+    assert context["anchor"] == "Context-Table" and len(context["sha256"]) == 64 and context["chars"] > 0
+    assert context["anchor_url"] == f"{SITE}/wiki/pages/viewpage.action?pageId={PAGE}#Context-Table"
+    assert listing.data[0]["anchor_url"] == f"{SITE}/wiki/pages/viewpage.action?pageId={PAGE}"  # the preamble
+
+    one = hopper.execute("confluence", action="page", target=PAGE, section="context table")  # equal, any case
+    assert one.ok and set(one.data) == keys | {"text"} and one.data["heading"] == "Context Table"
+    assert one.data["text"].startswith("| **Controller**") and one.data["sha256"] == context["sha256"]
+    contains = hopper.execute("confluence", action="page", target=PAGE, section="Hazards")  # else: containing
+    assert contains.ok and contains.data["heading"] == "Losses and Hazards" and "H1 - " in contains.data["text"]
+
+    miss = hopper.execute("confluence", action="page", target=PAGE, section="Appendix")
+    assert not miss.ok and miss.data is None
+    assert miss.errors[0].startswith(f"confluence page {PAGE}: no section 'Appendix'; headings present: ")
+    assert "'Losses and Hazards', 'Control Structure', 'Context Table', 'Loss Scenarios'" in miss.errors[0]
+    adf = hopper.execute("confluence", action="page", target=PAGE, format="adf", sections=True)
+    assert not adf.ok and "markdown body, not adf" in adf.errors[0]
+
+
 def test_children_search_and_comments(hopper: Hopper) -> None:
     kids = hopper.execute("confluence", action="children", target=PAGE, limit=5)
     assert kids.ok and [k["title"] for k in kids.data] == [

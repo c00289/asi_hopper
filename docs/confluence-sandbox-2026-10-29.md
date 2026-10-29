@@ -120,6 +120,7 @@ sentence it is anchored on (`selection`), its `resolution` and a markdown `body`
 | `confluence spaces [KEYS]` | `ConfluenceService.spaces(keys, limit)` | `Space` |
 | `confluence pages SPACE [--all] [--max N]` | `pages(space, ...)` (key or id) | `PageRef` |
 | `confluence page ID [--format markdown/adf/html] [--raw]` | `page(id, content_format)` | `PageRecord` (`to_dict`, `to_row`) |
+| `confluence page ID --section "Heading"` \| `--sections` (0.1.9) | `page(id)` then `PageRecord.sections()` (`model/pagetext.py`) | one section (heading, anchor, anchor_url, level, text, sha256), or the list without text |
 | `confluence children ID [--depth 1-10] [--all]` | `children(id, depth, ...)` | `PageRef` |
 | `confluence search [CQL] [--space KEY] [--all] [--max N]` | `search(cql, space, ...)` | `PageRef` |
 | `confluence comments ID [--kind footer/inline/all] [--replies]` | `comments(id, kind, replies)` | `PageComment` |

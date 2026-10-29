@@ -11,6 +11,8 @@ from dataclasses import asdict, dataclass, field
 from typing import Any, ClassVar
 from urllib.parse import parse_qs, urlparse
 
+from .pagetext import Section, heading_anchor, sections
+
 BODY_FORMATS = ("markdown", "adf", "html")
 COMMENT_KINDS = ("footer", "inline")
 
@@ -100,6 +102,20 @@ class PageRecord:
 
     def to_row(self) -> dict[str, Any]:
         return {name: getattr(self, name) for name in self.ROW_FIELDS}
+
+    def sections(self) -> list[Section]:
+        """The page's sections (``model.pagetext.sections``) for a Markdown body; empty for any other body."""
+        if self.body_format != "markdown" or not isinstance(self.body, str):
+            return []
+        return sections(self.body)
+
+    def anchor_url(self, heading: str) -> str:
+        """The page URL with the heading's anchor, the link a citation uses to point at one section.
+
+        The text before the first heading has no anchor: its URL is the page's.
+        """
+        anchor = heading_anchor(heading)
+        return f"{self.url}#{anchor}" if anchor else self.url
 
 
 # ----------------------------------------------------------------------------- normalisers

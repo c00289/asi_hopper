@@ -10,6 +10,43 @@ All notable changes to ASI Hopper are recorded here. The format follows
 - 0.2.0: `run steps.jsonl`, `serve --mcp`, `serve --http`; dewey and kletz `jira sync` land in
   those repos; live read smoke tests behind `ASI_HOPPER_LIVE=1`.
 
+## [0.1.9] - 2026-10-29
+
+The anatomy of a page: Phase C of `docs/confluence-integration-plan.md`. Generic helpers over the Markdown
+the Remote MCP Server renders, so that a consumer can cite a part of a page without parsing Markdown itself.
+No knowledge of what a page is about enters Hopper.
+
+### Added
+- `asi_hopper.model.pagetext`, standard library only, frozen dataclasses: `sections(markdown)` splits a body
+  on its ATX headings into `Section(level, heading, anchor, start, end, text)` with a `sha256` over the text
+  (the text before the first heading is a section of level 0; headings inside code fences are not headings);
+  `find_section(sections, heading)` picks one, equal first and then containing, case-insensitively;
+  `heading_anchor(heading)` is the cloud editor's anchor (`Context Table` gives `Context-Table`);
+  `tables(text)` reads GitHub pipe tables into `Table(header, rows, start, end)` with stripped cells, `\|`
+  unescaped, short rows padded and long rows folded into the last cell; `links(text)` gives
+  `Link(label, url, page_id)` with the Confluence page id from `pageId=` or `/pages/<id>`; `strike(text)`,
+  `bold_runs(text)` and `split_on_bold(text)` read a cell whose bold labels are glued to their text
+  (`**A **one *[x]***B **two` gives `[("A", "one *[x]*"), ("B", "two")]`). Exported from `asi_hopper.model`
+  (the link record as `PageLink`, since `Link` is the Jira issue link).
+- `PageRecord.sections()` (empty for an ADF or HTML body) and `PageRecord.anchor_url(heading)`.
+- `confluence page <id> --section "Context Table"` returns that one section (heading, anchor, anchor_url,
+  level, text, sha256); a miss is an error that lists the headings present. `--sections` lists every section
+  without its text (heading, anchor, anchor_url, level, chars, sha256). Both need the Markdown body.
+
+### Changed
+- Every `pages.json` entry of a Confluence bundle carries `sections: [{heading, anchor, sha256, chars}]`
+  (an empty list for a non-Markdown body), so a citation can name a section hash as well as the body hash.
+  `record_version` stays 1 (a new key), the compared fields of `diff` are unchanged, `pages.csv` and
+  `pages.md` are unchanged; a bundle written by 0.1.8 still verifies and diffs.
+
+### Tests
+- `tests/test_pagetext.py` on the synthetic fixture page (its five sections with anchors and stable hashes,
+  the two tables with their widths and row counts, the escaped pipe, the padded row, the three links with
+  page ids, the struck cell, `split_on_bold` on the first context cell) and by hand (no headings, CRLF,
+  code fences, closing hashes, a table without body rows, nested bold inside italics, the `***` boundary).
+  `test_confluence.py` covers `--section` hit by equality and by containment, a miss, `--sections`, and the
+  refusal on an ADF body; `test_evidence.py` checks the `sections` of every entry against the body files.
+
 ## [0.1.8] - 2026-10-29
 
 Confluence evidence bundles. The owner confirmed that Confluence lives in Hopper, read only, and asked for
@@ -259,7 +296,8 @@ Design only.
 - `docs/proposal.md`, `README.md`, `hopper.example.toml`, `.gitignore`, `.python-version`,
   and `evidence/open-tickets-2026-10-27/` (format preview pulled through the connector).
 
-[Unreleased]: https://example.invalid/asi-hopper/compare/v0.1.8...HEAD
+[Unreleased]: https://example.invalid/asi-hopper/compare/v0.1.9...HEAD
+[0.1.9]: https://example.invalid/asi-hopper/compare/v0.1.8...v0.1.9
 [0.1.8]: https://example.invalid/asi-hopper/compare/v0.1.7...v0.1.8
 [0.1.7]: https://example.invalid/asi-hopper/compare/v0.1.6...v0.1.7
 [0.1.6]: https://example.invalid/asi-hopper/compare/v0.1.5...v0.1.6

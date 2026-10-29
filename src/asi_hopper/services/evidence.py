@@ -6,8 +6,9 @@ Two bundle kinds share one folder layout and one manifest shape:
 
 Every hashed file is written with LF line endings on every platform, so a bundle hashes the same wherever
 it is taken or checked; the CSVs are Excel's (CRLF rows) and are not hashed.
-- ``confluence``: ``pages.json`` (records without bodies, with comments), one ``pages/<id>.md`` per page
-  holding the Markdown body byte for byte, ``pages.csv``, ``pages.md``, ``manifest.json``.
+- ``confluence``: ``pages.json`` (records without bodies, with comments and, since 0.1.9, the sections of a
+  Markdown body with their hashes), one ``pages/<id>.md`` per page holding the Markdown body byte for byte,
+  ``pages.csv``, ``pages.md``, ``manifest.json``.
 
 ``manifest.json`` names the kind, the source (JQL, or page ids / a page tree / a CQL), the account, the
 time, every file with its SHA-256, and for Confluence every page with its version and body hash. ``verify``
@@ -275,6 +276,9 @@ class EvidenceService:
         entry["body_file"] = f"{PAGES_DIR}/{record.id}.md"
         entry["body_sha256"] = _sha256_text(body)
         entry["body_chars"] = len(body)
+        entry["sections"] = [
+            {"heading": s.heading, "anchor": s.anchor, "sha256": s.sha256, "chars": s.chars} for s in record.sections()
+        ]
         entry["comments"] = []
         if comments:
             found = self.confluence.comments(record.id, kind="all", limit=LIST_LIMIT, replies=True)

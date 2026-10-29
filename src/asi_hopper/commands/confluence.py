@@ -18,7 +18,8 @@ from ..gateway.base import (
     LIST_TOOLS,
     READ_TOOLS,
 )
-from ..model.confluence import BODY_FORMATS, COMMENT_KINDS
+from ..model.confluence import BODY_FORMATS, COMMENT_KINDS, PageRecord
+from ..model.pagetext import Section, find_section
 from ..services.confluence import DEFAULT_CQL, PAGE_SIZE
 from ..services.evidence import PageSource
 from .base import Argument, Command, Context, Result
@@ -63,6 +64,18 @@ class Confluence(Command):
         Argument("replies", "comments: include each comment's replies", flag=True, type="bool", default=False),
         Argument("raw", "page: include the raw payload", flag=True, type="bool", default=False),
         Argument(
+            "section",
+            "page: one section by heading (equal, case-insensitive; else the first heading containing the text)",
+            flag=True,
+        ),
+        Argument(
+            "sections",
+            "page: list the sections (heading, anchor, level, chars, sha256) without their text",
+            flag=True,
+            type="bool",
+            default=False,
+        ),
+        Argument(
             "out", "snapshot: directory to write under (default: evidence_dir from config)", flag=True, type="path"
         ),
         Argument("name", "snapshot: folder name (default: <slug>-<date>)", flag=True),
@@ -98,6 +111,8 @@ class Confluence(Command):
             return Result.success([asdict(r) for r in refs])
         if action == "page":
             record = svc.page(target, content_format=args.get("format") or "markdown")
+            if args.get("section") or args.get("sections"):
+                return _page_sections(record, args.get("section"))
             return Result.success(record.to_dict(include_raw=bool(args.get("raw"))))
         if action == "children":
             refs = svc.children(target, depth=int(args.get("depth") or 1), limit=limit, all_pages=bool(args.get("all")))
@@ -115,6 +130,36 @@ class Confluence(Command):
         if kind not in COMMENT_KINDS:
             raise ValidationError(f"confluence replies: --kind must be one of {', '.join(COMMENT_KINDS)}")
         return Result.success([asdict(c) for c in svc.replies(target, kind, limit=limit)])
+
+
+def _section_entry(record: PageRecord, section: Section, *, text: bool) -> dict[str, Any]:
+    entry: dict[str, Any] = {
+        "heading": section.heading,
+        "anchor": section.anchor,
+        "anchor_url": record.anchor_url(section.heading),
+        "level": section.level,
+        "chars": section.chars,
+        "sha256": section.sha256,
+    }
+    if text:
+        entry["text"] = section.text
+    return entry
+
+
+def _page_sections(record: PageRecord, heading: str | None) -> Result:
+    """``--sections``: every section without its text; ``--section H``: the one section, text included."""
+    found = record.sections()
+    if record.body_format != "markdown":
+        return Result.failure(
+            f"confluence page {record.id}: sections are read from the markdown body, not {record.body_format}"
+        )
+    if not heading:
+        return Result.success([_section_entry(record, s, text=False) for s in found])
+    section = find_section(found, heading)
+    if section is None:
+        present = ", ".join(repr(s.heading) for s in found if s.heading) or "none"
+        return Result.failure(f"confluence page {record.id}: no section {heading!r}; headings present: {present}")
+    return Result.success(_section_entry(record, section, text=True))
 
 
 # Jira tools that write; the server does not flag them, so the inventory does (Hopper calls none).
