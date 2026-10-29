@@ -1,0 +1,22 @@
+{
+  "id": "5779062840",
+  "type": "page",
+  "status": "current",
+  "title": "Proximity Monitor Risk Scenarios",
+  "spaceId": "5791547559",
+  "parentId": "399343803",
+  "parentType": "page",
+  "authorId": "557058:00000000-0000-4000-8000-000000000002",
+  "ownerId": "557058:00000000-0000-4000-8000-000000000002",
+  "lastOwnerId": null,
+  "createdAt": "2021-08-17T15:49:37.306Z",
+  "version": {
+    "number": 1,
+    "message": "",
+    "minorEdit": false,
+    "authorId": "557058:00000000-0000-4000-8000-000000000002",
+    "createdAt": "2021-08-17T15:54:10.436Z",
+    "ncsStepVersion": null
+  },
+  "body": "\n\nA defect found in an earlier release was fixed in the next one.\n\n\nFollowing distance monitor versus proximity monitor\n\nHow the proximity monitor handles a loss of communications\n"
+}

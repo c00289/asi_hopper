@@ -25,3 +25,7 @@ apply-report*.json
 # OS
 Thumbs.db
 desktop.ini
+
+# Confluence evidence bundles hold page text. The pages are ASI-internal and this repository is public, so a
+# Confluence bundle stays on the machine that took it (or goes to asi_standards, private). Jira bundles are kept.
+evidence/locator-safety-function-stpa-2026-10-29/

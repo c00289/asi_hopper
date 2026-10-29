@@ -1,11 +1,11 @@
 # Integrating asi_hopper (read only) into asi_dewey and asi_kletz
 
-**Status:** Plan 0.1, 2026-10-27
+**Status:** Plan 0.2, 2026-10-29 (0.1 of 2026-10-27 plus the Confluence surface of Hopper 0.1.7 and 0.1.8)
 **Family context:** [ASI_FUSA_TOOLS.md](../../asi_fusa_tools/ASI_FUSA_TOOLS.md), the charter: the ontology's
 gateway tier, the edges table, and the plans index, where this plan is listed.
-**Scope:** read only. Nothing here writes to Jira. Each sibling only writes to its own SQLite.
+**Scope:** read only. Nothing here writes to Jira or Confluence. Each sibling only writes to its own SQLite.
 
-## 0. What Hopper already provides (0.1.0)
+## 0. What Hopper already provides (0.1.0; Confluence since 0.1.7)
 
 ```python
 from asi_hopper import Hopper
@@ -24,6 +24,20 @@ with Hopper(interactive=False) as hopper:          # reads ./hopper.toml or $ASI
 Hopper is offline-testable: `Hopper(gateway="replay", fixtures="<asi_hopper>/tests/fixtures")`
 returns the recorded HWL data, so each sibling's tests can cover its `jira` verbs without a
 session or a network.
+
+Confluence, read only, since 0.1.7 (the same `Hopper`, the same session):
+
+```python
+refs = hopper.cql("title ~ 'STPA'", space="STPA")            # list[PageRef]: id, title, url, excerpt
+page = hopper.page("399343803")                               # PageRecord: markdown body, version, updated
+hopper.execute("confluence", action="comments", target="399343803")
+manifest = hopper.evidence.snapshot_pages(                    # 0.1.8: a dated, hashed page bundle
+    PageSource.parse("399343803", depth=1), out_dir, comments=True
+)
+```
+
+`PageSource` is `asi_hopper.services.evidence.PageSource`. The replay fixtures cover the STPA space,
+page 399343803 with its two children and their comments.
 
 ## 1. Dependency
 
@@ -104,13 +118,25 @@ Add `jira_key` (TEXT, optional) so a deliverable can name the Jira issue that tr
 - A column "Jira" showing `jira_status` with a tooltip of the Jira summary; the cell opens the
   issue URL.
 
+### 3.4 Confluence (after 3.1 to 3.3; decided 2026-10-29)
+
+- `safety_plan_row` gains `confluence_page_id` (TEXT, optional) and `confluence_url` (TEXT, optional):
+  the page that backs a deliverable, found once with `hopper.cql(...)` and kept on the row.
+- `confluence link <row-id> <page-id>` sets them after `hopper.page(id)` confirms the page is visible.
+- `confluence evidence [--rows ...]` calls `hopper.evidence.snapshot_pages(PageSource(ids=...),
+  <kletz evidence dir>, comments=True)` for the linked pages and records the manifest's folder and
+  `taken_at` on each row; a later `asi-hopper diff <bundle>` shows what changed since the review.
+- No list refresh calls `hopper.page()`: every page carries its body. The matrix shows the stored
+  `confluence_url` only.
+
 ## 4. Shared conventions
 
 - Both siblings call Hopper with `interactive=False` and `actor="hopper"` when writing to their
   own database.
 - Both read `ASI_HOPPER_CONFIG` first; neither ships a `hopper.toml` of its own.
-- Both can call `hopper.evidence.snapshot(jql, out_dir, title=...)` to attach a dated bundle to
-  a review; the bundle lives under the sibling's evidence folder.
+- Both can call `hopper.evidence.snapshot(jql, out_dir, title=...)` (Jira) or
+  `hopper.evidence.snapshot_pages(source, out_dir, ...)` (Confluence, 0.1.8) to attach a dated bundle
+  to a review; the bundle lives under the sibling's evidence folder, and `asi-hopper verify` checks it.
 - Neither sibling imports anything from `asi_hopper.gateway`; the surface is `Hopper`,
   `IssueRecord`, `Result`, and the two error classes.
 
@@ -121,3 +147,5 @@ Add `jira_key` (TEXT, optional) so a deliverable can name the Jira issue that tr
 3. asi_kletz `jira_key`, `jira link`, `jira reconcile` with tests (half a day).
 4. One live run of each against `HWL` after `asi-hopper auth login`; record the result in each
    CHANGELOG.
+5. asi_kletz Confluence columns, `confluence link` and `confluence evidence` (section 3.4) with
+   tests on the replay fixtures (half a day), then one live run against the STPA space.

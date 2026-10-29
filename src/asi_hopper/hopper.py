@@ -55,9 +55,11 @@ class Hopper:
         self.api = JiraApi(self.gateway, self.config.cloud)
         self.issues = IssueService(self.api, self.config.site)
         self.meta = MetaService(self.api, self.config.site)
-        self.evidence = EvidenceService(self.issues, self.config.site, _LazyAccount(self.meta))
         self.confluence_api = ConfluenceApi(self.gateway, self.config.cloud)
         self.confluence = ConfluenceService(self.confluence_api, self.config.site)
+        self.evidence = EvidenceService(
+            self.issues, self.config.site, _LazyAccount(self.meta), confluence=self.confluence
+        )
         self.dispatcher = Dispatcher(self)
 
     # -- the command path -----------------------------------------------------------------

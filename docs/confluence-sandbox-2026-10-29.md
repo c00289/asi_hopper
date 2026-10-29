@@ -124,6 +124,7 @@ sentence it is anchored on (`selection`), its `resolution` and a markdown `body`
 | `confluence search [CQL] [--space KEY] [--all] [--max N]` | `search(cql, space, ...)` | `PageRef` |
 | `confluence comments ID [--kind footer/inline/all] [--replies]` | `comments(id, kind, replies)` | `PageComment` |
 | `confluence replies ID --kind footer/inline` | `replies(id, kind)` | `PageComment` |
+| `confluence snapshot IDS \| ID --depth N \| CQL [--space] [--comments] [--out] [--name] [--title]` (0.1.8) | `EvidenceService.snapshot_pages(PageSource, out_dir)` | a bundle: `pages.json`, `pages/<id>.md`, `pages.csv`, `pages.md`, `manifest.json` |
 | `tools [--product] [--schema]` | gateway `LIST_TOOLS` | the inventory, classified |
 
 Python: `hopper.page(id)`, `hopper.cql(cql, space=...)`, `hopper.confluence.<method>`; every verb answers a
@@ -143,8 +144,8 @@ children, the default CQL (empty) and a space-scoped CQL, footer and inline comm
    backs a Safety Plan deliverable; keep `PageRef.id` and `PageRef.url` on the row; `hopper.page(id)` only
    on demand (a detail pane), never in a list refresh, because every page carries its body.
 2. **Evidence**: a `PageRecord` with `body_format = "markdown"` plus `version` and `updated` is a dated,
-   hashable statement of what a page said. A `snapshot`-style bundle for pages is a natural next step and
-   is not built.
+   hashable statement of what a page said. `confluence snapshot` (0.1.8) writes such bundles: pages by id,
+   a page tree, or a CQL, with the Markdown bodies byte for byte and a manifest with every hash.
 3. **Do not** use `search` (Rovo) from a tool: it spends credits per call and is not scoped to the user.
 4. **Do not** rely on `getConfluenceSpaces` beyond 250 spaces: name the keys instead (`confluence spaces
    STPA,FST`), which is also what the key-to-id resolver does.
@@ -164,8 +165,8 @@ wants the exact selected text, which occurrence, and the total count of occurren
 
 ## 7. For the owner to decide
 
-- Whether Rovo `search` should be reachable at all (it is in the inventory, not in the adapter).
-- Whether the proposal's decision 6 ("Confluence: out of scope, permanently for this tool", 2026-10-27)
-  is superseded by this read-only surface living in Hopper; the proposal now carries a dated note saying
-  so, pending the owner's word.
-- Whether a Confluence evidence bundle (section 5, item 2) is wanted.
+- ~~Whether Rovo `search` should be reachable at all.~~ Decided 2026-10-29: it stays in the inventory and out of the adapter.
+- ~~Whether the proposal's decision 6 ("Confluence: out of scope, permanently for this tool", 2026-10-27)
+  is superseded by this read-only surface living in Hopper.~~ Superseded by the owner on 2026-10-29:
+  Confluence is in play, read only, inside Hopper (proposal decision 6, revised).
+- ~~Whether a Confluence evidence bundle (section 5, item 2) is wanted.~~ Wanted; shipped as `confluence snapshot` in 0.1.8.

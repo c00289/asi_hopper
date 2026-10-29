@@ -186,11 +186,11 @@ class Snapshot(Command):
 @register_command
 class Diff(Command):
     verb = "diff"
-    help = "Compare two snapshots, or one snapshot against live Jira"
+    help = "Compare two evidence bundles (Jira or Confluence), or one bundle against live"
     arguments = (
-        Argument("before", "snapshot folder or issues.json", required=True, type="path"),
-        Argument("after", "second snapshot; omit to compare against live Jira", type="path"),
-        Argument("jql", "JQL for the live side (default: the manifest's)", flag=True),
+        Argument("before", "bundle folder (or its issues.json / pages.json)", required=True, type="path"),
+        Argument("after", "second bundle of the same kind; omit to compare against live", type="path"),
+        Argument("jql", "Jira bundles: JQL for the live side (default: the manifest's)", flag=True),
     )
 
     def run(self, ctx: Context, args: dict[str, Any]) -> Result:
@@ -200,12 +200,16 @@ class Diff(Command):
 @register_command
 class Verify(Command):
     verb = "verify"
-    help = "Check a snapshot's issues.json against the SHA-256 in its manifest"
-    arguments = (Argument("snapshot", "snapshot folder", required=True, type="path"),)
+    help = "Recompute every SHA-256 an evidence bundle's manifest lists (Jira or Confluence)"
+    arguments = (Argument("snapshot", "bundle folder", required=True, type="path"),)
 
     def run(self, ctx: Context, args: dict[str, Any]) -> Result:
         report = ctx.hopper.evidence.verify(args["snapshot"])
-        return Result(report["intact"], report, [] if report["intact"] else ["issues.json does not match its manifest"])
+        broken = [f["file"] for f in report["files"] if not f["intact"]]
+        errors = [f"{len(broken)} file(s) do not match the manifest: {', '.join(broken)}"] if broken else []
+        if not report["files"]:
+            errors = ["the manifest lists no files"]
+        return Result(report["intact"], report, errors)
 
 
 @register_command

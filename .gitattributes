@@ -1,0 +1,4 @@
+# Evidence bundles are hashed byte for byte: git must never rewrite their line endings on checkout
+# (core.autocrlf is on by default on Windows). Everything else follows the usual text rules; the
+# replay fixtures are parsed as JSON, so normalising them is harmless.
+evidence/** -text

@@ -1,0 +1,143 @@
+{
+  "results": [
+    {
+      "id": "5351964709",
+      "status": "current",
+      "title": "Re: Locator Safety Function STPA",
+      "authorId": "557058:00000000-0000-4000-8000-000000000002",
+      "createdAt": "2021-04-26T17:12:49.235Z",
+      "body": "We could add a requirement for a second, independent sensing path.",
+      "resolutionStatus": "open",
+      "properties": {
+        "inlineMarkerRef": "bd316e76-c14b-4345-979d-5b57bdbb7d88",
+        "inlineOriginalSelection": "Feedback data does not reflect the world",
+        "inline-marker-ref": "bd316e76-c14b-4345-979d-5b57bdbb7d88",
+        "inline-original-selection": "Feedback data does not reflect the world"
+      },
+      "replies": [],
+      "hasReplies": false
+    },
+    {
+      "id": "5331059811",
+      "status": "current",
+      "title": "Re: Locator Safety Function STPA",
+      "authorId": "557058:00000000-0000-4000-8000-000000000002",
+      "createdAt": "2021-04-26T17:16:25.857Z",
+      "body": "Is the radius broadcast rate specified anywhere?",
+      "resolutionStatus": "open",
+      "properties": {
+        "inlineMarkerRef": "19f8d051-d843-4c0d-8cdc-f700255e2dcc",
+        "inlineOriginalSelection": "radius is being broadcast",
+        "inline-marker-ref": "19f8d051-d843-4c0d-8cdc-f700255e2dcc",
+        "inline-original-selection": "radius is being broadcast"
+      },
+      "replies": [],
+      "hasReplies": false
+    },
+    {
+      "id": "5806555782",
+      "status": "current",
+      "title": "Re: Locator Safety Function STPA",
+      "authorId": "557058:00000000-0000-4000-8000-000000000002",
+      "createdAt": "2021-08-31T19:52:21.417Z",
+      "body": "Clarify which controller owns this action.",
+      "resolutionStatus": "open",
+      "properties": {
+        "inlineMarkerRef": "6ee2900f-f95e-4526-94cb-5c254df9331a",
+        "inlineOriginalSelection": "Soft Stop",
+        "inline-marker-ref": "6ee2900f-f95e-4526-94cb-5c254df9331a",
+        "inline-original-selection": "Soft Stop"
+      },
+      "replies": [],
+      "hasReplies": false
+    },
+    {
+      "id": "5806555792",
+      "status": "current",
+      "title": "Re: Locator Safety Function STPA",
+      "authorId": "557058:00000000-0000-4000-8000-000000000002",
+      "createdAt": "2021-08-31T19:52:53.135Z",
+      "body": "This duplicates the planner row.",
+      "resolutionStatus": "open",
+      "properties": {
+        "inlineMarkerRef": "b38dea0f-7c95-41a2-8f09-3c427cdc9bd6",
+        "inlineOriginalSelection": "guiding the vehicle into another machine",
+        "inline-marker-ref": "b38dea0f-7c95-41a2-8f09-3c427cdc9bd6",
+        "inline-original-selection": "guiding the vehicle into another machine"
+      },
+      "replies": [],
+      "hasReplies": false
+    },
+    {
+      "id": "5808095340",
+      "status": "current",
+      "title": "Re: Locator Safety Function STPA",
+      "authorId": "557058:00000000-0000-4000-8000-000000000002",
+      "createdAt": "2021-09-01T18:55:16.497Z",
+      "body": "Needs a timing budget.",
+      "resolutionStatus": "open",
+      "properties": {
+        "inlineMarkerRef": "8daaef3c-4cf3-4155-bb1d-5437579d84da",
+        "inlineOriginalSelection": "Too late, after entering the radius",
+        "inline-marker-ref": "8daaef3c-4cf3-4155-bb1d-5437579d84da",
+        "inline-original-selection": "Too late, after entering the radius"
+      },
+      "replies": [],
+      "hasReplies": false
+    },
+    {
+      "id": "5808521357",
+      "status": "current",
+      "title": "Re: Locator Safety Function STPA",
+      "authorId": "557058:00000000-0000-4000-8000-000000000002",
+      "createdAt": "2021-09-01T19:11:38.646Z",
+      "body": "Agree; move to constraints.",
+      "resolutionStatus": "open",
+      "properties": {
+        "inlineMarkerRef": "837c64f2-fef1-40a9-bc4b-3e2d6a85a861",
+        "inlineOriginalSelection": "before the machine stop is achieved",
+        "inline-marker-ref": "837c64f2-fef1-40a9-bc4b-3e2d6a85a861",
+        "inline-original-selection": "before the machine stop is achieved"
+      },
+      "replies": [],
+      "hasReplies": false
+    },
+    {
+      "id": "5808193671",
+      "status": "current",
+      "title": "Re: Locator Safety Function STPA",
+      "authorId": "557058:00000000-0000-4000-8000-000000000002",
+      "createdAt": "2021-09-01T20:23:56.629Z",
+      "body": "Who measures the processing load?",
+      "resolutionStatus": "open",
+      "properties": {
+        "inlineMarkerRef": "e2414abc-4fc8-41ca-82da-e7d89a32e77f",
+        "inlineOriginalSelection": "Processing delays",
+        "inline-marker-ref": "e2414abc-4fc8-41ca-82da-e7d89a32e77f",
+        "inline-original-selection": "Processing delays"
+      },
+      "replies": [],
+      "hasReplies": false
+    },
+    {
+      "id": "5808226456",
+      "status": "current",
+      "title": "Re: Locator Safety Function STPA",
+      "authorId": "557058:00000000-0000-4000-8000-000000000002",
+      "createdAt": "2021-09-01T20:25:14.111Z",
+      "body": "Consider the map update rate here.",
+      "resolutionStatus": "open",
+      "properties": {
+        "inlineMarkerRef": "73cb6cbf-7675-487f-b673-d8ab827ab16d",
+        "inlineOriginalSelection": "not in the planner's map",
+        "inline-marker-ref": "73cb6cbf-7675-487f-b673-d8ab827ab16d",
+        "inline-original-selection": "not in the planner's map"
+      },
+      "replies": [],
+      "hasReplies": false
+    }
+  ],
+  "_links": {
+    "base": "https://asirobots.atlassian.net/wiki"
+  }
+}

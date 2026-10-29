@@ -1,0 +1,22 @@
+{
+  "id": "5763236170",
+  "type": "page",
+  "status": "current",
+  "title": "Low-precision GPS loss scenario details",
+  "spaceId": "5791547559",
+  "parentId": "399343803",
+  "parentType": "page",
+  "authorId": "557058:00000000-0000-4000-8000-000000000002",
+  "ownerId": "557058:00000000-0000-4000-8000-000000000002",
+  "lastOwnerId": null,
+  "createdAt": "2021-08-09T20:46:30.281Z",
+  "version": {
+    "number": 9,
+    "message": "",
+    "minorEdit": false,
+    "authorId": "557058:00000000-0000-4000-8000-000000000002",
+    "createdAt": "2021-09-13T13:28:47.933Z",
+    "ncsStepVersion": null
+  },
+  "body": "\n\n[Positioning reference A](https://example.invalid/reference/a)\n\n[Positioning reference B](https://example.invalid/reference/b)\n\n\n\n# Configurations from the field\n\n| **Vehicle** | **Length (m)** | **Bounding Box Length (m)** | **Width (m)** | **Bounding Box Width (m)** |\n| --- | --- | --- | --- | --- |\n| Type A | 10 | 12 | 4 | 10 |\n| Type B | 11.5 | 12 | 6.6 | 10 |\n"
+}

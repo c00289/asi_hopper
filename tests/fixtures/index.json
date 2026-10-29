@@ -425,5 +425,111 @@
     "file": "getConfluenceSpaces_STPA.json",
     "recorded_at": "2026-10-29T16:52:47+00:00",
     "source": "asi-hopper --record against the live site (OAuth session of the owner) (derived: the STPA entry of the STPA,FST lookup)"
+  },
+  {
+    "tool": "getConfluencePageDescendants",
+    "args": {
+      "pageId": "399343803",
+      "limit": 250,
+      "depth": 1
+    },
+    "file": "getConfluencePageDescendants_399343803.json",
+    "recorded_at": "2026-10-29T20:25:47+00:00",
+    "source": "asi-hopper --record against the live site (OAuth session of the owner) (same payload as limit 5; two children)"
+  },
+  {
+    "tool": "getConfluencePage",
+    "args": {
+      "pageId": "5763236170",
+      "contentFormat": "markdown"
+    },
+    "file": "getConfluencePage_5763236170.json",
+    "recorded_at": "2026-10-29T20:25:48+00:00",
+    "source": "asi-hopper --record against the live site (OAuth session of the owner)"
+  },
+  {
+    "tool": "getConfluencePage",
+    "args": {
+      "pageId": "5779062840",
+      "contentFormat": "markdown"
+    },
+    "file": "getConfluencePage_5779062840.json",
+    "recorded_at": "2026-10-29T20:25:49+00:00",
+    "source": "asi-hopper --record against the live site (OAuth session of the owner)"
+  },
+  {
+    "tool": "getConfluencePageFooterComments",
+    "args": {
+      "pageId": "399343803",
+      "limit": 250,
+      "contentFormat": "markdown",
+      "includeReplies": true
+    },
+    "file": "getConfluencePageFooterComments_399343803_replies.json",
+    "recorded_at": "2026-10-29T20:25:49+00:00",
+    "source": "asi-hopper --record against the live site (OAuth session of the owner)"
+  },
+  {
+    "tool": "getConfluencePageInlineComments",
+    "args": {
+      "pageId": "399343803",
+      "limit": 250,
+      "contentFormat": "markdown",
+      "resolutionStatus": "open",
+      "includeReplies": true
+    },
+    "file": "getConfluencePageInlineComments_399343803_replies.json",
+    "recorded_at": "2026-10-29T20:25:50+00:00",
+    "source": "asi-hopper --record against the live site (OAuth session of the owner)"
+  },
+  {
+    "tool": "getConfluencePageFooterComments",
+    "args": {
+      "pageId": "5763236170",
+      "limit": 250,
+      "contentFormat": "markdown",
+      "includeReplies": true
+    },
+    "file": "getConfluencePageFooterComments_5763236170.json",
+    "recorded_at": "2026-10-29T20:25:50+00:00",
+    "source": "asi-hopper --record against the live site (OAuth session of the owner)"
+  },
+  {
+    "tool": "getConfluencePageInlineComments",
+    "args": {
+      "pageId": "5763236170",
+      "limit": 250,
+      "contentFormat": "markdown",
+      "resolutionStatus": "open",
+      "includeReplies": true
+    },
+    "file": "getConfluencePageInlineComments_5763236170.json",
+    "recorded_at": "2026-10-29T20:25:51+00:00",
+    "source": "asi-hopper --record against the live site (OAuth session of the owner)"
+  },
+  {
+    "tool": "getConfluencePageFooterComments",
+    "args": {
+      "pageId": "5779062840",
+      "limit": 250,
+      "contentFormat": "markdown",
+      "includeReplies": true
+    },
+    "file": "getConfluencePageFooterComments_5779062840.json",
+    "recorded_at": "2026-10-29T20:25:51+00:00",
+    "source": "asi-hopper --record against the live site (OAuth session of the owner)"
+  },
+  {
+    "tool": "getConfluencePageInlineComments",
+    "args": {
+      "pageId": "5779062840",
+      "limit": 250,
+      "contentFormat": "markdown",
+      "resolutionStatus": "open",
+      "includeReplies": true
+    },
+    "file": "getConfluencePageInlineComments_5779062840.json",
+    "recorded_at": "2026-10-29T20:25:52+00:00",
+    "source": "asi-hopper --record against the live site (OAuth session of the owner)"
   }
 ]

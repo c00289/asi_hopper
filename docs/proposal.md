@@ -82,7 +82,7 @@ The connector is used *during the build* and *alongside* Hopper, never *inside* 
 |---|---|
 | A Jira Cloud client with a FuSa posture (rails, journal, evidence) | A Jira replacement or a mirror with its own truth |
 | A command vocabulary callable from CLI, Python, scripts, and an agent | A GUI (Jira already has one; the JIRA Live Data windows of asi_dewey and asi_kletz are fed by Hopper) |
-| The Jira door for asi_dewey and asi_kletz | A Confluence tool (possible later through the same gateway pattern, out of scope for v1) |
+| The Jira and, since 0.1.7, the Confluence door for asi_dewey and asi_kletz (both read only) | A Confluence editor: the write side is a closed contract, and Rovo search is not exposed |
 | Single-user, runs as the engineer's own Atlassian account | A shared service account or a server |
 
 ## 5. Architecture
@@ -416,11 +416,14 @@ decide them, and stand unless overruled.
    Jira status category (`new → open`, `indeterminate → in progress`, `done → done`);
    `blocked` only from an explicit Jira flag or label, never inferred. Sync runs in dewey with
    actor `hopper`.
-6. **Confluence: out of scope, permanently for this tool.** A Confluence door, if ever
-   wanted, is a separate sibling that reuses the gateway pattern, not a Hopper feature.
-   *2026-10-29:* the owner asked for a read-only Confluence sandbox "just like we did with jira"; it
-   shipped in Hopper 0.1.7 (`confluence` verb, `docs/confluence-sandbox-2026-10-29.md`), reads only,
-   write side closed. Whether this decision is formally superseded is the owner's call.
+6. **Confluence: in play, read only.** Superseded by the owner on 2026-10-29. The 2026-10-27 decision
+   was "out of scope, permanently; a separate sibling if ever wanted". On 2026-10-29 the owner asked
+   for a read-only sandbox "just like we did with jira"; it shipped as Hopper 0.1.7 (`confluence`
+   verb, `docs/confluence-sandbox-2026-10-29.md`) and the owner then confirmed that Confluence lives
+   in Hopper. The write side is closed the way the Jira one is (a contract, `ConfluenceWriteSide`,
+   whose only implementation refuses). Rovo `search` stays out of the adapter by the same decision:
+   it spends credits per call and is not scoped to the signed-in user. Confluence evidence bundles
+   (`confluence snapshot`, 0.1.8) come before the asi_kletz integration.
 
 ## 14. Status
 
@@ -451,6 +454,9 @@ the engineer has not run `asi-hopper auth login` yet.
 
 ## Revision history
 
+- 2026-10-29 Decision 6 superseded by the owner: Confluence is in play, read only, inside Hopper; Rovo
+  search stays out; evidence bundles for pages (0.1.8) precede the asi_kletz integration. Section 4
+  table updated.
 - 2026-10-29 Decision 6 carries a dated note: a read-only Confluence surface shipped in Hopper 0.1.7 at
   the owner's request; the write side stays closed. No other design change.
 - 2026-10-28 Wording sweep: decision 2, section 14 and this history say what the status line says:

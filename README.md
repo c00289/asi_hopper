@@ -4,7 +4,7 @@ One of the [ASI FuSa tools](https://github.com/c00289/c00289/blob/main/README.md
 
 A read-only, audited, replayable door into Jira, and since 0.1.7 into Confluence, for the Wheel Loader
 programme: a Python library, a command line, and a fixture-replay gateway so that siblings and tests
-never touch the network. Version **0.1.7**, alpha. Named after Grace Hopper, who built the first compiler
+never touch the network. Version **0.1.8**, alpha. Named after Grace Hopper, who built the first compiler
 so people could instruct a machine in their own words.
 
 The idea, in one sentence: Jira is the source of truth for the programme's work, Hopper is the
@@ -15,6 +15,16 @@ one way our tools and agents read it, and what it read on a given day can be pro
 > with OAuth 2.1 once, through the browser, and reads with your own account.
 > See [docs/proposal.md](docs/proposal.md) for the design. The write side is delayed indefinitely by owner
 > decision (2026-10-27): no sandbox will be requested and the question is closed.
+
+## What is in 0.1.8
+
+Confluence evidence bundles. `confluence snapshot <ids | id --depth N | cql> [--space KEY] [--comments]`
+writes `pages.json`, one `pages/<id>.md` per page (the Markdown body, byte for byte), `pages.csv`,
+`pages.md` and a `manifest.json` that names the source, the account, the time, every page's version and
+body hash, and the SHA-256 of every file. `verify` now checks every file a manifest lists, and `diff`
+compares two page bundles or one against live Confluence. The first real bundle is
+`evidence/locator-safety-function-stpa-2026-10-29/`, kept local and git-ignored (the page text is ASI-internal).
+The owner superseded proposal decision 6: Confluence is in play, read only, inside Hopper.
 
 ## What is in 0.1.7
 
@@ -158,6 +168,8 @@ asi-hopper confluence pages STPA --limit 10
 asi-hopper confluence page 399343803 --format markdown
 asi-hopper confluence search "title ~ 'STPA'" --space STPA
 asi-hopper confluence comments 399343803 --kind inline
+asi-hopper confluence snapshot 399343803 --depth 1 --comments   # since 0.1.8: a page tree as evidence
+asi-hopper verify evidence\locator-safety-function-stpa-2026-10-29
 asi-hopper tools --product confluence
 ```
 
@@ -229,6 +241,15 @@ site, account, time, JQL, keys, SHA-256 of `issues.json`). `verify` recomputes t
 `diff a b` lists added, removed, and changed keys and fields; `diff a` compares against live
 Jira using the manifest's JQL. `evidence/open-tickets-2026-10-27/` is the first real bundle,
 written by `snapshot` on 2026-10-27 after the first OAuth sign-in and verified against live Jira.
+
+Since 0.1.8 a Confluence bundle (`confluence snapshot`) holds `pages.json` (records and comments, no
+bodies), `pages/<id>.md` (one Markdown body per page, byte for byte), `pages.csv`, `pages.md` and a
+`manifest.json` whose `kind` is `confluence` and whose `source` is the page ids, the page tree or the CQL
+it covered. `verify` recomputes every hash the manifest lists; `diff` compares two page bundles by title,
+status, version, updated, parent, body hash and comment count, or one bundle against live. The first one,
+`evidence/locator-safety-function-stpa-2026-10-29/`, lives on the owner's machine and is git-ignored: the page
+text is ASI-internal and this repository is public. The Confluence fixtures under `tests/fixtures` carry
+synthetic page bodies and comments of the same shape for the same reason.
 
 ## Layout
 

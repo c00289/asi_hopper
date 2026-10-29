@@ -2,7 +2,8 @@
 
 ``confluence`` follows the ``auth`` precedent: one verb, an ``action`` positional, so the CLI reads
 ``asi-hopper confluence spaces``, ``confluence pages STPA``, ``confluence page 399343803``,
-``confluence search "<cql>"``, ``confluence comments 399343803``. No action writes.
+``confluence search "<cql>"``, ``confluence comments 399343803``, ``confluence snapshot 399343803 --depth 2``.
+No action writes to Confluence; ``snapshot`` writes an evidence bundle to the local evidence folder.
 """
 
 from __future__ import annotations
@@ -19,10 +20,11 @@ from ..gateway.base import (
 )
 from ..model.confluence import BODY_FORMATS, COMMENT_KINDS
 from ..services.confluence import DEFAULT_CQL, PAGE_SIZE
+from ..services.evidence import PageSource
 from .base import Argument, Command, Context, Result
 from .factory import register_command
 
-ACTIONS = ("spaces", "pages", "page", "children", "search", "comments", "replies")
+ACTIONS = ("spaces", "pages", "page", "children", "search", "comments", "replies", "snapshot")
 
 _TARGET_HELP = {
     "spaces": "space keys to look up (comma-separated); all visible spaces when omitted",
@@ -32,6 +34,7 @@ _TARGET_HELP = {
     "search": f'CQL; default "{DEFAULT_CQL}"',
     "comments": "page id",
     "replies": "comment id (needs --kind footer or inline)",
+    "snapshot": "page ids (comma-separated), one page id with --depth N (the tree below it), or a CQL (--space)",
 }
 
 
@@ -40,6 +43,7 @@ class Confluence(Command):
     verb = "confluence"
     help = (
         "Read Confluence: spaces | pages <space> | page <id> | children <id> | search [cql] | comments <id> | replies"
+        " | snapshot <ids | id --depth N | cql> (an evidence bundle with hashed Markdown bodies)"
     )
     arguments = (
         Argument("action", " | ".join(ACTIONS), required=True, choices=ACTIONS),
@@ -50,9 +54,26 @@ class Confluence(Command):
         Argument("space", "search: restrict the CQL to one space key", flag=True),
         Argument("format", "page: body format", flag=True, choices=BODY_FORMATS, default="markdown"),
         Argument("kind", "comments, replies: footer | inline (comments also: all)", flag=True, default=None),
-        Argument("depth", "children: levels below the page, 1-10", flag=True, type="int", default=1),
+        Argument(
+            "depth",
+            "children: levels below the page, 1-10 (default 1); snapshot: the tree below one page id",
+            flag=True,
+            type="int",
+        ),
         Argument("replies", "comments: include each comment's replies", flag=True, type="bool", default=False),
         Argument("raw", "page: include the raw payload", flag=True, type="bool", default=False),
+        Argument(
+            "out", "snapshot: directory to write under (default: evidence_dir from config)", flag=True, type="path"
+        ),
+        Argument("name", "snapshot: folder name (default: <slug>-<date>)", flag=True),
+        Argument("title", "snapshot: title for the readable view", flag=True),
+        Argument(
+            "comments",
+            "snapshot: include each page's footer and open inline comments",
+            flag=True,
+            type="bool",
+            default=False,
+        ),
     )
 
     def run(self, ctx: Context, args: dict[str, Any]) -> Result:
@@ -62,6 +83,13 @@ class Confluence(Command):
             raise ValidationError(f"confluence {action}: a target is required ({_TARGET_HELP[action]})")
         svc = ctx.hopper.confluence
         limit = int(args.get("limit") or PAGE_SIZE)
+        if action == "snapshot":
+            source = PageSource.parse(target, depth=int(args.get("depth") or 0), space=args.get("space"))
+            out = ctx.hopper.config.resolve(args.get("out") or ctx.hopper.config.evidence_dir)
+            manifest = ctx.hopper.evidence.snapshot_pages(
+                source, out, name=args.get("name"), comments=bool(args.get("comments")), title=args.get("title")
+            )
+            return Result.success(manifest)
         if action == "spaces":
             keys = [k.strip() for k in target.split(",") if k.strip()] or None
             return Result.success([asdict(s) for s in svc.spaces(keys, limit=limit)])

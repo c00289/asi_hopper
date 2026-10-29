@@ -10,6 +10,60 @@ All notable changes to ASI Hopper are recorded here. The format follows
 - 0.2.0: `run steps.jsonl`, `serve --mcp`, `serve --http`; dewey and kletz `jira sync` land in
   those repos; live read smoke tests behind `ASI_HOPPER_LIVE=1`.
 
+## [0.1.8] - 2026-10-29
+
+Confluence evidence bundles. The owner confirmed that Confluence lives in Hopper, read only, and asked for
+dated, hashed evidence of what a page said, the way `snapshot` gives it for Jira, before the asi_kletz
+integration.
+
+### Added
+- `confluence snapshot <ids | id --depth N | cql> [--space KEY] [--comments] [--out DIR] [--name] [--title]`
+  writes `pages.json` (records without bodies, with each page's comments when asked), one `pages/<id>.md`
+  per page holding the Markdown body byte for byte, `pages.csv`, `pages.md` and `manifest.json` (kind,
+  source, account, time, every page's version and body hash, SHA-256 of every file). The source is a list
+  of page ids, one page and the tree below it to a depth, or a CQL (optionally in one space); the manifest
+  keeps it so the bundle can be compared with live later.
+- `EvidenceService.snapshot_pages(PageSource, out_dir, ...)` and `PageSource.parse(...)` for the siblings;
+  `Hopper.evidence` now holds the Confluence service too.
+- The first real bundle, `evidence/locator-safety-function-stpa-2026-10-29/`: page 399343803 and its two
+  children with their comments, taken 2026-10-29 15:15 and verified. It stays on the owner's machine,
+  git-ignored: the page text is ASI-internal and this repository is public (the charter's rule on controlled
+  documents; `docs/confluence-integration-plan.md`, section 9).
+
+### Changed
+- `verify` recomputes every SHA-256 the manifest lists, not only `issues.json`, reports them one by one
+  under `files`, and is `intact` only when all of them match; the error names the files that do not.
+  A bundle written before 0.1.8 has no `kind` and is read as Jira, so `evidence/open-tickets-2026-10-27`
+  still verifies.
+- `diff` tells the two bundle kinds apart by the manifest's `kind` and refuses to compare one with the
+  other. A page diff compares title, status, version, updated, parent, body hash and comment count;
+  `diff <bundle>` alone re-reads the manifest's source from live Confluence.
+- `manifest.json` carries `kind` (`jira` or `confluence`); the Jira manifest is otherwise unchanged.
+
+### Fixed
+- Bundle files that are hashed (`issues.json`, `pages.json`, the page bodies), the manifests and the
+  readable views are written with LF on every platform; before, Python's text mode gave CRLF on Windows,
+  so the same page hashed differently on Windows and elsewhere. The CSVs stay Excel's (CRLF rows) and
+  are not hashed.
+- `.gitattributes` marks `evidence/**` as `-text`, so a bundle of either kind keeps its bytes through git:
+  with `core.autocrlf` on (the Windows default) git normalises a CRLF file to LF in the blob while the
+  manifest hashes the bytes on disk, and a fresh clone fails `verify`. Checked by cloning with
+  `autocrlf=true` and verifying the 2026-10-27 bundle from the clone.
+
+### Fixtures and tests
+- Recorded 2026-10-29 from the live site: the two child pages of 399343803 and the footer and inline
+  comments of all three pages with replies, at the page size the snapshot uses (250). Every Confluence
+  fixture's page body, comment text, inline selection, search excerpt and other people's account ids were
+  then replaced by synthetic text of the same shape (ids, titles, versions, timestamps and structure kept):
+  the pages are ASI-internal and this repository is public. The synthetic STPA page keeps the four sections,
+  the context table with glued bold runs and a struck duplicate, and the loss-scenario table, so the readers
+  of `docs/confluence-integration-plan.md` can be tested on it. `test_evidence.py` covers the page bundle, a tampered body file, the diff between two
+  page bundles and against live, the kind guard, `PageSource.parse`, and the 2026-10-27 Jira bundle.
+
+### Decided
+- Proposal decision 6 is superseded by the owner: Confluence is in play, read only, inside Hopper; Rovo
+  `search` stays out of the adapter; page evidence bundles come before the asi_kletz integration.
+
 ## [0.1.7] - 2026-10-29
 
 Confluence, read only. The owner asked to "sandbox a test of what we can do with confluence just like we
@@ -36,8 +90,7 @@ live site with small, user-scoped queries; the findings are in `docs/confluence-
 - `RecordingGateway` names Confluence recordings by page, space, comment, CQL or query.
 - Fixtures recorded from the live site on 2026-10-29 (inventory, spaces, STPA pages, one page in three
   formats, children, two CQL searches, comments, replies); the page bodies, comment texts, selections,
-  excerpts and other people's account ids are synthetic text of the same shape: the pages are ASI-internal
-  and this repository is public; `tests/test_confluence.py`.
+  excerpts and other people's account ids are synthetic (see 0.1.8); `tests/test_confluence.py`.
 
 ### Decided
 - Confluence reads live in Hopper; the proposal's decision 6 of 2026-10-27 ("out of scope, permanently")
@@ -206,7 +259,8 @@ Design only.
 - `docs/proposal.md`, `README.md`, `hopper.example.toml`, `.gitignore`, `.python-version`,
   and `evidence/open-tickets-2026-10-27/` (format preview pulled through the connector).
 
-[Unreleased]: https://example.invalid/asi-hopper/compare/v0.1.7...HEAD
+[Unreleased]: https://example.invalid/asi-hopper/compare/v0.1.8...HEAD
+[0.1.8]: https://example.invalid/asi-hopper/compare/v0.1.7...v0.1.8
 [0.1.7]: https://example.invalid/asi-hopper/compare/v0.1.6...v0.1.7
 [0.1.6]: https://example.invalid/asi-hopper/compare/v0.1.5...v0.1.6
 [0.1.5]: https://example.invalid/asi-hopper/compare/v0.1.4...v0.1.5
