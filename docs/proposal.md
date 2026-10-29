@@ -418,6 +418,9 @@ decide them, and stand unless overruled.
    actor `hopper`.
 6. **Confluence: out of scope, permanently for this tool.** A Confluence door, if ever
    wanted, is a separate sibling that reuses the gateway pattern, not a Hopper feature.
+   *2026-10-29:* the owner asked for a read-only Confluence sandbox "just like we did with jira"; it
+   shipped in Hopper 0.1.7 (`confluence` verb, `docs/confluence-sandbox-2026-10-29.md`), reads only,
+   write side closed. Whether this decision is formally superseded is the owner's call.
 
 ## 14. Status
 
@@ -448,6 +451,8 @@ the engineer has not run `asi-hopper auth login` yet.
 
 ## Revision history
 
+- 2026-10-29 Decision 6 carries a dated note: a read-only Confluence surface shipped in Hopper 0.1.7 at
+  the owner's request; the write side stays closed. No other design change.
 - 2026-10-28 Wording sweep: decision 2, section 14 and this history say what the status line says:
   write side delayed indefinitely by owner decision, no sandbox requested. No design change.
 - 2026-10-27 Proposal 0.3: write side delayed indefinitely, no sandbox request; status and section 15

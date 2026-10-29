@@ -31,6 +31,12 @@ class PolicyViolation(HopperError):
     """A write was refused by policy (there are no write verbs; kept for the wire format)."""
 
 
+class WriteSideClosed(PolicyViolation):
+    """A write method of the Confluence contract was called. The write side is closed by owner decision
+    (Jira 2026-10-27, Confluence 2026-10-29): the method exists as a signature only and never reaches the
+    network."""
+
+
 class ValidationError(HopperError):
     def __init__(self, *errors: str) -> None:
         super().__init__("; ".join(errors))

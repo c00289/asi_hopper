@@ -1,0 +1,22 @@
+{
+  "id": "399343803",
+  "type": "page",
+  "status": "current",
+  "title": "Locator Safety Function STPA",
+  "spaceId": "5791547559",
+  "parentId": "6051201086",
+  "parentType": "page",
+  "authorId": "557058:00000000-0000-4000-8000-000000000001",
+  "ownerId": "557058:00000000-0000-4000-8000-000000000001",
+  "lastOwnerId": null,
+  "createdAt": "2020-04-09T18:51:49.935Z",
+  "version": {
+    "number": 45,
+    "message": "",
+    "minorEdit": false,
+    "authorId": "557058:00000000-0000-4000-8000-000000000001",
+    "createdAt": "2021-10-20T20:49:25.061Z",
+    "ncsStepVersion": null
+  },
+  "body": "<section data-breakout=\"full-width\" data-type=\"layout-two-right-sidebar\"><div data-type=\"column\" data-width=\"66.66\"><p>Related Links:</p><p><a href=\"https://example.invalid/wiki/spaces/STPA/pages/100000001\">Top-level STPA</a> (System STPA)</p><h2>Losses and Hazards</h2><p><strong>HAZARD FOCUS</strong>:</p><p>H1 - The vehicle comes too close to another vehicle, an object or a void</p><h2>Control Structure</h2><p>The stop channel broadcasts a radius.</p><h2>Context Table</h2><table><tr><th>Controller</th><th>Control Action</th></tr><tr><td>Stop Controller</td><td>Soft Stop</td></tr></table><h2>Loss Scenarios</h2><p>[... the synthetic page continues; the real body is ASI-internal and was replaced ...]</p></div></section>"
+}

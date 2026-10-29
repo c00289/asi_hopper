@@ -17,6 +17,7 @@ from typing import Any
 
 from ..errors import AuthRequired, GatewayError
 from .auth import SessionStore, build_oauth_provider
+from .base import LIST_TOOLS
 
 log = logging.getLogger(__name__)
 
@@ -120,8 +121,11 @@ class McpGateway:
                             break
                         tool, args, future = item
                         try:
-                            result = await client.call_tool(tool, args)
-                            future.set_result(self._decode(result))
+                            if tool == LIST_TOOLS:
+                                future.set_result(self._decode_tools(await client.list_tools()))
+                            else:
+                                result = await client.call_tool(tool, args)
+                                future.set_result(self._decode(result))
                         except BaseException as exc:  # hand every failure back to the caller
                             future.set_exception(self._translate(exc))
         except BaseException as exc:
@@ -167,6 +171,21 @@ class McpGateway:
             return json.loads(text)
         except (json.JSONDecodeError, TypeError):
             return text
+
+    @staticmethod
+    def _decode_tools(result: Any) -> list[dict[str, Any]]:
+        """``list_tools`` -> ``[{"name", "description", "input_schema"}]``, sorted by name."""
+        out: list[dict[str, Any]] = []
+        for tool in getattr(result, "tools", None) or []:
+            out.append(
+                {
+                    "name": getattr(tool, "name", ""),
+                    "description": getattr(tool, "description", None) or "",
+                    # mcp 2.x names it input_schema; 1.x named it inputSchema
+                    "input_schema": getattr(tool, "input_schema", None) or getattr(tool, "inputSchema", None) or {},
+                }
+            )
+        return sorted(out, key=lambda t: t["name"])
 
     # -- calls ------------------------------------------------------------------------------
     def call(self, tool: str, args: dict[str, Any]) -> Any:

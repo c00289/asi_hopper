@@ -1,0 +1,130 @@
+{
+  "results": [
+    {
+      "content": {
+        "id": "262996144",
+        "type": "page",
+        "ari": "ari:cloud:confluence:0e0e7883-6f84-469d-a098-706e035c766e:page/262996144",
+        "base64EncodedAri": "YXJpOmNsb3VkOmNvbmZsdWVuY2U6MGUwZTc4ODMtNmY4NC00NjlkLWEwOTgtNzA2ZTAzNWM3NjZlOmNvbnRlbnQvMjYyOTk2MTQ0",
+        "status": "current",
+        "title": "V2X to VCU STPA (Old Format)",
+        "history": {
+          "latest": true,
+          "createdDate": "2020-02-19T16:41:53.473Z"
+        },
+        "extensions": {
+          "position": 208382442
+        },
+        "_links": {
+          "self": "https://asirobots.atlassian.net/wiki/rest/api/content/262996144",
+          "tinyui": "/x/sACtDw",
+          "editui": "/pages/resumedraft.action?draftId=262996144",
+          "webui": "/spaces/STPA/pages/262996144/V2X+to+VCU+STPA+Old+Format",
+          "edituiv2": "/spaces/STPA/pages/edit-v2/262996144"
+        }
+      },
+      "title": "V2X to VCU STPA (Old Format)",
+      "excerpt": "Table of Contents\nSystem Level Hazards\nHazard\nDescription\nLosses\nH-1\n[synthetic excerpt]",
+      "url": "/spaces/STPA/pages/262996144/V2X+to+VCU+STPA+Old+Format",
+      "resultGlobalContainer": {
+        "title": "STPA Space",
+        "displayUrl": "/spaces/STPA"
+      },
+      "breadcrumbs": [],
+      "entityType": "content",
+      "iconCssClass": "aui-icon content-type-page",
+      "lastModified": "2026-10-13T16:29:06.000Z",
+      "friendlyLastModified": "Oct 13, 2026",
+      "score": 0
+    },
+    {
+      "content": {
+        "id": "7629013406",
+        "type": "page",
+        "subType": "live",
+        "subtype": "live",
+        "ari": "ari:cloud:confluence:0e0e7883-6f84-469d-a098-706e035c766e:page/7629013406",
+        "base64EncodedAri": "YXJpOmNsb3VkOmNvbmZsdWVuY2U6MGUwZTc4ODMtNmY4NC00NjlkLWEwOTgtNzA2ZTAzNWM3NjZlOmNvbnRlbnQvNzYyOTAxMzQwNg==",
+        "status": "current",
+        "title": "Untitled live doc 2025-07-23",
+        "history": {
+          "latest": true,
+          "createdDate": "2025-07-23T21:20:28.093Z"
+        },
+        "extensions": {
+          "position": 4147
+        },
+        "_links": {
+          "self": "https://asirobots.atlassian.net/wiki/rest/api/content/7629013406",
+          "tinyui": "/x/noG5xgE",
+          "editui": "/spaces/STPA/pages/7629013406/Untitled+live+doc+2025-07-23",
+          "webui": "/spaces/STPA/pages/7629013406/Untitled+live+doc+2025-07-23",
+          "edituiv2": "/spaces/STPA/pages/7629013406/Untitled+live+doc+2025-07-23"
+        }
+      },
+      "title": "Untitled live doc 2025-07-23",
+      "excerpt": "",
+      "url": "/spaces/STPA/pages/7629013406/Untitled+live+doc+2025-07-23",
+      "resultGlobalContainer": {
+        "title": "STPA Space",
+        "displayUrl": "/spaces/STPA"
+      },
+      "breadcrumbs": [],
+      "entityType": "content",
+      "iconCssClass": "aui-icon content-type-live-page",
+      "lastModified": "2025-07-23T21:20:28.000Z",
+      "friendlyLastModified": "Jul 23, 2025",
+      "score": 0
+    },
+    {
+      "content": {
+        "id": "5791842487",
+        "type": "page",
+        "ari": "ari:cloud:confluence:0e0e7883-6f84-469d-a098-706e035c766e:page/5791842487",
+        "base64EncodedAri": "YXJpOmNsb3VkOmNvbmZsdWVuY2U6MGUwZTc4ODMtNmY4NC00NjlkLWEwOTgtNzA2ZTAzNWM3NjZlOmNvbnRlbnQvNTc5MTg0MjQ4Nw==",
+        "status": "current",
+        "title": "Education/Training",
+        "history": {
+          "latest": true,
+          "createdDate": "2021-08-23T17:40:02.229Z"
+        },
+        "extensions": {
+          "position": 741
+        },
+        "_links": {
+          "self": "https://asirobots.atlassian.net/wiki/rest/api/content/5791842487",
+          "tinyui": "/x/t4A4WQE",
+          "editui": "/pages/resumedraft.action?draftId=5791842487",
+          "webui": "/spaces/STPA/pages/5791842487/Education+Training",
+          "edituiv2": "/spaces/STPA/pages/edit-v2/5791842487"
+        }
+      },
+      "title": "Education/Training",
+      "excerpt": "[synthetic excerpt 3]",
+      "url": "/spaces/STPA/pages/5791842487/Education+Training",
+      "resultGlobalContainer": {
+        "title": "STPA Space",
+        "displayUrl": "/spaces/STPA"
+      },
+      "breadcrumbs": [],
+      "entityType": "content",
+      "iconCssClass": "aui-icon content-type-page",
+      "lastModified": "2024-10-29T16:01:18.000Z",
+      "friendlyLastModified": "Oct 29, 2024",
+      "score": 0
+    }
+  ],
+  "start": 0,
+  "limit": 3,
+  "size": 3,
+  "totalSize": 97,
+  "cqlQuery": "space = STPA AND ( type = page ) ORDER BY lastmodified DESC",
+  "searchDuration": 236,
+  "archivedResultCount": 0,
+  "_links": {
+    "base": "https://asirobots.atlassian.net/wiki",
+    "context": "/wiki",
+    "next": "/rest/api/search?next=true&cursor=_t_WzE3MzAyMTc2NzgwMDAsIlx0NTc5MTg0MjQ4NyAlTSFgOURoTFROVFU5XFw5XCInZ1wiZSBjcCJd_h_W10%3D&expand=content%2Ccontent.history&limit=3&start=3&cql=space+%3D+STPA+AND+%28type+%3D+page%29+ORDER+BY+lastmodified+DESC",
+    "self": "https://asirobots.atlassian.net/wiki/rest/api/search?expand=content%2Ccontent.history&cql=space+%3D+STPA+AND+%28type+%3D+page%29+ORDER+BY+lastmodified+DESC"
+  }
+}

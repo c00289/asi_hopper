@@ -39,7 +39,7 @@ def test_config_error_exit_code(capsys: pytest.CaptureFixture[str]) -> None:
 def test_parser_has_every_verb() -> None:
     parser = build_parser()
     text = parser.format_help()
-    for verb in ("whoami", "get", "search", "snapshot", "diff", "verify", "auth"):
+    for verb in ("whoami", "get", "search", "snapshot", "diff", "verify", "auth", "confluence", "tools"):
         assert verb in text
 
 
@@ -48,3 +48,12 @@ def test_bool_flags_and_multiple(capsys: pytest.CaptureFixture[str], empty_confi
     assert code == 0 and "raw" in data["data"]
     code, data = _run(capsys, empty_config, "fields", "HWL", "Story")
     assert code == 0 and data["data"][0]["required"] is True
+
+
+def test_confluence_verb_reads_like_auth(capsys: pytest.CaptureFixture[str], empty_config: Path) -> None:
+    code, data = _run(capsys, empty_config, "confluence", "pages", "STPA", "--limit", "5", "--max", "1")
+    assert code == 0 and [p["id"] for p in data["data"]] == ["262996144"]
+    code, data = _run(capsys, empty_config, "confluence", "search", "--limit", "5")
+    assert code == 0 and data["data"] == [] and "user-scoped default" in data["warnings"][0]
+    code, data = _run(capsys, empty_config, "confluence", "comments", "399343803", "--kind", "inline", "--limit", "5")
+    assert code == 0 and data["data"][0]["kind"] == "inline"

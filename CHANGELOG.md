@@ -10,6 +10,42 @@ All notable changes to ASI Hopper are recorded here. The format follows
 - 0.2.0: `run steps.jsonl`, `serve --mcp`, `serve --http`; dewey and kletz `jira sync` land in
   those repos; live read smoke tests behind `ASI_HOPPER_LIVE=1`.
 
+## [0.1.7] - 2026-10-29
+
+Confluence, read only. The owner asked to "sandbox a test of what we can do with confluence just like we
+did with jira ... what can we retrieve ... no writes at all for now but plan for them in the adapter".
+Every Confluence read tool of the Remote MCP Server was exercised through Hopper's own client against the
+live site with small, user-scoped queries; the findings are in `docs/confluence-sandbox-2026-10-29.md`.
+
+### Added
+- `confluence` verb (one verb, an action word, like `auth`): `spaces [KEYS]`, `pages SPACE`, `page ID
+  [--format markdown|adf|html] [--raw]`, `children ID [--depth]`, `search [CQL] [--space KEY]`,
+  `comments ID [--kind footer|inline|all] [--replies]`, `replies ID --kind`; `--limit`, `--all`, `--max` on
+  the lists. No CQL runs `contributor = currentUser() AND type = page ORDER BY lastmodified DESC` and says
+  so in `warnings`. Every answer is a `Result`, the Jira verbs' shape, for asi_kletz to consume later.
+- `Hopper.page(id, content_format=)` and `Hopper.cql(cql, space=, ...)`; `Hopper.confluence`
+  (`ConfluenceService`) and `Hopper.confluence_api` (`ConfluenceApi`).
+- Records `Space`, `PageRef`, `PageRecord` (`to_dict`, `to_row`, `ROW_FIELDS`), `PageComment` and the
+  normalisers in `model/confluence.py`; cursors are read from `_links.next`.
+- `ConfluenceWriteSide`: the write contract, four documented signatures (`create_page`, `update_page`,
+  `create_footer_comment`, `create_inline_comment`) and no implementation; `ClosedConfluenceWriteSide`
+  raises the new `WriteSideClosed` (a `PolicyViolation`) on each before touching anything.
+- `tools` verb: the server's tool inventory (32 tools) classified by product, whether the tool writes and
+  whether Hopper uses it; `--schema` adds the input schemas. `McpGateway` serves it through the
+  `LIST_TOOLS` pseudo tool so it records and replays like any call.
+- `RecordingGateway` names Confluence recordings by page, space, comment, CQL or query.
+- Fixtures recorded from the live site on 2026-10-29 (inventory, spaces, STPA pages, one page in three
+  formats, children, two CQL searches, comments, replies); the page bodies, comment texts, selections,
+  excerpts and other people's account ids are synthetic text of the same shape: the pages are ASI-internal
+  and this repository is public; `tests/test_confluence.py`.
+
+### Decided
+- Confluence reads live in Hopper; the proposal's decision 6 of 2026-10-27 ("out of scope, permanently")
+  carries a dated note pending the owner's word. The Confluence write side is closed (2026-10-29) the way
+  the Jira one is: no write, no test page, no comment, no sandbox.
+- Not in the adapter: `search` (Rovo; spends credits per call and is not user-scoped), `fetch` (a subset
+  of `getConfluencePage`), `getContentFormatGuide` (authoring guidance for the write tools).
+
 ## [0.1.6] - 2026-10-29
 
 Broken-windows sweep. No change to the API, the verbs, or the fixtures.
@@ -170,7 +206,8 @@ Design only.
 - `docs/proposal.md`, `README.md`, `hopper.example.toml`, `.gitignore`, `.python-version`,
   and `evidence/open-tickets-2026-10-27/` (format preview pulled through the connector).
 
-[Unreleased]: https://example.invalid/asi-hopper/compare/v0.1.6...HEAD
+[Unreleased]: https://example.invalid/asi-hopper/compare/v0.1.7...HEAD
+[0.1.7]: https://example.invalid/asi-hopper/compare/v0.1.6...v0.1.7
 [0.1.6]: https://example.invalid/asi-hopper/compare/v0.1.5...v0.1.6
 [0.1.5]: https://example.invalid/asi-hopper/compare/v0.1.4...v0.1.5
 [0.1.4]: https://example.invalid/asi-hopper/compare/v0.1.3...v0.1.4

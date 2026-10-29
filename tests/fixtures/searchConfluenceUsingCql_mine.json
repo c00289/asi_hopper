@@ -1,0 +1,15 @@
+{
+  "results": [],
+  "start": 0,
+  "limit": 5,
+  "size": 0,
+  "totalSize": 0,
+  "cqlQuery": "contributor = currentUser ( ) AND type = page ORDER BY lastmodified DESC",
+  "searchDuration": 137,
+  "archivedResultCount": 0,
+  "_links": {
+    "base": "https://asirobots.atlassian.net/wiki",
+    "context": "/wiki",
+    "self": "https://asirobots.atlassian.net/wiki/rest/api/search?expand=content%2Ccontent.history&cql=contributor+%3D+currentUser%28%29+AND+type+%3D+page+ORDER+BY+lastmodified+DESC"
+  }
+}

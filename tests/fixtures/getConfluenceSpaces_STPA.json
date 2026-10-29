@@ -1,0 +1,24 @@
+{
+  "results": [
+    {
+      "spaceOwnerId": "8a7f80856814cdae016815e4ba9e0024",
+      "homepageId": "5791547635",
+      "authorId": "557058:00000000-0000-4000-8000-000000000009",
+      "createdAt": "2021-08-23T17:39:12.739Z",
+      "icon": null,
+      "name": "STPA Space",
+      "key": "STPA",
+      "id": "5791547559",
+      "type": "global",
+      "description": null,
+      "status": "current",
+      "_links": {
+        "webui": "/spaces/STPA"
+      },
+      "currentActiveAlias": "STPA"
+    }
+  ],
+  "_links": {
+    "base": "https://asirobots.atlassian.net/wiki"
+  }
+}

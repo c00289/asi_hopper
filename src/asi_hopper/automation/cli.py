@@ -30,7 +30,7 @@ def build_parser(factory: CommandFactory | None = None) -> argparse.ArgumentPars
     factory = factory or default_command_factory
     parser = argparse.ArgumentParser(
         prog="asi-hopper",
-        description="ASI Hopper: read-only door into Jira. Every verb prints a JSON Result.",
+        description="ASI Hopper: read-only door into Jira and Confluence. Every verb prints a JSON Result.",
     )
     parser.add_argument("--config", help="hopper.toml to use (default: $ASI_HOPPER_CONFIG or ./hopper.toml)")
     parser.add_argument("--gateway", choices=["mcp", "replay"], help="override the gateway kind")

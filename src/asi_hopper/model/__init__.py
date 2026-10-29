@@ -1,5 +1,6 @@
-"""Normalised, frozen records. Nothing outside ``asi_hopper.model`` and the gateways sees raw Jira JSON."""
+"""Normalised, frozen records. Nothing outside ``asi_hopper.model`` and the gateways sees raw Atlassian JSON."""
 
+from .confluence import PageComment, PageRecord, PageRef, Space
 from .normalise import (
     DEFAULT_FIELDS,
     fields_from_raw,
@@ -37,7 +38,11 @@ __all__ = [
     "IssueType",
     "Link",
     "LinkType",
+    "PageComment",
+    "PageRecord",
+    "PageRef",
     "Project",
+    "Space",
     "Status",
     "Transition",
     "User",

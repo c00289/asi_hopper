@@ -257,5 +257,173 @@
     "file": "getJiraIssueRemoteIssueLinks_HWL-2554.json",
     "recorded_at": "2026-10-27T17:40:00-06:00",
     "source": "claude.ai Atlassian connector"
+  },
+  {
+    "tool": "__list_tools__",
+    "args": {},
+    "file": "list_tools.json",
+    "recorded_at": "2026-10-29T16:52:42+00:00",
+    "source": "asi-hopper --record against the live site (OAuth session of the owner)",
+    "note": "the server's full inventory (32 tools) as the mcp client decoded it"
+  },
+  {
+    "tool": "getConfluenceSpaces",
+    "args": {
+      "limit": 5
+    },
+    "file": "getConfluenceSpaces_limit5.json",
+    "recorded_at": "2026-10-29T16:52:47+00:00",
+    "source": "asi-hopper --record against the live site (OAuth session of the owner)"
+  },
+  {
+    "tool": "getConfluenceSpaces",
+    "args": {
+      "limit": 25,
+      "keys": [
+        "STPA",
+        "FST"
+      ]
+    },
+    "file": "getConfluenceSpaces_STPA_FST.json",
+    "recorded_at": "2026-10-29T16:52:52+00:00",
+    "source": "asi-hopper --record against the live site (OAuth session of the owner)"
+  },
+  {
+    "tool": "getConfluenceSpaces",
+    "args": {
+      "limit": 1,
+      "keys": [
+        "STPA"
+      ]
+    },
+    "file": "getConfluenceSpaces_STPA.json",
+    "recorded_at": "2026-10-29T16:52:57+00:00",
+    "source": "asi-hopper --record against the live site (OAuth session of the owner)"
+  },
+  {
+    "tool": "getPagesInConfluenceSpace",
+    "args": {
+      "spaceId": "5791547559",
+      "limit": 5,
+      "sort": "-modified-date",
+      "contentFormat": "markdown"
+    },
+    "file": "getPagesInConfluenceSpace_5791547559.json",
+    "recorded_at": "2026-10-29T16:52:58+00:00",
+    "source": "asi-hopper --record against the live site (OAuth session of the owner)",
+    "note": "each page body cut to 160 characters; list views drop bodies anyway"
+  },
+  {
+    "tool": "getConfluencePage",
+    "args": {
+      "pageId": "399343803",
+      "contentFormat": "markdown"
+    },
+    "file": "getConfluencePage_399343803_markdown.json",
+    "recorded_at": "2026-10-29T16:53:03+00:00",
+    "source": "asi-hopper --record against the live site (OAuth session of the owner)",
+    "note": "markdown body cut to 1200 characters (live: ~48 KB markdown, ~96 KB html)"
+  },
+  {
+    "tool": "getConfluencePage",
+    "args": {
+      "pageId": "399343803",
+      "contentFormat": "adf"
+    },
+    "file": "getConfluencePage_399343803_adf.json",
+    "recorded_at": "2026-10-29T16:53:09+00:00",
+    "source": "asi-hopper --record against the live site (OAuth session of the owner)",
+    "note": "ADF body cut to its first 4 top-level nodes (the live document has 24)"
+  },
+  {
+    "tool": "getConfluencePage",
+    "args": {
+      "pageId": "399343803",
+      "contentFormat": "html"
+    },
+    "file": "getConfluencePage_399343803_html.json",
+    "recorded_at": "2026-10-29T16:53:14+00:00",
+    "source": "asi-hopper --record against the live site (OAuth session of the owner)",
+    "note": "html body cut to 1200 characters (live: ~48 KB markdown, ~96 KB html)"
+  },
+  {
+    "tool": "getConfluencePageDescendants",
+    "args": {
+      "pageId": "399343803",
+      "limit": 5,
+      "depth": 1
+    },
+    "file": "getConfluencePageDescendants_399343803.json",
+    "recorded_at": "2026-10-29T16:53:19+00:00",
+    "source": "asi-hopper --record against the live site (OAuth session of the owner)"
+  },
+  {
+    "tool": "searchConfluenceUsingCql",
+    "args": {
+      "cql": "contributor = currentUser() AND type = page ORDER BY lastmodified DESC",
+      "limit": 5
+    },
+    "file": "searchConfluenceUsingCql_mine.json",
+    "recorded_at": "2026-10-29T16:53:24+00:00",
+    "source": "asi-hopper --record against the live site (OAuth session of the owner)",
+    "note": "excerpts cut to 200 characters; macroRenderedOutput and _expandable dropped from content"
+  },
+  {
+    "tool": "searchConfluenceUsingCql",
+    "args": {
+      "cql": "space = STPA AND (type = page) ORDER BY lastmodified DESC",
+      "limit": 3
+    },
+    "file": "searchConfluenceUsingCql_space_STPA.json",
+    "recorded_at": "2026-10-29T16:53:30+00:00",
+    "source": "asi-hopper --record against the live site (OAuth session of the owner)",
+    "note": "excerpts cut to 200 characters; macroRenderedOutput and _expandable dropped from content; history.createdBy (a person) dropped"
+  },
+  {
+    "tool": "getConfluencePageFooterComments",
+    "args": {
+      "pageId": "399343803",
+      "limit": 5,
+      "contentFormat": "markdown"
+    },
+    "file": "getConfluencePageFooterComments_399343803.json",
+    "recorded_at": "2026-10-29T16:53:35+00:00",
+    "source": "asi-hopper --record against the live site (OAuth session of the owner)"
+  },
+  {
+    "tool": "getConfluencePageInlineComments",
+    "args": {
+      "pageId": "399343803",
+      "limit": 5,
+      "contentFormat": "markdown",
+      "resolutionStatus": "open"
+    },
+    "file": "getConfluencePageInlineComments_399343803.json",
+    "recorded_at": "2026-10-29T16:53:36+00:00",
+    "source": "asi-hopper --record against the live site (OAuth session of the owner)"
+  },
+  {
+    "tool": "getConfluenceCommentChildren",
+    "args": {
+      "commentId": "5351964709",
+      "commentType": "inline",
+      "limit": 5,
+      "contentFormat": "markdown"
+    },
+    "file": "getConfluenceCommentChildren_5351964709.json",
+    "recorded_at": "2026-10-29T16:53:42+00:00",
+    "source": "asi-hopper --record against the live site (OAuth session of the owner)"
+  },
+  {
+    "tool": "getConfluenceSpaces",
+    "args": {
+      "keys": [
+        "STPA"
+      ],
+      "limit": 1
+    },
+    "file": "getConfluenceSpaces_STPA.json",
+    "recorded_at": "2026-10-29T16:52:47+00:00",
+    "source": "asi-hopper --record against the live site (OAuth session of the owner) (derived: the STPA entry of the STPA,FST lookup)"
   }
 ]

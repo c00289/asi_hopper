@@ -27,11 +27,20 @@ class RecordingGateway:
 
     @staticmethod
     def _filename(tool: str, args: dict[str, Any]) -> str:
-        hint = args.get("issueIdOrKey") or args.get("projectIdOrKey") or ""
+        hint = (
+            args.get("issueIdOrKey")
+            or args.get("projectIdOrKey")
+            or args.get("pageId")
+            or args.get("spaceId")
+            or args.get("commentId")
+            or args.get("toolName")
+            or ""
+        )
         if args.get("issueTypeId"):
             hint = f"{hint}_{args['issueTypeId']}"
-        if args.get("jql"):
-            hint = _SAFE.sub("_", str(args["jql"]))[:60].strip("_")
+        for text_key in ("jql", "cql", "query"):
+            if args.get(text_key):
+                hint = _SAFE.sub("_", str(args[text_key]))[:60].strip("_")
         if args.get("searchString"):
             hint = f"search_{_SAFE.sub('_', str(args['searchString']))[:40]}"
         base = _SAFE.sub("_", f"{tool}_{hint}" if hint else tool).strip("_")

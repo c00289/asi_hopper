@@ -1,4 +1,4 @@
-"""ASI Hopper: a read-only, audited, replayable door into Jira Cloud.
+"""ASI Hopper: a read-only, audited, replayable door into Jira Cloud and Confluence Cloud.
 
 Hopper is a library first and a CLI second. Everything a front end can do goes
 through the same command path (see ``asi_hopper.commands``), so a human at a
@@ -15,6 +15,10 @@ Quick start::
 
         for issue in hopper.search("project = HWL AND assignee = currentUser()"):
             print(issue.key, issue.summary, issue.status)
+
+        page = hopper.page("399343803")                # Confluence, read only (0.1.7)
+        for ref in hopper.cql(space="STPA"):
+            print(ref.id, ref.title, ref.url)
 
 Tests and offline work use the replay gateway::
 

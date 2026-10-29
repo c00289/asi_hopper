@@ -8,15 +8,15 @@ from typing import Any
 from .commands import Dispatcher, Result
 from .config import Config, load_config
 from .errors import ConfigError
-from .gateway import JiraApi, JiraGateway, default_gateway_factory
+from .gateway import ConfluenceApi, JiraApi, JiraGateway, default_gateway_factory
 from .gateway.auth import SessionStore
-from .model import IssueRecord
-from .services import EvidenceService, IssueService, MetaService
+from .model import IssueRecord, PageRecord, PageRef
+from .services import ConfluenceService, EvidenceService, IssueService, MetaService
 from .version import __version__
 
 
 class Hopper:
-    """One Jira door.
+    """One Atlassian door: Jira and, since 0.1.7, Confluence, both read only.
 
     ``Hopper()`` reads ``hopper.toml`` and opens the live gateway lazily (the first call connects, and
     logs in through the browser if there is no session yet). ``Hopper(gateway="replay",
@@ -56,6 +56,8 @@ class Hopper:
         self.issues = IssueService(self.api, self.config.site)
         self.meta = MetaService(self.api, self.config.site)
         self.evidence = EvidenceService(self.issues, self.config.site, _LazyAccount(self.meta))
+        self.confluence_api = ConfluenceApi(self.gateway, self.config.cloud)
+        self.confluence = ConfluenceService(self.confluence_api, self.config.site)
         self.dispatcher = Dispatcher(self)
 
     # -- the command path -----------------------------------------------------------------
@@ -90,6 +92,22 @@ class Hopper:
 
     def whoami(self) -> dict[str, Any]:
         return self.meta.whoami()
+
+    def page(self, page_id: str, *, content_format: str = "markdown") -> PageRecord:
+        """One Confluence page with its body (``markdown``, ``adf`` or ``html``)."""
+        return self.confluence.page(page_id, content_format=content_format)
+
+    def cql(
+        self,
+        cql: str | None = None,
+        *,
+        space: str | None = None,
+        all_pages: bool = False,
+        limit: int | None = None,
+        page_size: int = 25,
+    ) -> list[PageRef]:
+        """Run CQL (default: the signed-in user's pages, newest first); ``space`` restricts it to one space."""
+        return self.confluence.search(cql, space=space, limit=page_size, all_pages=all_pages, max_items=limit)
 
     # -- housekeeping -----------------------------------------------------------------------
     def session_store(self) -> SessionStore:

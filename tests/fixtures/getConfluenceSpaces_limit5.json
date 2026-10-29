@@ -1,0 +1,93 @@
+{
+  "results": [
+    {
+      "spaceOwnerId": "8a7f80856814cdae016815e4bae10077",
+      "authorId": "557058:00000000-0000-4000-8000-000000000002",
+      "homepageId": "16810905",
+      "createdAt": "2019-02-15T22:50:51.916Z",
+      "icon": null,
+      "description": null,
+      "status": "current",
+      "name": "Vehicle Software Platform",
+      "key": "VSP",
+      "id": "16810795",
+      "type": "global",
+      "_links": {
+        "webui": "/spaces/VSP"
+      },
+      "currentActiveAlias": "VSP"
+    },
+    {
+      "spaceOwnerId": "557058:00000000-0000-4000-8000-000000000004",
+      "authorId": "557058:00000000-0000-4000-8000-000000000005",
+      "homepageId": "294617856",
+      "createdAt": "2020-03-02T20:13:19.730Z",
+      "icon": null,
+      "description": null,
+      "status": "current",
+      "name": "ODOA Platform Team",
+      "key": "OPT",
+      "id": "294617225",
+      "type": "global",
+      "_links": {
+        "webui": "/spaces/OPT"
+      },
+      "currentActiveAlias": "OPT"
+    },
+    {
+      "spaceOwnerId": "8a7f80856814cdae016815e4bae1006d",
+      "authorId": "557058:00000000-0000-4000-8000-000000000006",
+      "homepageId": "390955541",
+      "createdAt": "2020-04-06T21:38:07.966Z",
+      "icon": null,
+      "description": null,
+      "status": "current",
+      "name": "Mobius Functional Group",
+      "key": "MOBIUS",
+      "id": "390955423",
+      "type": "global",
+      "_links": {
+        "webui": "/spaces/MOBIUS"
+      },
+      "currentActiveAlias": "MOBIUS"
+    },
+    {
+      "spaceOwnerId": "557058:00000000-0000-4000-8000-000000000007",
+      "authorId": "557058:00000000-0000-4000-8000-000000000008",
+      "homepageId": "393873006",
+      "createdAt": "2020-04-08T20:22:14.041Z",
+      "icon": null,
+      "description": null,
+      "status": "current",
+      "name": "Mechanical Platform",
+      "key": "MP",
+      "id": "393872636",
+      "type": "global",
+      "_links": {
+        "webui": "/spaces/MP"
+      },
+      "currentActiveAlias": "MP"
+    },
+    {
+      "spaceOwnerId": "8a7f80856814cdae016815e4baa0002f",
+      "authorId": "557058:00000000-0000-4000-8000-000000000008",
+      "homepageId": "400131085",
+      "createdAt": "2020-04-10T17:53:20.947Z",
+      "icon": null,
+      "description": null,
+      "status": "current",
+      "name": "Electrical Platform",
+      "key": "EP",
+      "id": "400130884",
+      "type": "global",
+      "_links": {
+        "webui": "/spaces/EP"
+      },
+      "currentActiveAlias": "EP"
+    }
+  ],
+  "_links": {
+    "next": "/wiki/api/v2/spaces?limit=5&cursor=eyJpZCI6NDAwMTMwODg0LCJzcGFjZVNvcnRPcmRlciI6eyJmaWVsZCI6IklEIiwiZGlyZWN0aW9uIjoiQVNDRU5ESU5HIn0sInNwYWNlU29ydE9yZGVyVmFsdWUiOjQwMDEzMDg4NH0=",
+    "base": "https://asirobots.atlassian.net/wiki"
+  }
+}

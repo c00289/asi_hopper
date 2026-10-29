@@ -1,0 +1,87 @@
+{
+  "id": "399343803",
+  "type": "page",
+  "status": "current",
+  "title": "Locator Safety Function STPA",
+  "spaceId": "5791547559",
+  "parentId": "6051201086",
+  "parentType": "page",
+  "authorId": "557058:00000000-0000-4000-8000-000000000001",
+  "ownerId": "557058:00000000-0000-4000-8000-000000000001",
+  "lastOwnerId": null,
+  "createdAt": "2020-04-09T18:51:49.935Z",
+  "version": {
+    "number": 45,
+    "message": "",
+    "minorEdit": false,
+    "authorId": "557058:00000000-0000-4000-8000-000000000001",
+    "createdAt": "2021-10-20T20:49:25.061Z",
+    "ncsStepVersion": null
+  },
+  "body": {
+    "type": "doc",
+    "version": 1,
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Related Links:"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Losses and Hazards"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "HAZARD FOCUS",
+            "marks": [
+              {
+                "type": "strong"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ": H1 - The vehicle comes too close to another vehicle, an object or a void"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Context Table"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "[... the synthetic page continues; the real document is ASI-internal and was replaced ...]"
+          }
+        ]
+      }
+    ]
+  }
+}

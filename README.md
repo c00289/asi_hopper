@@ -2,19 +2,30 @@
 
 One of the [ASI FuSa tools](https://github.com/c00289/c00289/blob/main/README.md) by Roy Mendoza; the master README there lists every sibling.
 
-A read-only, audited, replayable door into Jira for the Wheel Loader programme: a Python
-library, a command line, and a fixture-replay gateway so that siblings and tests never touch
-the network. Version **0.1.6**, alpha. Named after Grace Hopper, who built the first compiler
+A read-only, audited, replayable door into Jira, and since 0.1.7 into Confluence, for the Wheel Loader
+programme: a Python library, a command line, and a fixture-replay gateway so that siblings and tests
+never touch the network. Version **0.1.7**, alpha. Named after Grace Hopper, who built the first compiler
 so people could instruct a machine in their own words.
 
 The idea, in one sentence: Jira is the source of truth for the programme's work, Hopper is the
 one way our tools and agents read it, and what it read on a given day can be proven.
 
-> **Scope, decided 2026-10-27:** read only. There is no write verb, no API token (the org does
-> not permit them), and no sandbox project. Hopper signs in to Atlassian's Remote MCP Server
+> **Scope, decided 2026-10-27 (Jira) and 2026-10-29 (Confluence):** read only. There is no write verb,
+> no API token (the org does not permit them), and no sandbox project. Hopper signs in to Atlassian's Remote MCP Server
 > with OAuth 2.1 once, through the browser, and reads with your own account.
 > See [docs/proposal.md](docs/proposal.md) for the design. The write side is delayed indefinitely by owner
 > decision (2026-10-27): no sandbox will be requested and the question is closed.
+
+## What is in 0.1.7
+
+Confluence, read only, sandboxed on 2026-10-29 at the owner's request ("what can we retrieve ... no writes
+at all for now but plan for them in the adapter"): one `confluence` verb with the actions `spaces`, `pages`,
+`page`, `children`, `search`, `comments`, `replies`; `hopper.page()` and `hopper.cql()`; frozen `Space`,
+`PageRef`, `PageRecord`, `PageComment` records; `ConfluenceApi` with every read call in one place and a
+write contract (`ConfluenceWriteSide`) whose only implementation refuses every call with `WriteSideClosed`;
+a `tools` verb that lists and classifies the server's 32 tools; fixtures recorded from the live site and
+`tests/test_confluence.py`. The findings, tool by tool, are in
+[docs/confluence-sandbox-2026-10-29.md](docs/confluence-sandbox-2026-10-29.md).
 
 ## What is in 0.1.6
 
@@ -142,6 +153,12 @@ asi-hopper fields HWL Story --all
 asi-hopper snapshot "project = HWL AND summary ~ 'STPA'" --title "STPA tickets"
 asi-hopper verify evidence\stpa-tickets-2026-10-27
 asi-hopper diff evidence\stpa-tickets-2026-10-27            # against live Jira
+asi-hopper confluence spaces STPA,FST
+asi-hopper confluence pages STPA --limit 10
+asi-hopper confluence page 399343803 --format markdown
+asi-hopper confluence search "title ~ 'STPA'" --space STPA
+asi-hopper confluence comments 399343803 --kind inline
+asi-hopper tools --product confluence
 ```
 
 Offline, against the recorded fixtures (what the tests do):
@@ -172,11 +189,37 @@ with Hopper(interactive=False) as hopper:        # a sibling: never opens a brow
 
     # the wire format an agent sends; identical shape to asi_dewey
     hopper.execute_dict({"verb": "transitions", "args": {"key": "HWL-2575"}, "actor": "agent"})
+
+    # Confluence, read only (0.1.7): refs for a table, one page with its body on demand
+    for ref in hopper.cql("title ~ 'STPA'", space="STPA"):
+        print(ref.id, ref.title, ref.url)
+    page = hopper.page("399343803")                 # PageRecord: body as markdown, version, updated
+    hopper.execute("confluence", action="comments", target="399343803")
 ```
 
 `Hopper()` reads `hopper.toml`. `Hopper(gateway="replay", fixtures="tests/fixtures")` is fully
 offline. If there is no OAuth session and `interactive=False`, the first call fails with
 `AuthRequired` telling the user to run `asi-hopper auth login`.
+
+## Confluence (read only)
+
+`asi-hopper confluence <action> [target]` follows the `auth` verb's shape: one verb, an action word.
+
+| Action | Target | Flags | Returns |
+|---|---|---|---|
+| `spaces` | space keys, comma-separated (optional) | `--limit` | `Space` records |
+| `pages` | space key or id | `--limit --all --max` | `PageRef` records, newest change first |
+| `page` | page id | `--format markdown/adf/html --raw` | one `PageRecord` with its body |
+| `children` | page id | `--depth 1-10 --limit --all` | `PageRef` records |
+| `search` | CQL (optional) | `--space KEY --limit --all --max` | `PageRef` records; no CQL runs the user-scoped default and says so in `warnings` |
+| `comments` | page id | `--kind footer/inline/all --replies --limit` | `PageComment` records (open inline comments carry the text they hang on) |
+| `replies` | comment id | `--kind footer/inline --limit` | `PageComment` records |
+
+No action writes. The write side is a contract only: `ConfluenceWriteSide` in `gateway/api.py` names the
+four methods a write adapter would have, and `ConfluenceApi.writes` (a `ClosedConfluenceWriteSide`) raises
+`WriteSideClosed` on each before touching anything. `asi-hopper tools` lists what the server exposes and
+which tools write; Hopper calls none of those. Recorded shapes, limits and errors are in
+[docs/confluence-sandbox-2026-10-29.md](docs/confluence-sandbox-2026-10-29.md).
 
 ## Evidence
 
@@ -195,13 +238,15 @@ src/asi_hopper/
   config.py           Config, Policy, GatewaySettings, precedence
   errors.py           HopperError and its subclasses (ConfigError, AuthRequired, NotRecorded, ...)
   version.py          __version__ and RECORD_VERSION
-  model/              records (frozen dataclasses) and normalise (raw payload -> record)
+  model/              records (frozen dataclasses) and normalise (raw payload -> record);
+                      confluence (Space, PageRef, PageRecord, PageComment and their normalisers)
   adf/                ADF <-> Markdown
-  gateway/            JiraGateway protocol, JiraApi (every tool call in one place),
-                      McpGateway (OAuth, background event loop), ReplayGateway, RecordingGateway,
+  gateway/            JiraGateway protocol, JiraApi and ConfluenceApi (every tool call in one place),
+                      ConfluenceWriteSide (the closed write contract), McpGateway (OAuth, background
+                      event loop, tool inventory), ReplayGateway, RecordingGateway,
                       auth (session store, browser callback), GatewayFactory
-  services/           IssueService, MetaService, EvidenceService
-  commands/           Result, Command, CommandFactory, Dispatcher, the read verbs
+  services/           IssueService, MetaService, EvidenceService, ConfluenceService
+  commands/           Result, Command, CommandFactory, Dispatcher, the read verbs, confluence and tools
   automation/         CLI (`python -m asi_hopper` runs the same main)
 tests/                pytest; fixtures/ recorded from the live site with dates
 ```
@@ -218,13 +263,14 @@ Every test runs against `tests/fixtures` through `ReplayGateway`; `tests/conftes
 `max_event_mb`), `test_adf.py` (ADF round trip), `test_model.py` (normalisation, `LIST_FIELDS`),
 `test_commands.py` (every verb), `test_evidence.py` (bundles, verify, diff), `test_cli.py` (exit
 codes), `test_gateway.py` (the MCP gateway's reconnect, timeout and exception-group handling,
-with the serve loop stubbed). Tests never read the developer's `hopper.toml`, environment, or keyring. Live smoke tests
+with the serve loop stubbed), `test_confluence.py` (every Confluence action, the normalisers, the tool
+inventory, and the write contract refusing). Tests never read the developer's `hopper.toml`, environment, or keyring. Live smoke tests
 do not exist yet; run the CLI by hand after `auth login`.
 
 ## Functional-safety posture
 
-Hopper is a tool in the safety lifecycle. It cannot change a safety record: there is no write
-verb. What it reads is normalised deterministically, tests run on recorded fixtures with their
+Hopper is a tool in the safety lifecycle. It cannot change a safety record, in Jira or in Confluence:
+there is no write verb. What it reads is normalised deterministically, tests run on recorded fixtures with their
 provenance, and evidence bundles are content-hashed so a reviewer can prove what Jira said on a
 given day. The write side is delayed indefinitely by owner decision (2026-10-27); its design
 (plan/apply, journaling, undo, a per-project test lock) stays in the proposal as a record only.

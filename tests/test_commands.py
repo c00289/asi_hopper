@@ -111,6 +111,8 @@ def test_schema_describes_verbs(hopper: Hopper) -> None:
         "status",
         "auth",
         "link-types",
+        "confluence",
+        "tools",
     } <= verbs
     assert all(not v["writes"] for v in all_verbs.data["verbs"])
     one = hopper.execute("schema", name="search")

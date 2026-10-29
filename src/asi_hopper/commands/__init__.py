@@ -1,5 +1,6 @@
 """The command layer: one path for the CLI, the Python API, scripts, and agents."""
 
+from . import confluence as _confluence  # noqa: F401  (registers confluence and tools)
 from . import read as _read  # noqa: F401  (registers the verbs)
 from .base import Argument, Command, Context, Result, parse_kv
 from .dispatcher import Dispatcher
