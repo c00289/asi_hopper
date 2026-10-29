@@ -118,7 +118,11 @@ Add `jira_key` (TEXT, optional) so a deliverable can name the Jira issue that tr
 - A column "Jira" showing `jira_status` with a tooltip of the Jira summary; the cell opens the
   issue URL.
 
-### 3.4 Confluence (after 3.1 to 3.3; decided 2026-10-29)
+### 3.4 Confluence (after 3.1 to 3.3; decided 2026-10-29; superseded the same day)
+
+> Superseded by [confluence-integration-plan.md](confluence-integration-plan.md), sections 4 and 5: no new
+> columns, the row's `urls` list (Kletz 0.20.0) is the association; `confluence link`, `confluence evidence`
+> and `confluence check` are specified there. Kept for the record.
 
 - `safety_plan_row` gains `confluence_page_id` (TEXT, optional) and `confluence_url` (TEXT, optional):
   the page that backs a deliverable, found once with `hopper.cql(...)` and kept on the row.
