@@ -10,6 +10,25 @@ All notable changes to ASI Hopper are recorded here. The format follows
 - 0.2.0: `run steps.jsonl`, `serve --mcp`, `serve --http`; dewey and kletz `jira sync` land in
   those repos; live read smoke tests behind `ASI_HOPPER_LIVE=1`.
 
+## [0.1.6] - 2026-10-29
+
+Broken-windows sweep. No change to the API, the verbs, or the fixtures.
+
+### Fixed
+- The README's version line still said 0.1.4 while the package was 0.1.5, and `uv.lock` still carried
+  0.1.4; both say 0.1.6 now, and the README has a "What is in 0.1.6" note.
+- The compare links at the foot of this file stopped at 0.1.2; 0.1.3 to 0.1.6 and `Unreleased` are
+  listed.
+- `.github/workflows/ci.yml` said the job runs on windows-latest "where Tk is available, so the GUI
+  tests run too"; Hopper has no GUI. The comment now gives the real reason (the platform Hopper runs on).
+- The README's Tests paragraph named six test files and missed `test_gateway.py` (added in 0.1.3).
+
+### Checked, nothing to fix
+- `ruff check`, `ruff format --check` and the 44 tests were green before the sweep; no test is
+  skipped or marked flaky; no TODO or dead code in `src`; no token or secret in the tree
+  (`hopper.toml` is git-ignored and holds none); `evidence/open-tickets-2026-10-27` verifies
+  against its manifest; `.gitignore` covers `.venv`, caches, build output and the local config.
+
 ## [0.1.5] - 2026-10-28
 
 The Kletz window said "Offline: Jira read failed: could not connect to https://mcp.atlassian.com/v1/mcp:
@@ -151,7 +170,11 @@ Design only.
 - `docs/proposal.md`, `README.md`, `hopper.example.toml`, `.gitignore`, `.python-version`,
   and `evidence/open-tickets-2026-10-27/` (format preview pulled through the connector).
 
-[Unreleased]: https://example.invalid/asi-hopper/compare/v0.1.2...HEAD
+[Unreleased]: https://example.invalid/asi-hopper/compare/v0.1.6...HEAD
+[0.1.6]: https://example.invalid/asi-hopper/compare/v0.1.5...v0.1.6
+[0.1.5]: https://example.invalid/asi-hopper/compare/v0.1.4...v0.1.5
+[0.1.4]: https://example.invalid/asi-hopper/compare/v0.1.3...v0.1.4
+[0.1.3]: https://example.invalid/asi-hopper/compare/v0.1.2...v0.1.3
 [0.1.2]: https://example.invalid/asi-hopper/compare/v0.1.1...v0.1.2
 [0.1.1]: https://example.invalid/asi-hopper/compare/v0.1.0...v0.1.1
 [0.1.0]: https://example.invalid/asi-hopper/compare/v0.0.0...v0.1.0

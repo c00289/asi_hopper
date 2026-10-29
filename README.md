@@ -4,7 +4,7 @@ One of the [ASI FuSa tools](https://github.com/c00289/c00289/blob/main/README.md
 
 A read-only, audited, replayable door into Jira for the Wheel Loader programme: a Python
 library, a command line, and a fixture-replay gateway so that siblings and tests never touch
-the network. Version **0.1.4**, alpha. Named after Grace Hopper, who built the first compiler
+the network. Version **0.1.6**, alpha. Named after Grace Hopper, who built the first compiler
 so people could instruct a machine in their own words.
 
 The idea, in one sentence: Jira is the source of truth for the programme's work, Hopper is the
@@ -15,6 +15,13 @@ one way our tools and agents read it, and what it read on a given day can be pro
 > with OAuth 2.1 once, through the browser, and reads with your own account.
 > See [docs/proposal.md](docs/proposal.md) for the design. The write side is delayed indefinitely by owner
 > decision (2026-10-27): no sandbox will be requested and the question is closed.
+
+## What is in 0.1.6
+
+Housekeeping from the 2026-10-29 broken-windows sweep, no change to the API or the verbs: the
+version line here, `uv.lock` and the CHANGELOG's compare links had fallen behind the package;
+the CI comment described a Tk GUI that Hopper does not have; the test list below names
+`test_gateway.py`. The CHANGELOG lists every fix.
 
 ## What is in 0.1.5
 
@@ -210,7 +217,8 @@ Every test runs against `tests/fixtures` through `ReplayGateway`; `tests/conftes
 `ASI_HOPPER_*` environment and builds the replay `Hopper`. The files: `test_config.py` (precedence,
 `max_event_mb`), `test_adf.py` (ADF round trip), `test_model.py` (normalisation, `LIST_FIELDS`),
 `test_commands.py` (every verb), `test_evidence.py` (bundles, verify, diff), `test_cli.py` (exit
-codes). Tests never read the developer's `hopper.toml`, environment, or keyring. Live smoke tests
+codes), `test_gateway.py` (the MCP gateway's reconnect, timeout and exception-group handling,
+with the serve loop stubbed). Tests never read the developer's `hopper.toml`, environment, or keyring. Live smoke tests
 do not exist yet; run the CLI by hand after `auth login`.
 
 ## Functional-safety posture

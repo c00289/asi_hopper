@@ -1,5 +1,6 @@
 # Continuous integration: every push to main, every v* tag and every pull request runs ruff and pytest on
-# windows-latest, where Tk is available, so the GUI tests run too. A release is green by this, not by anyone's word.
+# windows-latest, the platform Hopper runs on (keyring goes to Windows Credential Manager). A release is green
+# by this, not by anyone's word.
 name: ci
 
 on:
