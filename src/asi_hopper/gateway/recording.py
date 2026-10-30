@@ -33,7 +33,6 @@ class RecordingGateway:
             or args.get("pageId")
             or args.get("spaceId")
             or args.get("commentId")
-            or args.get("toolName")
             or ""
         )
         if args.get("issueTypeId"):

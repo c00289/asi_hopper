@@ -289,18 +289,6 @@
     "source": "asi-hopper --record against the live site (OAuth session of the owner)"
   },
   {
-    "tool": "getConfluenceSpaces",
-    "args": {
-      "limit": 1,
-      "keys": [
-        "STPA"
-      ]
-    },
-    "file": "getConfluenceSpaces_STPA.json",
-    "recorded_at": "2026-10-29T16:52:57+00:00",
-    "source": "asi-hopper --record against the live site (OAuth session of the owner)"
-  },
-  {
     "tool": "getPagesInConfluenceSpace",
     "args": {
       "spaceId": "5791547559",
@@ -311,7 +299,7 @@
     "file": "getPagesInConfluenceSpace_5791547559.json",
     "recorded_at": "2026-10-29T16:52:58+00:00",
     "source": "asi-hopper --record against the live site (OAuth session of the owner)",
-    "note": "each page body cut to 160 characters; list views drop bodies anyway"
+    "note": "page bodies synthetic since 0.1.8 (under 200 characters each; the live ones were cut to 160 before that); list views drop bodies anyway"
   },
   {
     "tool": "getConfluencePage",
@@ -322,7 +310,7 @@
     "file": "getConfluencePage_399343803_markdown.json",
     "recorded_at": "2026-10-29T16:53:03+00:00",
     "source": "asi-hopper --record against the live site (OAuth session of the owner)",
-    "note": "markdown body cut to 1200 characters (live: ~48 KB markdown, ~96 KB html)"
+    "note": "markdown body synthetic since 0.1.8 (the synthetic STPA page: five sections, two tables; live: ~48 KB markdown, ~96 KB html)"
   },
   {
     "tool": "getConfluencePage",
@@ -333,7 +321,7 @@
     "file": "getConfluencePage_399343803_adf.json",
     "recorded_at": "2026-10-29T16:53:09+00:00",
     "source": "asi-hopper --record against the live site (OAuth session of the owner)",
-    "note": "ADF body cut to its first 4 top-level nodes (the live document has 24)"
+    "note": "ADF body synthetic since 0.1.8 (five top-level nodes; the live document has 24)"
   },
   {
     "tool": "getConfluencePage",
@@ -344,7 +332,7 @@
     "file": "getConfluencePage_399343803_html.json",
     "recorded_at": "2026-10-29T16:53:14+00:00",
     "source": "asi-hopper --record against the live site (OAuth session of the owner)",
-    "note": "html body cut to 1200 characters (live: ~48 KB markdown, ~96 KB html)"
+    "note": "html body synthetic since 0.1.8 (under 1 KB; live: ~48 KB markdown, ~96 KB html)"
   },
   {
     "tool": "getConfluencePageDescendants",

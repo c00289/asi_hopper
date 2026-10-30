@@ -11,6 +11,7 @@ from dataclasses import asdict, dataclass, field
 from typing import Any, ClassVar
 from urllib.parse import parse_qs, urlparse
 
+from ..adf import adf_to_markdown
 from .pagetext import Section, heading_anchor, sections
 
 BODY_FORMATS = ("markdown", "adf", "html")
@@ -279,15 +280,9 @@ def cql_from_raw(payload: Any, site: str) -> tuple[list[PageRef], str | None]:
     return refs, next_cursor(payload)
 
 
-def cql_total(payload: Any) -> int | None:
-    return payload.get("totalSize") if isinstance(payload, dict) else None
-
-
 def _comment(c: dict[str, Any], kind: str) -> PageComment:
     body = c.get("body")
-    if isinstance(body, dict):
-        from ..adf import adf_to_markdown  # an ADF body when contentFormat was adf
-
+    if isinstance(body, dict):  # an ADF body when contentFormat was adf
         body = adf_to_markdown(body) if body.get("type") == "doc" else str(body.get("value") or body)
     props = c.get("properties") if isinstance(c.get("properties"), dict) else {}
     replies = tuple(_comment(r, kind) for r in c.get("replies") or [] if isinstance(r, dict))

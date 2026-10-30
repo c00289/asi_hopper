@@ -17,6 +17,9 @@ from ..gateway.base import (
     CONFLUENCE_WRITE_TOOLS,
     LIST_TOOLS,
     READ_TOOLS,
+    TOOL_CONTENT_FORMAT_GUIDE,
+    TOOL_FETCH,
+    TOOL_ROVO_SEARCH,
 )
 from ..model.confluence import BODY_FORMATS, COMMENT_KINDS, PageRecord
 from ..model.pagetext import Section, find_section
@@ -178,7 +181,9 @@ _JIRA_WRITE_TOOLS = frozenset(
 def classify_tool(name: str) -> dict[str, Any]:
     """Product, whether the tool writes, and whether Hopper uses it: the inventory's verdict on one tool."""
     lowered = name.lower()
-    if "confluence" in lowered or name in ("getContentFormatGuide",):
+    if name in (TOOL_FETCH, TOOL_ROVO_SEARCH):
+        product = "atlassian"  # cross-product; not used by Hopper
+    elif "confluence" in lowered or name == TOOL_CONTENT_FORMAT_GUIDE:
         product = "confluence"
     elif "jira" in lowered or "issue" in lowered:
         product = "jira"

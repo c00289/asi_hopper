@@ -482,7 +482,3 @@ class EvidenceService:
             "changed": changed,
             "same": not changed and a.keys() == b.keys(),
         }
-
-
-def record_to_dict(record: IssueRecord) -> dict[str, Any]:
-    return asdict(record)

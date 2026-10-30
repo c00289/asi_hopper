@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-from collections.abc import Iterable
 from typing import Any
 
 from ..adf import adf_to_markdown
@@ -285,10 +284,3 @@ def user_from_raw(payload: Any) -> dict[str, Any]:
         "locale": payload.get("locale"),
         "account_status": payload.get("account_status"),
     }
-
-
-def unique_keys(records: Iterable[IssueRecord]) -> list[str]:
-    seen: dict[str, None] = {}
-    for r in records:
-        seen.setdefault(r.key, None)
-    return list(seen)

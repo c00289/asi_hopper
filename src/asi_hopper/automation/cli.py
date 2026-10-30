@@ -9,6 +9,7 @@ from typing import Any
 
 from ..commands import CommandFactory, default_command_factory
 from ..errors import HopperError
+from ..gateway import default_gateway_factory
 from ..version import __version__
 
 
@@ -33,7 +34,7 @@ def build_parser(factory: CommandFactory | None = None) -> argparse.ArgumentPars
         description="ASI Hopper: read-only door into Jira and Confluence. Every verb prints a JSON Result.",
     )
     parser.add_argument("--config", help="hopper.toml to use (default: $ASI_HOPPER_CONFIG or ./hopper.toml)")
-    parser.add_argument("--gateway", choices=["mcp", "replay"], help="override the gateway kind")
+    parser.add_argument("--gateway", choices=default_gateway_factory.kinds(), help="override the gateway kind")
     parser.add_argument("--fixtures", help="replay gateway: fixtures directory")
     parser.add_argument("--record", help="record every call into this fixtures directory")
     parser.add_argument("--site", help="override the Jira site URL")

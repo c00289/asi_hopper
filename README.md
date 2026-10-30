@@ -4,7 +4,7 @@ One of the [ASI FuSa tools](https://github.com/c00289/c00289/blob/main/README.md
 
 A read-only, audited, replayable door into Jira, and since 0.1.7 into Confluence, for the Wheel Loader
 programme: a Python library, a command line, and a fixture-replay gateway so that siblings and tests
-never touch the network. Version **0.1.9**, alpha. Named after Grace Hopper, who built the first compiler
+never touch the network. Version **0.1.10**, alpha. Named after Grace Hopper, who built the first compiler
 so people could instruct a machine in their own words.
 
 The idea, in one sentence: Jira is the source of truth for the programme's work, Hopper is the
@@ -15,6 +15,14 @@ one way our tools and agents read it, and what it read on a given day can be pro
 > with OAuth 2.1 once, through the browser, and reads with your own account.
 > See [docs/proposal.md](docs/proposal.md) for the design. The write side is delayed indefinitely by owner
 > decision (2026-10-27): no sandbox will be requested and the question is closed.
+
+## What is in 0.1.10
+
+Housekeeping from the 2026-10-29 end-of-day broken-windows sweep, no change to the API, the verbs or the
+fixtures' payloads: dead code left behind by the two Confluence sessions is gone, `--gateway` offers what
+the gateway factory knows, `tests/fixtures/index.json` names each fixture once and says what is synthetic,
+CI checks `ruff format` as well as `ruff check`, and the documents are listed below. The CHANGELOG lists
+every fix.
 
 ## What is in 0.1.9
 
@@ -282,6 +290,16 @@ status, version, updated, parent, body hash and comment count, or one bundle aga
 text is ASI-internal and this repository is public. The Confluence fixtures under `tests/fixtures` carry
 synthetic page bodies and comments of the same shape for the same reason.
 
+## Documents
+
+- [docs/proposal.md](docs/proposal.md): the design and its decisions, with a dated revision history.
+- [docs/integration-plan.md](docs/integration-plan.md): the read-side integration into asi_kletz and
+  asi_dewey (Jira).
+- [docs/confluence-integration-plan.md](docs/confluence-integration-plan.md): Confluence into the family
+  (Kletz URL kinds and `confluence` verbs, Hopper page anatomy, the STPA objects now in asi_kletz 0.24.0).
+- [docs/confluence-sandbox-2026-10-29.md](docs/confluence-sandbox-2026-10-29.md): the Confluence read
+  tools, exercised one by one against the live site.
+
 ## Layout
 
 ```
@@ -309,6 +327,7 @@ tests/                pytest; fixtures/ recorded from the live site with dates
 ```powershell
 .venv\Scripts\python -m pytest
 .venv\Scripts\ruff check src tests
+.venv\Scripts\ruff format --check src tests
 ```
 
 Every test runs against `tests/fixtures` through `ReplayGateway`; `tests/conftest.py` clears the

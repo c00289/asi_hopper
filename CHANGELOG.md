@@ -10,6 +10,40 @@ All notable changes to ASI Hopper are recorded here. The format follows
 - 0.2.0: `run steps.jsonl`, `serve --mcp`, `serve --http`; dewey and kletz `jira sync` land in
   those repos; live read smoke tests behind `ASI_HOPPER_LIVE=1`.
 
+## [0.1.10] - 2026-10-29
+
+Broken-windows sweep at the end of the day the Confluence side shipped (0.1.7 to 0.1.9, two sessions). No change
+to the API, the verbs, or the fixtures' payloads.
+
+### Fixed
+- Dead code after the two Confluence sessions: `cql_total` (`model/confluence.py`), `unique_keys`
+  (`model/normalise.py`) and `record_to_dict` (`services/evidence.py`) had no caller; the `toolName` file-name
+  hint in `RecordingGateway` matched no tool argument. All four are removed. `model/confluence.py` imports the
+  ADF converter at module level like `normalise.py` does, instead of inside `_comment`.
+- `gateway/base.py` named `fetch`, `search` and `getContentFormatGuide` "so the inventory can classify them",
+  but `classify_tool` spelt the one it used as a literal and never looked at the other two; it now uses the
+  three constants (the verdicts are unchanged: `fetch` and `search` are `atlassian`, the guide `confluence`).
+- `--gateway` offered a hard-coded `mcp | replay`; the choices now come from `default_gateway_factory.kinds()`,
+  so a registered kind is accepted on the command line without editing the CLI.
+- `tests/fixtures/index.json` listed the `getConfluenceSpaces` lookup of `STPA` with `limit 1` twice, both
+  entries naming the same file (the replay gateway took the last); the entry that says where the payload came
+  from is kept. Four notes still said the page bodies were "cut to" 160, 1200 or four nodes, which was true
+  of the live recordings and not of the synthetic bodies 0.1.8 put in their place; they now say what is there.
+- `.github/workflows/ci.yml` runs `ruff format --check` beside `ruff check`, which the sweeps had been running
+  by hand; the README's Tests block shows both.
+- The README had no list of the documents under `docs/` (`integration-plan.md` was linked from nowhere); a
+  "Documents" section names the four, the Confluence integration plan among them.
+
+### Checked, nothing to fix
+- `ruff check`, `ruff format --check` and the 78 tests were green before the sweep; versions agree in
+  `pyproject.toml`, `version.py`, the README, this file and `uv.lock`; the compare links reach 0.1.9; the
+  README's `confluence` table matches `commands/confluence.py` action for action and flag for flag; proposal
+  decision 6 and its dated notes still describe what shipped. Every fixture `index.json` names exists and
+  every fixture file is named; `evidence/open-tickets-2026-10-27` and the local
+  `evidence/locator-safety-function-stpa-2026-10-29` verify file by file; the Confluence fixtures carry only
+  synthetic account ids and no `history.createdBy`; no token or secret in the tree; `.gitignore` covers
+  `hopper.toml` and `.env`; `hopper.example.toml` carries every key `config.py` reads.
+
 ## [0.1.9] - 2026-10-29
 
 The anatomy of a page: Phase C of `docs/confluence-integration-plan.md`. Generic helpers over the Markdown
@@ -296,7 +330,8 @@ Design only.
 - `docs/proposal.md`, `README.md`, `hopper.example.toml`, `.gitignore`, `.python-version`,
   and `evidence/open-tickets-2026-10-27/` (format preview pulled through the connector).
 
-[Unreleased]: https://example.invalid/asi-hopper/compare/v0.1.9...HEAD
+[Unreleased]: https://example.invalid/asi-hopper/compare/v0.1.10...HEAD
+[0.1.10]: https://example.invalid/asi-hopper/compare/v0.1.9...v0.1.10
 [0.1.9]: https://example.invalid/asi-hopper/compare/v0.1.8...v0.1.9
 [0.1.8]: https://example.invalid/asi-hopper/compare/v0.1.7...v0.1.8
 [0.1.7]: https://example.invalid/asi-hopper/compare/v0.1.6...v0.1.7

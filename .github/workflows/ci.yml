@@ -1,6 +1,6 @@
-# Continuous integration: every push to main, every v* tag and every pull request runs ruff and pytest on
-# windows-latest, the platform Hopper runs on (keyring goes to Windows Credential Manager). A release is green
-# by this, not by anyone's word.
+# Continuous integration: every push to main, every v* tag and every pull request runs ruff (check and
+# format) and pytest on windows-latest, the platform Hopper runs on (keyring goes to Windows Credential
+# Manager). A release is green by this, not by anyone's word.
 name: ci
 
 on:
@@ -25,4 +25,5 @@ jobs:
       - run: uv python install 3.13
       - run: uv sync
       - run: uv run ruff check src tests
+      - run: uv run ruff format --check src tests
       - run: uv run pytest -q
