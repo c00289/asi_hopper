@@ -40,11 +40,11 @@ DOC = {
             "content": [
                 {
                     "type": "listItem",
-                    "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Javier"}]}],
+                    "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Zed"}]}],
                 },
                 {
                     "type": "listItem",
-                    "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Adolfo"}]}],
+                    "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Lou"}]}],
                 },
             ],
         },
@@ -103,7 +103,7 @@ def test_adf_to_markdown_covers_the_subset() -> None:
     assert "## Definition of Done" in md
     assert "Reviewed per **QP-06** in [Jama](https://jama.example)." in md
     assert "- [ ] Submit" in md and "- [x] Approve" in md
-    assert "- Javier\n- Adolfo" in md
+    assert "- Zed\n- Lou" in md
     assert "```python\nprint(1)\n```" in md
     assert "| Reviewer | Role |" in md and "| Rod | Chief Engineer |" in md
     assert "> **Warning:** Safety record" in md

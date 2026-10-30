@@ -1,11 +1,11 @@
 {
-  "account_id": "712020:cc2de3ca-496f-4478-a2fb-88035b07c08e",
+  "account_id": "557058:00000000-0000-4000-8000-000000000021",
   "account_status": "active",
-  "name": "Roy Mendoza - C",
-  "picture": "https://secure.gravatar.com/avatar/1f453dad681cdeea3cefdd7b5c289301",
+  "name": "Ann Lee - C",
+  "picture": "https://secure.gravatar.com/avatar/00000000000000000000000000000000",
   "created_at": "2026-09-20T01:27:05.121Z",
   "last_updated": "2026-10-21T14:58:46.686Z",
-  "email": "c00289@contractor.asirobots.com",
+  "email": "ann.lee@contractor.asirobots.com",
   "characteristics": {"not_mentionable": false},
   "extended_profile": {
     "job_title": "Functional Safety Engineer",
@@ -14,7 +14,7 @@
     "team_type": "Software Development"
   },
   "locale": "en-US",
-  "nickname": "Roy Mendoza - C",
+  "nickname": "Ann Lee - C",
   "account_type": "atlassian",
   "email_verified": true
 }

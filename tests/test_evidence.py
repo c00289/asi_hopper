@@ -21,7 +21,7 @@ def test_snapshot_writes_a_verifiable_bundle(hopper: Hopper, tmp_path: Path) -> 
     manifest = json.loads((folder / "manifest.json").read_text(encoding="utf-8"))
     assert manifest["kind"] == "jira"
     assert manifest["count"] == 3 and manifest["keys"] == ["HWL-2572", "HWL-2575", "HWL-2620"]
-    assert manifest["jql"] == OPEN_JQL and manifest["account"]["name"] == "Roy Mendoza - C"
+    assert manifest["jql"] == OPEN_JQL and manifest["account"]["name"] == "Ann Lee - C"
     digest = hashlib.sha256((folder / "issues.json").read_bytes()).hexdigest()
     assert manifest["sha256"]["issues.json"] == digest
     with (folder / "issues.csv").open(encoding="utf-8", newline="") as fh:
@@ -86,7 +86,7 @@ def test_confluence_snapshot_of_a_page_tree(hopper: Hopper, tmp_path: Path) -> N
     assert manifest["kind"] == "confluence" and manifest["tool"].startswith("asi_hopper ")
     assert manifest["source"] == {"kind": "tree", "root": PAGE, "depth": 1} and manifest["comments"] is True
     assert [p["id"] for p in manifest["pages"]] == [PAGE, "5763236170", "5779062840"] and manifest["count"] == 3
-    assert manifest["account"]["name"] == "Roy Mendoza - C"
+    assert manifest["account"]["name"] == "Ann Lee - C"
     # every body is on disk byte for byte, and its hash is in both the page entry and the file list
     for p in manifest["pages"]:
         body = (folder / "pages" / f"{p['id']}.md").read_bytes()

@@ -4,7 +4,8 @@
     "args": {},
     "file": "atlassianUserInfo.json",
     "recorded_at": "2026-10-27T17:05:00-06:00",
-    "source": "claude.ai Atlassian connector"
+    "source": "claude.ai Atlassian connector",
+    "note": "the account synthetic since 0.1.11 (name, email, account id, avatar hash); job title and department as recorded"
   },
   {
     "tool": "getAccessibleAtlassianResources",
@@ -84,7 +85,8 @@
     },
     "file": "getJiraIssue_HWL-2575.json",
     "recorded_at": "2026-10-27T17:35:00-06:00",
-    "source": "claude.ai Atlassian connector"
+    "source": "claude.ai Atlassian connector",
+    "note": "the people synthetic since 0.1.11 (display names, emails, account ids, the first names in the description); keys, summaries, statuses and timestamps as recorded"
   },
   {
     "tool": "getJiraIssue",
@@ -113,7 +115,8 @@
     },
     "file": "getJiraIssue_HWL-2575.json",
     "recorded_at": "2026-10-27T17:35:00-06:00",
-    "source": "claude.ai Atlassian connector"
+    "source": "claude.ai Atlassian connector",
+    "note": "the people synthetic since 0.1.11 (display names, emails, account ids, the first names in the description); keys, summaries, statuses and timestamps as recorded"
   },
   {
     "tool": "getJiraIssue",
@@ -130,7 +133,8 @@
     },
     "file": "getJiraIssue_HWL-2575.json",
     "recorded_at": "2026-10-27T17:35:00-06:00",
-    "source": "claude.ai Atlassian connector (superset payload)"
+    "source": "claude.ai Atlassian connector (superset payload)",
+    "note": "the people synthetic since 0.1.11 (display names, emails, account ids, the first names in the description); keys, summaries, statuses and timestamps as recorded"
   },
   {
     "tool": "getJiraIssue",
@@ -147,7 +151,8 @@
     },
     "file": "getJiraIssue_HWL-2575.json",
     "recorded_at": "2026-10-27T17:35:00-06:00",
-    "source": "claude.ai Atlassian connector (superset payload)"
+    "source": "claude.ai Atlassian connector (superset payload)",
+    "note": "the people synthetic since 0.1.11 (display names, emails, account ids, the first names in the description); keys, summaries, statuses and timestamps as recorded"
   },
   {
     "tool": "searchJiraIssuesUsingJql",
@@ -176,7 +181,8 @@
     },
     "file": "searchJiraIssuesUsingJql_open.json",
     "recorded_at": "2026-10-27T17:25:00-06:00",
-    "source": "claude.ai Atlassian connector (3 of 6 issues kept)"
+    "source": "claude.ai Atlassian connector (3 of 6 issues kept)",
+    "note": "the people synthetic since 0.1.11 (display names, emails, account ids, the first names in the descriptions); keys, summaries, statuses and timestamps as recorded"
   },
   {
     "tool": "searchJiraIssuesUsingJql",
@@ -202,7 +208,7 @@
       "responseContentFormat": "markdown"
     },
     "file": "searchJiraIssuesUsingJql_open.json",
-    "note": "the list-view request (LIST_FIELDS, page 50) replays the same recorded page; extra recorded fields are ignored"
+    "note": "the people synthetic since 0.1.11 (display names, emails, account ids, the first names in the descriptions); keys, summaries, statuses and timestamps as recorded; the list-view request (LIST_FIELDS, page 50) replays the same recorded page; extra recorded fields are ignored"
   },
   {
     "tool": "searchJiraIssuesUsingJql",
@@ -231,7 +237,8 @@
     },
     "file": "searchJiraIssuesUsingJql_open.json",
     "recorded_at": "2026-10-27T17:25:00-06:00",
-    "source": "claude.ai Atlassian connector (3 of 6 issues kept)"
+    "source": "claude.ai Atlassian connector (3 of 6 issues kept)",
+    "note": "the people synthetic since 0.1.11 (display names, emails, account ids, the first names in the descriptions); keys, summaries, statuses and timestamps as recorded"
   },
   {
     "tool": "getTransitionsForJiraIssue",

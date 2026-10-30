@@ -10,6 +10,26 @@ All notable changes to ASI Hopper are recorded here. The format follows
 - 0.2.0: `run steps.jsonl`, `serve --mcp`, `serve --http`; dewey and kletz `jira sync` land in
   those repos; live read smoke tests behind `ASI_HOPPER_LIVE=1`.
 
+## [0.1.11] - 2026-10-29
+
+The house rule: no real person's name enters a public repository. The owner's decision of 2026-10-29,
+"synthesise all": the people in the Jira fixtures and the tests are invented, as 0.1.8 did for the Confluence
+fixtures. History is not rewritten. No change to the API, the verbs or the shape of the fixtures.
+
+### Changed
+- `tests/fixtures/getJiraIssue_HWL-2575.json`, `searchJiraIssuesUsingJql_open.json` and
+  `atlassianUserInfo.json` (recorded from 0.1.0): the three accounts they carried (the signed-in one, the
+  reporter of the stories, the owner of the bug) have synthetic display names, emails and account ids in the
+  `557058:...00NN` style of the Confluence fixtures, the same person the same way in all three files and in
+  `context.atlassianAccountId`; the first names in the two descriptions and the avatar hash are synthetic
+  too. Issue keys, summaries, statuses, timestamps, job title and department are as recorded. `index.json`
+  says so on each of the eight entries that name those files.
+- `test_model.py`, `test_commands.py`, `test_evidence.py` and `test_adf.py` assert the invented names and the
+  `557058:` prefix.
+- Left as they are, on purpose: `evidence/open-tickets-2026-10-27/` is hashed evidence recorded from Jira and
+  stays as recorded (evidence is evidence); `docs/proposal.md` names the owner's own account, the owner being
+  its author.
+
 ## [0.1.10] - 2026-10-29
 
 Broken-windows sweep at the end of the day the Confluence side shipped (0.1.7 to 0.1.9, two sessions). No change
@@ -330,7 +350,8 @@ Design only.
 - `docs/proposal.md`, `README.md`, `hopper.example.toml`, `.gitignore`, `.python-version`,
   and `evidence/open-tickets-2026-10-27/` (format preview pulled through the connector).
 
-[Unreleased]: https://example.invalid/asi-hopper/compare/v0.1.10...HEAD
+[Unreleased]: https://example.invalid/asi-hopper/compare/v0.1.11...HEAD
+[0.1.11]: https://example.invalid/asi-hopper/compare/v0.1.10...v0.1.11
 [0.1.10]: https://example.invalid/asi-hopper/compare/v0.1.9...v0.1.10
 [0.1.9]: https://example.invalid/asi-hopper/compare/v0.1.8...v0.1.9
 [0.1.8]: https://example.invalid/asi-hopper/compare/v0.1.7...v0.1.8

@@ -9,7 +9,7 @@ from .conftest import OPEN_JQL
 def test_whoami_and_status(hopper: Hopper) -> None:
     r = hopper.execute("whoami")
     assert r.ok and r.verb == "whoami"
-    assert r.data["account"]["email"] == "c00289@contractor.asirobots.com"
+    assert r.data["account"]["email"] == "ann.lee@contractor.asirobots.com"
     assert r.data["gateway"] == "replay" and r.data["policy_mode"] == "read"
     s = hopper.execute("status")
     assert s.ok and s.data["gateway"]["name"] == "replay" and "get" in s.data["commands"]
@@ -55,7 +55,7 @@ def test_typed_shortcuts(hopper: Hopper) -> None:
     assert isinstance(issue, IssueRecord) and issue.summary.startswith("STPA Step 4")
     issues = hopper.search(OPEN_JQL)
     assert all(isinstance(i, IssueRecord) for i in issues) and len(issues) == 3
-    assert hopper.whoami()["account_id"].startswith("712020:")
+    assert hopper.whoami()["account_id"].startswith("557058:")
 
 
 def test_wire_format_matches_dewey(hopper: Hopper) -> None:
@@ -140,7 +140,7 @@ def test_auth_status_probes_a_stored_session_without_a_browser(hopper: Hopper, m
 
     def whoami():
         seen.append(gateway.interactive)  # type: ignore[attr-defined]
-        return {"account_id": "a1", "display_name": "Roy Mendoza"}
+        return {"account_id": "a1", "display_name": "Ann Lee"}
 
     monkeypatch.setattr(hopper.meta, "whoami", whoami)
     valid = hopper.execute("auth", action="status")

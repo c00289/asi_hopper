@@ -21,8 +21,8 @@
           "components": [],
           "created": "2026-10-16T09:16:25.969-0600",
           "project": {"self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/project/12649", "id": "12649", "key": "HWL", "name": "Wheel Loader (Haulage)", "projectTypeKey": "software", "simplified": false, "projectCategory": {"self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/projectCategory/11025", "id": "11025", "description": "All Construction Market / Program Projects", "name": "Construction"}},
-          "description": "### Description\n\nSTPA Step 4 — identify loss scenarios for the WL Unsafe Control Actions from Step 3 (HWL-2574). Worked jointly with Javier/Tim.\n\n### Definition of Done\n\n- [ ] Step 3 UCAs complete\n- [ ] Loss scenarios identified for each UCA\n- [ ] Scenarios traced to UCAs and hazards\n- [ ] Ready for peer review\n\n",
-          "reporter": {"self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/user?accountId=712020%3A68a8c06d-fe4a-456b-96c3-c8da54ca3409", "accountId": "712020:68a8c06d-fe4a-456b-96c3-c8da54ca3409", "emailAddress": "0600@asirobots.com", "displayName": "Javier Quintana", "active": true, "timeZone": "America/Denver", "accountType": "atlassian"},
+          "description": "### Description\n\nSTPA Step 4 — identify loss scenarios for the WL Unsafe Control Actions from Step 3 (HWL-2574). Worked jointly with Zed/Cy.\n\n### Definition of Done\n\n- [ ] Step 3 UCAs complete\n- [ ] Loss scenarios identified for each UCA\n- [ ] Scenarios traced to UCAs and hazards\n- [ ] Ready for peer review\n\n",
+          "reporter": {"self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/user?accountId=557058%3A00000000-0000-4000-8000-000000000022", "accountId": "557058:00000000-0000-4000-8000-000000000022", "emailAddress": "zed.young@asirobots.com", "displayName": "Zed Young", "active": true, "timeZone": "America/Denver", "accountType": "atlassian"},
           "priority": {"self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/priority/5", "iconUrl": "https://asirobots.atlassian.net/images/icons/priorities/trivial.svg", "name": "Un-Groomed", "id": "5"},
           "resolution": null,
           "labels": [],
@@ -44,7 +44,7 @@
               }
             }
           ],
-          "assignee": {"self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/user?accountId=712020%3Acc2de3ca-496f-4478-a2fb-88035b07c08e", "accountId": "712020:cc2de3ca-496f-4478-a2fb-88035b07c08e", "emailAddress": "c00289@contractor.asirobots.com", "displayName": "Roy Mendoza - C", "active": true, "timeZone": "America/Denver", "accountType": "atlassian"},
+          "assignee": {"self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/user?accountId=557058%3A00000000-0000-4000-8000-000000000021", "accountId": "557058:00000000-0000-4000-8000-000000000021", "emailAddress": "ann.lee@contractor.asirobots.com", "displayName": "Ann Lee - C", "active": true, "timeZone": "America/Denver", "accountType": "atlassian"},
           "updated": "2026-10-27T11:18:59.416-0600",
           "status": {"self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/status/10249", "description": "", "iconUrl": "https://asirobots.atlassian.net/images/icons/status_generic.gif", "name": "To Do", "id": "10249", "statusCategory": {"self": "https://api.atlassian.com/ex/jira/0e0e7883-6f84-469d-a098-706e035c766e/rest/api/3/statuscategory/2", "id": 2, "key": "new", "colorName": "blue-gray", "name": "To Do"}}
         },
@@ -53,5 +53,5 @@
       }
     ]
   },
-  "context": {"atlassianAccountId": "712020:cc2de3ca-496f-4478-a2fb-88035b07c08e", "cloudId": "0e0e7883-6f84-469d-a098-706e035c766e", "toolName": "getJiraIssue", "endpoint": "v1:streamable-http", "env": "prod"}
+  "context": {"atlassianAccountId": "557058:00000000-0000-4000-8000-000000000021", "cloudId": "0e0e7883-6f84-469d-a098-706e035c766e", "toolName": "getJiraIssue", "endpoint": "v1:streamable-http", "env": "prod"}
 }

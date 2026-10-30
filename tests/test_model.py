@@ -27,8 +27,8 @@ def test_issue_from_get_normalises_everything() -> None:
     assert record.issue_type == "Story"
     assert record.status == "To Do" and record.status_category == "new" and record.is_open
     assert record.priority == "Un-Groomed"
-    assert record.assignee == "Roy Mendoza - C" and record.assignee_id.startswith("712020:")
-    assert record.reporter == "Javier Quintana"
+    assert record.assignee == "Ann Lee - C" and record.assignee_id.startswith("557058:")
+    assert record.reporter == "Zed Young"
     assert record.parent is not None and record.parent.key == "HWL-1915" and record.parent.issue_type == "Epic"
     assert record.url == "https://asirobots.atlassian.net/browse/HWL-2575"
     assert "- [ ] Step 3 UCAs complete" in (record.description or "")
@@ -104,7 +104,7 @@ def test_transitions_projects_fields_user() -> None:
     assert [f.id for f in fields] == ["issuetype", "project", "summary"]
     assert fields[0].allowed_values == ("Story",) and fields[2].required
     me = user_from_raw(_load("atlassianUserInfo.json"))
-    assert me["name"] == "Roy Mendoza - C" and me["job_title"] == "Functional Safety Engineer"
+    assert me["name"] == "Ann Lee - C" and me["job_title"] == "Functional Safety Engineer"
 
 
 def test_list_fields_drop_the_bodies() -> None:

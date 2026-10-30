@@ -4,7 +4,7 @@ One of the [ASI FuSa tools](https://github.com/c00289/c00289/blob/main/README.md
 
 A read-only, audited, replayable door into Jira, and since 0.1.7 into Confluence, for the Wheel Loader
 programme: a Python library, a command line, and a fixture-replay gateway so that siblings and tests
-never touch the network. Version **0.1.10**, alpha. Named after Grace Hopper, who built the first compiler
+never touch the network. Version **0.1.11**, alpha. Named after Grace Hopper, who built the first compiler
 so people could instruct a machine in their own words.
 
 The idea, in one sentence: Jira is the source of truth for the programme's work, Hopper is the
@@ -15,6 +15,14 @@ one way our tools and agents read it, and what it read on a given day can be pro
 > with OAuth 2.1 once, through the browser, and reads with your own account.
 > See [docs/proposal.md](docs/proposal.md) for the design. The write side is delayed indefinitely by owner
 > decision (2026-10-27): no sandbox will be requested and the question is closed.
+
+## What is in 0.1.11
+
+The people in the Jira fixtures and the tests are invented, as the Confluence fixtures' have been since 0.1.8:
+the house rule that no real person's name enters a public repository, the owner's decision of 2026-10-29.
+Synthetic display names, emails and `557058:` account ids, the same person the same way in every file; keys,
+summaries, statuses and timestamps as recorded. The hashed evidence bundle stays as recorded. No change to
+the API or the verbs.
 
 ## What is in 0.1.10
 

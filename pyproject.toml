@@ -1,6 +1,6 @@
 [project]
 name = "asi_hopper"
-version = "0.1.10"
+version = "0.1.11"
 description = "Read-only, audited, replayable door into Jira Cloud and Confluence Cloud for functional-safety tooling: a Python API, a CLI, and a fixture-replay gateway for tests"
 readme = "README.md"
 authors = [
