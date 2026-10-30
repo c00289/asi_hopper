@@ -7,7 +7,9 @@ records up, primary tools decide what to keep), the policy "Confluence: reads on
 the plans index where this plan is listed.
 **Supersedes:** section 3.4 of [integration-plan.md](integration-plan.md) (the `confluence_page_id` columns it
 proposed are not needed: the plan row's `urls` list already is the association).
-**Target versions:** asi_kletz 0.21.0 and 0.22.0, asi_hopper 0.1.9, asi_dewey 0.9.0, in that order.
+**Target versions:** asi_kletz 0.22.0 and 0.23.0, asi_hopper 0.1.9, asi_dewey 0.10.0, in that order (the plan
+was written against Kletz 0.20.0 and Dewey 0.8.4; the same day shipped Kletz 0.21.0 and Dewey 0.9.0 on other
+work, so every number moved up one).
 **Scope:** read only. Nothing here writes to Confluence or Jira. Each tool writes its own SQLite only.
 
 ---
@@ -101,7 +103,7 @@ The ontology decides this, not convenience:
 Dewey and Kletz still never import each other. Both point at the same Confluence page id, which is the join a
 human or an agent makes by reading the two tools; neither tool stores the other's rows.
 
-## 4. Phase A: Kletz 0.21.0, URLs that know what they are
+## 4. Phase A: Kletz 0.22.0, URLs that know what they are
 
 No schema change. `schema/urls.py` gains `url_kind(url) -> str` and `URL_KINDS = ("confluence", "jira",
 "sharepoint", "placeholder", "other")`, decided from the host; Confluence is the one that matters:
@@ -136,7 +138,7 @@ kind and the optional host map above are there only so a pasted Jama or DMS link
 Tests: `test_url_kinds.py` (every kind, the optional host map, the audit's findings on the seeded database, the
 replacement in three forms and its dry run, the export cell text). Half a day.
 
-## 5. Phase B: Kletz 0.22.0, Confluence read only, through Hopper
+## 5. Phase B: Kletz 0.23.0, Confluence read only, through Hopper
 
 The `asi_hopper` dependency is already there (0.5.0). No schema change: the URL list is the association, as the
 owner designed it in 0.20.0.
@@ -199,7 +201,14 @@ otherwise; `record_version` stays 1 because the addition is a new key).
 Tests on the recorded page (the four sections, the two tables with their row counts, the links to the
 ASIMFS pages, a struck cell), plus a synthetic page for the edge cases. Half a day.
 
-## 7. Phase D: Dewey 0.9.0, the STPA step objects
+## 7. Phase D: Dewey 0.10.0, the STPA step objects
+
+> **Moved, 2026-10-29, later the same day.** Phase D shipped in asi_dewey 0.10.0 and 0.10.1 as written, and the
+> owner then decided that control structures and every STPA object belong in Kletz ("Dewey is more for
+> experimental and day to day; all true work products will end up in Kletz once sanitized"). asi_kletz 0.24.0
+> holds the entities, the `stpa` verb, the reader through Kletz's own Confluence path, the views and the screen,
+> unchanged in dialect; asi_dewey 0.11.0 removes them and keeps a `handover` verb. Read this section as the
+> design; the code is in asi_kletz.
 
 ### 7.1 Entities (schema 4)
 
@@ -344,10 +353,10 @@ covers UCA14, is it on track, and has the page changed since the review" answers
 
 | Step | Repo and version | Effort | Depends on |
 |---|---|---|---|
-| A | asi_kletz 0.21.0: URL kinds, audit, replace | half a day | nothing |
-| B | asi_kletz 0.22.0: `confluence` verbs, Find page, evidence per deliverable | one day | Hopper 0.1.8 (shipped) |
+| A | asi_kletz 0.22.0: URL kinds, audit, replace | half a day | nothing |
+| B | asi_kletz 0.23.0: `confluence` verbs, Find page, evidence per deliverable | one day | Hopper 0.1.8 (shipped) |
 | C | asi_hopper 0.1.9: page anatomy, `--section`, section hashes in bundles | half a day | nothing |
-| D | asi_dewey 0.9.0: STPA entities, factory, reader, `stpa` verb, views, screen | two days | C |
+| D | asi_dewey 0.10.0 (since moved to asi_kletz 0.24.0): STPA entities, factory, reader, `stpa` verb, views, screen | two days | C |
 | E | one live run of each: Kletz links the STPA deliverables to their pages and takes evidence; Dewey reads page 399343803; counts in the CHANGELOGs | half a day | B, D |
 
 A and C can run in parallel; B and D after them; E last. Nine working days of agent time at the family's usual
